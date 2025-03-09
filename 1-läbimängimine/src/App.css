@@ -1,0 +1,68 @@
+
+
+button {
+  color: lightgray;
+  background-color: darkgreen;
+  padding: 10px;
+}
+button:hover {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+button:active {
+  cursor: grab;
+}
+
+.blue-text {
+  color: blue;
+  font-style: italic;
+}
+.blue-text:hover {
+  font-size: 24px;
+}
+
+.green-text {
+  color: green;
+  font-weight: bold;
+  border: 3px solid red;
+}
+.green-text:hover {
+  border-color: brown;
+}
+
+.beluga-cat-div {
+  text-align: right;
+}
+.beluga-cat-img {
+  width: 500px;
+  height: 350px;
+}
+.beluga-cat-img:hover {
+  border-radius: 100px;
+  opacity: 50%;
+}
+
+table {
+  background-color: white;
+}
+table, th, td {
+  border: 1px solid darkgray;
+  border-collapse: collapse;
+  padding: 10px;
+}
+th {
+  text-align: left;
+}
+tr:nth-child(even) {
+  background-color: #DDD;
+}
+
+.company {
+  width: 400px;
+}
+.contact {
+  width: 250px;
+}
+.country {
+  width: 150px;
+}

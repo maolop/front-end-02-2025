@@ -1,0 +1,12 @@
+#root {
+  text-align: center;
+}
+
+body {
+  background-color: coral;
+}
+
+button {
+  margin: 50px 10px;
+  padding: 5px 10px;
+}

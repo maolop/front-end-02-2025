@@ -1,0 +1,70 @@
+#root {
+  margin: 0;
+  text-align: center;
+  color: #DDD;
+  font-size: 16px;
+}
+
+.main-picture {
+  width: 50%;
+  border-radius: 30px;
+}
+
+.rectangle {
+  height: 4px;
+  margin: 20px 40%;
+  background-color: #DDD;
+  border-radius: 3px;
+}
+
+.navigation-pictures {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px 20%;
+}
+.nav-image {
+  height: 120px;
+  border-radius: 10%;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+button {
+  border-style: none;
+  border-radius: 5px;
+  padding: 3px 15px;
+  margin: 30px;
+  background-color: lightseagreen;
+  font-size: 16px;
+}
+
+.projects {
+  text-align: left;
+  margin: 10px 30%;
+}
+
+p {
+  margin: 10px 30%;
+  text-align: justify;
+}
+
+.subtext {
+  font-size: 12px;
+  font-weight: bold;
+  color: #DDD;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #DDD;
+}
+
+.fa-brands {
+  font-size: 40px;
+  margin: 20px;
+  cursor: pointer;
+}
