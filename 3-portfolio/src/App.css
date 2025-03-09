@@ -68,3 +68,7 @@ a:hover {
   margin: 20px;
   cursor: pointer;
 }
+
+.active-button {
+  background-color: white;
+}

@@ -10,10 +10,10 @@ export default function Courses() {
         </p>
 
         <div>Courses we offer on various platforms:</div>
-        <button onClick={ () => setChosenCourse("Udemy") }>Udemy</button>
-        <button onClick={ () => setChosenCourse("Coursera")} >Coursera</button>
-        <button onClick={ () => setChosenCourse("Codecademy")} >Codecademy</button>
-        <button onClick={ () => setChosenCourse("Udacity") }>Udacity</button>
+        <button className={chosenCourse === "Udemy" ? "active-button" : "inactive-button"} onClick={ () => setChosenCourse("Udemy") }>Udemy</button>
+        <button className={chosenCourse === "Coursera" ? "active-button" : "inactive-button"} onClick={ () => setChosenCourse("Coursera")} >Coursera</button>
+        <button className={chosenCourse === "Codecademy" ? "active-button" : "inactive-button"} onClick={ () => setChosenCourse("Codecademy")} >Codecademy</button>
+        <button className={chosenCourse === "Udacity" ? "active-button" : "inactive-button"} onClick={ () => setChosenCourse("Udacity") }>Udacity</button>
 
         {chosenCourse && <div>You have chosen <b>{chosenCourse}</b></div>}
         
