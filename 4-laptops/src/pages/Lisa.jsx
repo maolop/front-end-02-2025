@@ -2,10 +2,14 @@ import { useState } from 'react'
 
 export default function Lisa() {
   const [message, setMessage] = useState("Lisa arvuti!")
+  const [showButton, setShowButton] = useState(true)
 
+  function addProduct () {
+    setMessage("Arvuti lisatud")
+    setShowButton(false)
+  }
   return (
     <>
-
       <h1>Lisa sülearvuti</h1>
       <div>{message}</div>
       <label>Mark </label>
@@ -16,9 +20,7 @@ export default function Lisa() {
       <input type='text'/>
       <br/>
       
-      {message !== "Lisatud!" && <button onClick={ () => setMessage("Lisatud!") }>Sisesta</button>}
-
-
+      {showButton && <button onClick={ () => addProduct() }>Sisesta</button>}
     </>
   )
 }
