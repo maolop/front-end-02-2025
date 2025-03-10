@@ -1,6 +1,8 @@
 function Kujundus() {
   return (
-    <div>Kujundus</div>
+    <>
+      <h1>Kujundus</h1>
+    </>
   )
 }
 

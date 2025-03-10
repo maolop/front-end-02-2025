@@ -1,6 +1,8 @@
 function Muutmine() {
   return (
-    <div>Muutmine</div>
+    <>
+      <h1>Muutmine</h1>
+    </>
   )
 }
 

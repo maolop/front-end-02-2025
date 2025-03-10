@@ -75,7 +75,7 @@ function Ilmumine() {
           <div>Täiskasvanute kanalid</div>
           <div>Järelevaatamise võimalus</div>
           <div>Tasuta filmilaenutus</div>
-          <div>Igakuine ajakirja "Ekraanisõltlane" väljaanne</div>
+          <div>Igakuine ajakirja &#34;Ekraanisõltlane&#34; väljaanne</div>
         </>
         }
         
