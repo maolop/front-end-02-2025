@@ -23,7 +23,6 @@ function Ilmumine() {
 
     else if (pakett === "fanatic")
       setFanaticAktiivne(!fanaticAktiivne)
-
   }
 
   return (

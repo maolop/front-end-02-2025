@@ -4,3 +4,21 @@
   padding: 2rem;
   text-align: center;
 }
+
+.telefon {
+  border: 6px solid grey;
+  margin: auto 20px;
+  padding: 20px;
+  background-color: white;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.valitud-telefon {
+  border-color: blue;
+}
+
+.valitud-ram {
+  border: 3px solid blue;
+  border-radius: 5px;
+}
