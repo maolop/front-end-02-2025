@@ -5,7 +5,7 @@ import MaksimaalneKalkulaator from "../components/MaksimaalneKalkulaator"
 
 export default function Kalkulaator() {
 
-    const [vaade, setVaade] = useState("tava")
+    const [vaade, setVaade] = useState("maksimaalne")
 
     return (
         <>

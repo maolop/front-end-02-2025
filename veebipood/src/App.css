@@ -42,3 +42,7 @@
 .aktiivne-linn {
   text-decoration: underline;
 }
+
+input, select {
+  margin: 10px 20px;
+}
