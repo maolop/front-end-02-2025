@@ -10,15 +10,6 @@
   border-radius: 30px;
 }
 
-.pilt:hover {
-  opacity: 10%;
-  cursor: pointer;
-}
-
-.pilt:active {
-  transform: scale(150%);
-}
-
 .aktiivne, .inaktiivne {
   padding: 30px 50px;
   border: 3px solid;
