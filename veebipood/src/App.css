@@ -37,3 +37,13 @@
 input, select {
   margin: 10px 20px;
 }
+
+table, td, th {
+  margin: 10px auto;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th {
+  width: 200px;
+  padding: 10px 0;
+}
