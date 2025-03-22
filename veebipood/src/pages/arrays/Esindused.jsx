@@ -29,15 +29,7 @@ function Esindused() {
 
       {linn === "Tallinn" &&
         <>
-{/*           <div>Ülemiste</div>
-          <div>Rocca al Mare</div>
-          <div>Lasnamäe</div>
-          <div>Magistrali</div>
-          <div>Järveotsa</div> */}
-          {esindused.map(esindus =>
-            <div key={esindus}>
-              {esindus.keskus} (+372{esindus.tel})
-            </div>)}
+          {esindused.map(esindus => <div key={esindus}>{esindus.keskus} (+372{esindus.tel})</div>)}
         </>
       }
 
