@@ -1,0 +1,8 @@
+:root {
+  font-family: sans-serif;
+}
+
+button.menu {
+  margin: 15px 5px;
+  padding: 5px 15px;
+}

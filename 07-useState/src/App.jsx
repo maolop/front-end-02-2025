@@ -4,6 +4,9 @@ import Kontakt from "./pages/Kontakt"
 import Avaleht from "./pages/Avaleht"
 import "./App.css"
 import { useState, useRef } from "react"
+import Kuud from "./pages/Kuud"
+import Loomad from "./pages/Loomad"
+import Sõnad from "./pages/Sõnad"
 
 function App() {
   const [sisseLogitud, setSisseLogitud] = useState("ei")
@@ -51,11 +54,26 @@ function App() {
       <Link to='/kontakt'>
         <button>Kontakt</button>
       </Link>
+      
+      <Link to='/kuud'>
+        <button>Kuud</button>
+      </Link>
+
+      <Link to='/loomad'>
+        <button>Loomad</button>
+      </Link>
+
+      <Link to='/sõnad'>
+        <button>Sõnad</button>
+      </Link>
 
       <Routes>
         <Route path="/" element={<Avaleht/>}/>
         <Route path="/meist" element={<Meist/>}/>
         <Route path="/kontakt" element={<Kontakt/>}/>
+        <Route path="/kuud" element={<Kuud/>}/>
+        <Route path="/loomad" element={<Loomad/>}/>
+        <Route path="/sõnad" element={<Sõnad/>}/>\
       </Routes>
     </>
   )
