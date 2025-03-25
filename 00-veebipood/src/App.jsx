@@ -22,6 +22,12 @@ import HaldaHinnad from './pages/halda/HaldaHinnad'
 import HaldaTootajad from './pages/halda/HaldaTootajad'
 import HaldaTooted from './pages/halda/HaldaTooted'
 import HaldaEsindused from './pages/halda/HaldaEsindused'
+import YksAuto from './pages/yks/YksAuto'
+import YksKasutaja from './pages/yks/YksKasutaja'
+import YksHind from './pages/yks/YksHind'
+import YksTootaja from './pages/yks/YksTootaja'
+import YksToode from './pages/yks/YksToode'
+import YksEsindus from './pages/yks/YksEsindus'
 
 function App() {
 
@@ -55,6 +61,13 @@ function App() {
           <Route path="/halda-tootajad" element={ <HaldaTootajad />} />
           <Route path="/halda-tooted" element={ <HaldaTooted/>} />
           <Route path="/halda-esindused" element={ <HaldaEsindused />} />
+
+          <Route path="/auto/:index" element={ <YksAuto />} />
+          <Route path="/kasutaja" element={ <YksKasutaja />} />
+          <Route path="/hind/:index" element={ <YksHind />} />
+          <Route path="/tootaja" element={ <YksTootaja />} />
+          <Route path="/toode" element={ <YksToode />} />
+          <Route path="/esindus/:jrknr" element={ <YksEsindus />} />
 
           <Route path="/*" element={ <NotFound/> }/>
         </Routes>

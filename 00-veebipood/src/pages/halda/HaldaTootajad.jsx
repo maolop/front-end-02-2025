@@ -33,3 +33,4 @@ function HaldaTootajad() {
 }
 
 export default HaldaTootajad
+// objektideks => nimi, vanus, amet

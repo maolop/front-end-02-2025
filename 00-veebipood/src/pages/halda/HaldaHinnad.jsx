@@ -5,6 +5,7 @@ import hinnadFailist from "../../data/hinnad.json"
 function HaldaHinnad() {
   const [hinnad, setHinnad] = useState(hinnadFailist.slice())
   const hindRef = useRef()
+  const lisajaRef = useRef()
   
   const kustuta = (index) => {
     hinnadFailist.splice(index, 1)
@@ -12,14 +13,17 @@ function HaldaHinnad() {
   }
 
   const sisesta = () => {
-    hinnadFailist.push(Number(hindRef.current.value))
+    hinnadFailist.push({
+      "arv": Number(hindRef.current.value),
+      "lisaja": lisajaRef.current.value})
     setHinnad(hinnadFailist.slice())
     hindRef.current.value = ""
+    lisajaRef.current.value = ""
   }
 
   const arvutaKokku = () => {
     let summa = 0
-    hinnad.forEach(hind => summa += hind)
+    hinnad.forEach(hind => summa += hind.arv)
     return summa
   }
 
@@ -27,6 +31,8 @@ function HaldaHinnad() {
     <>
       <label>Uus hind:</label>
       <input ref={hindRef} type="number"/>
+      <label>Lisaja:</label>
+      <input ref={lisajaRef} type="text"/>
       <button onClick={sisesta}>Sisesta</button>
 
       <div>{hinnad.length} hinda</div>
@@ -37,15 +43,17 @@ function HaldaHinnad() {
             <th>Järjekorranr</th>
             <th>Index</th>
             <th>Hind</th>
+            <th>Lisaja</th>
             <th>Kustuta</th>
           </tr>
         </thead>
         <tbody>
-          {hinnad.map((auto, index) =>
-            <tr key={auto}>
+          {hinnad.map((hind, index) =>
+            <tr key={hind.arv}>
               <td>{index + 1}</td>
               <td>{index}</td>
-              <td>{auto}</td>
+              <td>{hind.arv}</td>
+              <td>{hind.lisaja}</td>
               <td><button onClick={() => kustuta(index)}>x</button></td>
             </tr>)}
         </tbody>

@@ -35,3 +35,4 @@ function HaldaTooted() {
 }
 
 export default HaldaTooted
+// objektideks => nimi, hind, aktiivne, pilt

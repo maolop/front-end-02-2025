@@ -5,3 +5,5 @@ function HaldaEsindused() {
 }
 
 export default HaldaEsindused
+
+// kodus

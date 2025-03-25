@@ -1,10 +1,13 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
 import esindusedFailist from "../../data/esindused.json"
 
 function Esindused() {
   const [linn, setLinn] = useState("Tallinn")
   const [esindused, setEsindused] = useState(esindusedFailist.slice())
 
+  // objektideks!
   // sorteeri A-Z
   // sorteeri Z-A
   // tähed kasvavalt
@@ -29,7 +32,14 @@ function Esindused() {
 
       {linn === "Tallinn" &&
         <>
-          {esindused.map(esindus => <div key={esindus}>{esindus.keskus} (+372{esindus.tel})</div>)}
+          {esindused.map((esindus, index) => <div key={esindus}>
+            {esindus.keskus} (+372{esindus.tel})
+            <Link to={"/esindus/" + index}>
+              <button>Vt esindust</button>
+            </Link>
+          </div>)
+
+          }
         </>
       }
 

@@ -1,7 +1,7 @@
 [
-    {"keskus": "Ülemiste", "tel": "5426242", "aadress": "1"},
-    {"keskus": "Rocca al Mare", "tel": "765223", "aadress": "2"},
-    {"keskus": "Lasnamäe", "tel": "3367765", "aadress": "3"},
-    {"keskus": "Magistrali", "tel": "553887", "aadress": "4"},
-    {"keskus": "Järveotsa", "tel": "4577754", "aadress": "5"}
+    {"keskus": "Ülemiste", "tel": "5426242", "aadress": "Lubja 14"},
+    {"keskus": "Rocca al Mare", "tel": "765223", "aadress": "Kajaka 25"},
+    {"keskus": "Lasnamäe", "tel": "3367765", "aadress": "Tahma 2"},
+    {"keskus": "Magistrali", "tel": "553887", "aadress": "Silikaadi 24"},
+    {"keskus": "Järveotsa", "tel": "4577754", "aadress": "Ohaka 66"}
 ]
