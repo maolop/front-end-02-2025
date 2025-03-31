@@ -7,6 +7,25 @@ function YksJook() {
 
 	if (jook === undefined) return <div>Jooki ei leitud</div>;
 
+	let jookImg = "";
+
+	if (jook.type === "beer")
+		jookImg =
+			"https://www.diybeer.com/media/wysiwyg/Beer-Glasses/Steam_Beer_700x700px.png";
+	else if (jook.type === "wine")
+		jookImg =
+			"https://www.perfectcellar.com/cdn/shop/articles/Fine_Wine_and_Regular_Wine.jpg?v=1643119025";
+	else if (jook.type === "whiskey" || jook.type === "rum")
+		jookImg =
+			"https://media.post.rvohealth.io/wp-content/uploads/2020/01/whiskey-glass-bourbon-liquor-1200x628-facebook.jpg";
+	else if (
+		jook.type === "vodka" ||
+		jook.type === "tequila" ||
+		jook.type === "gin"
+	)
+		jookImg =
+			"https://thumbs.dreamstime.com/b/vodka-shot-glass-fresh-lime-isolated-white-background-39110358.jpg";
+
 	return (
 		<table>
 			<tr>
@@ -18,32 +37,7 @@ function YksJook() {
 					<div>Price: {jook.price}€</div>
 				</td>
 				<td style={{ "text-align": "left", padding: "10px 20px" }}>
-					{jook.type === "wine" && (
-						<img
-							className="drink"
-							src="https://www.perfectcellar.com/cdn/shop/articles/Fine_Wine_and_Regular_Wine.jpg?v=1643119025"
-						/>
-					)}
-					{jook.type === "beer" && (
-						<img
-							className="drink"
-							src="https://www.diybeer.com/media/wysiwyg/Beer-Glasses/Steam_Beer_700x700px.png"
-						/>
-					)}
-					{(jook.type === "whiskey" || jook.type === "rum") && (
-						<img
-							className="drink"
-							src="https://media.post.rvohealth.io/wp-content/uploads/2020/01/whiskey-glass-bourbon-liquor-1200x628-facebook.jpg"
-						/>
-					)}
-					{(jook.type === "vodka" ||
-						jook.type === "tequila" ||
-						jook.type === "gin") && (
-						<img
-							className="drink"
-							src="https://thumbs.dreamstime.com/b/vodka-shot-glass-fresh-lime-isolated-white-background-39110358.jpg"
-						/>
-					)}
+					<img className="drink" src={jookImg} alt="" />
 				</td>
 			</tr>
 		</table>
