@@ -1,0 +1,416 @@
+[
+	{
+		"name": "Amber Oak Reserve",
+		"type": "whiskey",
+		"alcohol_content": 45,
+		"bottle_size": 70,
+		"price": 50
+	},
+	{
+		"name": "Arctic Frost",
+		"type": "vodka",
+		"alcohol_content": 40,
+		"bottle_size": 70,
+		"price": 25
+	},
+	{
+		"name": "Autumn Barrel",
+		"type": "rum",
+		"alcohol_content": 39,
+		"bottle_size": 70,
+		"price": 31
+	},
+	{
+		"name": "Azure Bliss",
+		"type": "wine",
+		"alcohol_content": 12.5,
+		"bottle_size": 75,
+		"price": 16
+	},
+	{
+		"name": "Blackwood Stout",
+		"type": "beer",
+		"alcohol_content": 6.8,
+		"bottle_size": 50,
+		"price": 4.2
+	},
+	{
+		"name": "Blue Agave Gold",
+		"type": "tequila",
+		"alcohol_content": 38,
+		"bottle_size": 70,
+		"price": 35
+	},
+	{
+		"name": "Cedar Reserve",
+		"type": "whiskey",
+		"alcohol_content": 48,
+		"bottle_size": 70,
+		"price": 55
+	},
+	{
+		"name": "Citrus Grove",
+		"type": "gin",
+		"alcohol_content": 43,
+		"bottle_size": 70,
+		"price": 30
+	},
+	{
+		"name": "Crimson Ale",
+		"type": "beer",
+		"alcohol_content": 7.5,
+		"bottle_size": 50,
+		"price": 4.9
+	},
+	{
+		"name": "Crimson Merlot",
+		"type": "wine",
+		"alcohol_content": 13.5,
+		"bottle_size": 75,
+		"price": 15
+	},
+	{
+		"name": "Darkwood Bourbon",
+		"type": "whiskey",
+		"alcohol_content": 50,
+		"bottle_size": 70,
+		"price": 60
+	},
+	{
+		"name": "Desert Bloom",
+		"type": "tequila",
+		"alcohol_content": 39,
+		"bottle_size": 70,
+		"price": 36
+	},
+	{
+		"name": "Emerald Gin",
+		"type": "gin",
+		"alcohol_content": 42,
+		"bottle_size": 70,
+		"price": 28
+	},
+	{
+		"name": "Fireside Reserve",
+		"type": "whiskey",
+		"alcohol_content": 47,
+		"bottle_size": 70,
+		"price": 58
+	},
+	{
+		"name": "Frostbite",
+		"type": "vodka",
+		"alcohol_content": 39,
+		"bottle_size": 70,
+		"price": 22
+	},
+	{
+		"name": "Frosty Peaks",
+		"type": "vodka",
+		"alcohol_content": 40,
+		"bottle_size": 70,
+		"price": 24
+	},
+	{
+		"name": "Fiery Sunset",
+		"type": "rum",
+		"alcohol_content": 38,
+		"bottle_size": 70,
+		"price": 32
+	},
+	{
+		"name": "Bold Cascade",
+		"type": "beer",
+		"alcohol_content": 6.2,
+		"bottle_size": 50,
+		"price": 4.5
+	},
+	{
+		"name": "Blazing Ember",
+		"type": "whiskey",
+		"alcohol_content": 46,
+		"bottle_size": 70,
+		"price": 53
+	},
+	{
+		"name": "Amber Haze",
+		"type": "gin",
+		"alcohol_content": 44,
+		"bottle_size": 70,
+		"price": 29
+	},
+	{
+		"name": "Cask Haven",
+		"type": "whiskey",
+		"alcohol_content": 45,
+		"bottle_size": 70,
+		"price": 54
+	},
+	{
+		"name": "Crimson Ridge",
+		"type": "wine",
+		"alcohol_content": 14,
+		"bottle_size": 75,
+		"price": 17
+	},
+	{
+		"name": "Dusk Valley",
+		"type": "wine",
+		"alcohol_content": 13,
+		"bottle_size": 75,
+		"price": 15
+	},
+	{
+		"name": "Elderwood Spirits",
+		"type": "gin",
+		"alcohol_content": 42,
+		"bottle_size": 70,
+		"price": 27
+	},
+	{
+		"name": "Fabled Reserve",
+		"type": "whiskey",
+		"alcohol_content": 47,
+		"bottle_size": 70,
+		"price": 57
+	},
+	{
+		"name": "Flickering Lantern",
+		"type": "rum",
+		"alcohol_content": 37,
+		"bottle_size": 70,
+		"price": 30
+	},
+	{
+		"name": "Frozen Tundra",
+		"type": "vodka",
+		"alcohol_content": 41,
+		"bottle_size": 70,
+		"price": 26
+	},
+	{
+		"name": "Frosty Ale",
+		"type": "beer",
+		"alcohol_content": 5.8,
+		"bottle_size": 50,
+		"price": 3.9
+	},
+	{
+		"name": "Flaming Agave",
+		"type": "tequila",
+		"alcohol_content": 38.5,
+		"bottle_size": 70,
+		"price": 33
+	},
+	{
+		"name": "Fireside Glow",
+		"type": "wine",
+		"alcohol_content": 12.7,
+		"bottle_size": 75,
+		"price": 14
+	},
+
+	{
+		"name": "Golden Hops",
+		"type": "beer",
+		"alcohol_content": 5.9,
+		"bottle_size": 50,
+		"price": 4.1
+	},
+	{
+		"name": "Gilded Oak",
+		"type": "whiskey",
+		"alcohol_content": 46,
+		"bottle_size": 70,
+		"price": 52
+	},
+	{
+		"name": "Harvest Moon",
+		"type": "wine",
+		"alcohol_content": 13,
+		"bottle_size": 75,
+		"price": 18
+	},
+	{
+		"name": "Horizon Breeze",
+		"type": "gin",
+		"alcohol_content": 41,
+		"bottle_size": 70,
+		"price": 29
+	},
+	{
+		"name": "Imperial Stout",
+		"type": "beer",
+		"alcohol_content": 8.2,
+		"bottle_size": 50,
+		"price": 5.3
+	},
+	{
+		"name": "Ivory Cask",
+		"type": "whiskey",
+		"alcohol_content": 44,
+		"bottle_size": 70,
+		"price": 51
+	},
+	{
+		"name": "Jade Spirit",
+		"type": "gin",
+		"alcohol_content": 42,
+		"bottle_size": 70,
+		"price": 27
+	},
+	{
+		"name": "Lush Vineyard",
+		"type": "wine",
+		"alcohol_content": 12.2,
+		"bottle_size": 75,
+		"price": 14
+	},
+	{
+		"name": "Midnight Elixir",
+		"type": "vodka",
+		"alcohol_content": 40,
+		"bottle_size": 70,
+		"price": 26
+	},
+	{
+		"name": "Noble Oak",
+		"type": "whiskey",
+		"alcohol_content": 45,
+		"bottle_size": 70,
+		"price": 53
+	},
+	{
+		"name": "Obsidian Stout",
+		"type": "beer",
+		"alcohol_content": 6.7,
+		"bottle_size": 50,
+		"price": 4.4
+	},
+	{
+		"name": "Pristine Glacier",
+		"type": "vodka",
+		"alcohol_content": 39,
+		"bottle_size": 70,
+		"price": 23
+	},
+	{
+		"name": "Quarry Oak",
+		"type": "whiskey",
+		"alcohol_content": 47,
+		"bottle_size": 70,
+		"price": 55
+	},
+	{
+		"name": "Raven's Brew",
+		"type": "beer",
+		"alcohol_content": 7.1,
+		"bottle_size": 50,
+		"price": 4.6
+	},
+	{
+		"name": "Ruby Nectar",
+		"type": "wine",
+		"alcohol_content": 14.5,
+		"bottle_size": 75,
+		"price": 19
+	},
+	{
+		"name": "Sapphire Mist",
+		"type": "vodka",
+		"alcohol_content": 40,
+		"bottle_size": 70,
+		"price": 27
+	},
+	{
+		"name": "Silver Frost",
+		"type": "vodka",
+		"alcohol_content": 38,
+		"bottle_size": 70,
+		"price": 22
+	},
+	{
+		"name": "Twilight Reserve",
+		"type": "whiskey",
+		"alcohol_content": 46,
+		"bottle_size": 70,
+		"price": 56
+	},
+	{
+		"name": "Umber Ale",
+		"type": "beer",
+		"alcohol_content": 5.6,
+		"bottle_size": 50,
+		"price": 4.0
+	},
+	{
+		"name": "Velvet Agave",
+		"type": "tequila",
+		"alcohol_content": 37,
+		"bottle_size": 70,
+		"price": 34
+	},
+	{
+		"name": "Vivid Vineyard",
+		"type": "wine",
+		"alcohol_content": 12.8,
+		"bottle_size": 75,
+		"price": 17
+	},
+	{
+		"name": "Whispering Oak",
+		"type": "whiskey",
+		"alcohol_content": 45,
+		"bottle_size": 70,
+		"price": 54
+	},
+	{
+		"name": "Wild Juniper",
+		"type": "gin",
+		"alcohol_content": 43,
+		"bottle_size": 70,
+		"price": 31
+	},
+	{
+		"name": "Xanadu Spirits",
+		"type": "vodka",
+		"alcohol_content": 38,
+		"bottle_size": 70,
+		"price": 24
+	},
+	{
+		"name": "Yellow Bloom",
+		"type": "tequila",
+		"alcohol_content": 39,
+		"bottle_size": 70,
+		"price": 36
+	},
+	{
+		"name": "Zephyr Breeze",
+		"type": "gin",
+		"alcohol_content": 42,
+		"bottle_size": 70,
+		"price": 30
+	},
+	{
+		"name": "Zinfandel Dream",
+		"type": "wine",
+		"alcohol_content": 13.2,
+		"bottle_size": 75,
+		"price": 16
+	},
+	{
+		"name": "Zenith Stout",
+		"type": "beer",
+		"alcohol_content": 7.3,
+		"bottle_size": 50,
+		"price": 4.8
+	},
+	{
+		"name": "Zodiac Reserve",
+		"type": "whiskey",
+		"alcohol_content": 47,
+		"bottle_size": 70,
+		"price": 57
+	}
+]

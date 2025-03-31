@@ -36,6 +36,8 @@ import MuudaToode from "./pages/muuda/MuudaToode";
 import MuudaEsindus from "./pages/muuda/MuudaEsindus";
 import LogiSisse from "./pages/LogiSisse";
 import Registreeru from "./pages/Registreeru";
+import Jook from "./pages/Jook";
+import YksJook from "./pages/yks/YksJook";
 
 function App() {
 	return (
@@ -45,6 +47,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Avaleht />} />
 				<Route path="/ostukorv" element={<Ostukorv />} />
+				<Route path="/jook" element={<Jook />} />
 				<Route path="/seaded" element={<Seaded />} />
 				<Route path="/lisa-toode" element={<LisaToode />} />
 				<Route path="/osta-kinkekaart" element={<Kinkekaart />} />
@@ -69,6 +72,7 @@ function App() {
 				<Route path="/halda-esindused" element={<HaldaEsindused />} />
 
 				<Route path="/auto/:index" element={<YksAuto />} />
+				<Route path="/jook/:index" element={<YksJook />} />
 				<Route path="/kasutaja" element={<YksKasutaja />} />
 				<Route path="/hind/:index" element={<YksHind />} />
 				<Route path="/tootaja" element={<YksTootaja />} />

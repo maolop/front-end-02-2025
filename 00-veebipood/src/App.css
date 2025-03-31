@@ -6,7 +6,7 @@
 }
 
 .pilt {
-	height: 500px;
+	height: 300;
 	border-radius: 30px;
 }
 
@@ -58,4 +58,8 @@ th {
 
 .ostukorv-toode {
 	width: 100px;
+}
+
+img.drink {
+	width: 300px;
 }

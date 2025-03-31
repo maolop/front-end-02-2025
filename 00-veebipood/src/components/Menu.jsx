@@ -14,6 +14,9 @@ export default function Menu() {
 			<Link to="/ostukorv">
 				<button>Ostukorvi</button>
 			</Link>
+			<Link to="/jook">
+				<button>Jook</button>
+			</Link>
 
 			<Link to="/seaded">
 				<button>Seaded</button>
