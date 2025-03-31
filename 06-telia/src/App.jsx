@@ -1,14 +1,13 @@
-import { Link, Route, Routes } from 'react-router-dom'
-import './App.css'
-import Avaleht from './pages/Avaleht'
-import Ilmumine from "./pages/Ilmumine"
-import Kujundus from "./pages/Kujundus"
-import Muutmine from "./pages/Muutmine"
-import Hind from "./pages/Hind"
-import Telefon from "./pages/Telefon"
+import { Link, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Avaleht from "./pages/Avaleht";
+import Ilmumine from "./pages/Ilmumine";
+import Kujundus from "./pages/Kujundus";
+import Muutmine from "./pages/Muutmine";
+import Hind from "./pages/Hind";
+import Telefon from "./pages/Telefon";
 
 function App() {
-
   return (
     <>
       <Link to="/">
@@ -32,16 +31,15 @@ function App() {
       </Link>
 
       <Routes>
-        <Route path="/" element={<Avaleht/>}/>
-        <Route path="/ilmumine" element={<Ilmumine/>}/>
-        <Route path="/kujundus" element={<Kujundus/>}/>
-        <Route path="/muutmine" element={<Muutmine/>}/>
-        <Route path="/hind" element={<Hind/>}/>
-        <Route path="/telefon" element={<Telefon/>}/>
+        <Route path="/" element={<Avaleht />} />
+        <Route path="/ilmumine" element={<Ilmumine />} />
+        <Route path="/kujundus" element={<Kujundus />} />
+        <Route path="/muutmine" element={<Muutmine />} />
+        <Route path="/hind" element={<Hind />} />
+        <Route path="/telefon" element={<Telefon />} />
       </Routes>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

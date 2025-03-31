@@ -22,5 +22,5 @@ export default function Avaleht() {
         <div>Hundred Acre Wood</div>
       </div>
     </>
-  )
+  );
 }

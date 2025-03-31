@@ -3,7 +3,7 @@ function Muutmine() {
     <>
       <h1>Muutmine</h1>
     </>
-  )
+  );
 }
 
-export default Muutmine
+export default Muutmine;

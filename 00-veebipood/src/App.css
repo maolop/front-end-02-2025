@@ -10,7 +10,8 @@
   border-radius: 30px;
 }
 
-.aktiivne, .inaktiivne {
+.aktiivne,
+.inaktiivne {
   padding: 30px 50px;
   border: 3px solid;
 }
@@ -34,11 +35,14 @@
   text-decoration: underline;
 }
 
-input, select {
+input,
+select {
   margin: 10px 20px;
 }
 
-table, td, th {
+table,
+td,
+th {
   margin: 10px auto;
   border: 2px solid black;
   border-collapse: collapse;

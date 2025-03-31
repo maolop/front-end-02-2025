@@ -1,7 +1,5 @@
 function MuudaTootaja() {
-  return (
-    <div>MuudaTootaja</div>
-  )
+  return <div>MuudaTootaja</div>;
 }
 
-export default MuudaTootaja
+export default MuudaTootaja;

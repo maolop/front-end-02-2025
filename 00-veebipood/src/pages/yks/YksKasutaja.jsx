@@ -1,7 +1,5 @@
 function YksKasutaja() {
-  return (
-    <div>YksKasutaja</div>
-  )
+  return <div>YksKasutaja</div>;
 }
 
-export default YksKasutaja
+export default YksKasutaja;

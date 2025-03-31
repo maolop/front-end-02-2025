@@ -3,7 +3,7 @@ function Kujundus() {
     <>
       <h1>Kujundus</h1>
     </>
-  )
+  );
 }
 
-export default Kujundus
+export default Kujundus;

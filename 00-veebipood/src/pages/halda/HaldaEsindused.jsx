@@ -1,9 +1,7 @@
 function HaldaEsindused() {
-  return (
-    <div>HaldaEsindused</div>
-  )
+  return <div>HaldaEsindused</div>;
 }
 
-export default HaldaEsindused
+export default HaldaEsindused;
 
 // kodus

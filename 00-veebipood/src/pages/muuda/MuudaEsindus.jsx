@@ -1,7 +1,5 @@
 function MuudaEsindus() {
-  return (
-    <div>MuudaEsindus</div>
-  )
+  return <div>MuudaEsindus</div>;
 }
 
-export default MuudaEsindus
+export default MuudaEsindus;

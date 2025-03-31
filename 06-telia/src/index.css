@@ -1,6 +1,6 @@
 :root {
   background-color: lightblue;
-  font-family: 'Tahoma';
+  font-family: "Tahoma";
   text-align: center;
 }
 
@@ -34,10 +34,21 @@ button.aktiivne-pakett {
   border-color: black;
 }
 
-.red { background-color: red; }
-.yellow {background-color: yellow;}
-.blue {background-color: blue;}
-.orange {background-color: orange;}
-.green { background-color: green;}
-.purple {background-color: purple;}
-
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+.orange {
+  background-color: orange;
+}
+.green {
+  background-color: green;
+}
+.purple {
+  background-color: purple;
+}

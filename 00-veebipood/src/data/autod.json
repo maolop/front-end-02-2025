@@ -1,10 +1,10 @@
 [
-    {"nimi": "BMW", "hind": 25000, "aktiivne": true, "pilt": ""},
-    {"nimi": "Audi", "hind": 45000, "aktiivne": true, "pilt": ""},
-    {"nimi": "Ferrari", "hind": 125000, "aktiivne": false, "pilt": ""},
-    {"nimi": "Ford", "hind": 20000, "aktiivne": true, "pilt": ""},
-    {"nimi": "Nobe", "hind": 23000, "aktiivne": true, "pilt": ""},
-    {"nimi": "Saab", "hind": 28000, "aktiivne": true, "pilt": ""},
-    {"nimi": "Opel", "hind": 21000, "aktiivne": true, "pilt": ""},
-    {"nimi": "Volvo", "hind": 26000, "aktiivne": true, "pilt": ""}
+  { "nimi": "BMW", "hind": 25000, "aktiivne": true, "pilt": "" },
+  { "nimi": "Audi", "hind": 45000, "aktiivne": true, "pilt": "" },
+  { "nimi": "Ferrari", "hind": 125000, "aktiivne": false, "pilt": "" },
+  { "nimi": "Ford", "hind": 20000, "aktiivne": true, "pilt": "" },
+  { "nimi": "Nobe", "hind": 23000, "aktiivne": true, "pilt": "" },
+  { "nimi": "Saab", "hind": 28000, "aktiivne": true, "pilt": "" },
+  { "nimi": "Opel", "hind": 21000, "aktiivne": true, "pilt": "" },
+  { "nimi": "Volvo", "hind": 26000, "aktiivne": true, "pilt": "" }
 ]

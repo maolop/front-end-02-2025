@@ -1,7 +1,5 @@
 function MuudaKasutaja() {
-  return (
-    <div>MuudaKasutaja</div>
-  )
+  return <div>MuudaKasutaja</div>;
 }
 
-export default MuudaKasutaja
+export default MuudaKasutaja;

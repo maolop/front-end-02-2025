@@ -1,11 +1,11 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import esindusedFailist from "../../data/esindused.json"
+import esindusedFailist from "../../data/esindused.json";
 
 function Esindused() {
-  const [linn, setLinn] = useState("Tallinn")
-  const [esindused, setEsindused] = useState(esindusedFailist.slice())
+  const [linn, setLinn] = useState("Tallinn");
+  const [esindused, setEsindused] = useState(esindusedFailist.slice());
 
   // objektideks!
   // sorteeri A-Z
@@ -25,36 +25,55 @@ function Esindused() {
   return (
     <>
       <div>Hetkel aktiivne linn: {linn}</div>
-      <button className={ linn === "Tallinn" ? "aktiivne-linn" : undefined } onClick={ () => setLinn("Tallinn")}>Tallinn</button>
-      <button className={ linn === "Tartu" ? "aktiivne-linn" : undefined } onClick={ () => setLinn("Tartu")}>Tartu</button>
-      <button className={ linn === "Pärnu" ? "aktiivne-linn" : undefined } onClick={ () => setLinn("Pärnu")}>Pärnu</button>
-      <button className={ linn === "Narva" ? "aktiivne-linn" : undefined } onClick={ () => setLinn("Narva")}>Narva</button>
+      <button
+        className={linn === "Tallinn" ? "aktiivne-linn" : undefined}
+        onClick={() => setLinn("Tallinn")}
+      >
+        Tallinn
+      </button>
+      <button
+        className={linn === "Tartu" ? "aktiivne-linn" : undefined}
+        onClick={() => setLinn("Tartu")}
+      >
+        Tartu
+      </button>
+      <button
+        className={linn === "Pärnu" ? "aktiivne-linn" : undefined}
+        onClick={() => setLinn("Pärnu")}
+      >
+        Pärnu
+      </button>
+      <button
+        className={linn === "Narva" ? "aktiivne-linn" : undefined}
+        onClick={() => setLinn("Narva")}
+      >
+        Narva
+      </button>
 
-      {linn === "Tallinn" &&
+      {linn === "Tallinn" && (
         <>
-          {esindused.map((esindus, index) => <div key={esindus}>
-            {esindus.keskus} (+372{esindus.tel})
-            <Link to={"/esindus/" + index}>
-              <button>Vt esindust</button>
-            </Link>
-          </div>)
-
-          }
+          {esindused.map((esindus, index) => (
+            <div key={esindus}>
+              {esindus.keskus} (+372{esindus.tel})
+              <Link to={"/esindus/" + index}>
+                <button>Vt esindust</button>
+              </Link>
+            </div>
+          ))}
         </>
-      }
+      )}
 
-      {linn === "Tartu" && 
+      {linn === "Tartu" && (
         <>
           <div>Tasku</div>
           <div>Lõunakeskus</div>
         </>
-      }
+      )}
 
-      {linn === "Pärnu" && <div>Port Artur</div> }
-      {linn === "Narva" && <div>Fama</div> }
-
+      {linn === "Pärnu" && <div>Port Artur</div>}
+      {linn === "Narva" && <div>Fama</div>}
     </>
-  )
+  );
 }
 
-export default Esindused
+export default Esindused;

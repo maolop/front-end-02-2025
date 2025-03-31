@@ -1,7 +1,7 @@
 #root {
   margin: 0;
   text-align: center;
-  color: #DDD;
+  color: #ddd;
   font-size: 16px;
 }
 
@@ -13,7 +13,7 @@
 .rectangle {
   height: 4px;
   margin: 20px 40%;
-  background-color: #DDD;
+  background-color: #ddd;
   border-radius: 3px;
 }
 
@@ -51,7 +51,7 @@ p {
 .subtext {
   font-size: 12px;
   font-weight: bold;
-  color: #DDD;
+  color: #ddd;
 }
 
 a {
@@ -60,7 +60,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-decoration-color: #DDD;
+  text-decoration-color: #ddd;
 }
 
 .fa-brands {

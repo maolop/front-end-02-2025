@@ -1,9 +1,9 @@
 function Avaleht() {
   return (
     <>
-        <h1>Avaleht</h1>
+      <h1>Avaleht</h1>
     </>
-  )
+  );
 }
 
-export default Avaleht
+export default Avaleht;

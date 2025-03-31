@@ -1,7 +1,5 @@
 function Avaleht() {
-  return (
-    <div>Avaleht</div>
-  )
+  return <div>Avaleht</div>;
 }
 
-export default Avaleht
+export default Avaleht;
