@@ -1,13 +1,13 @@
 #root {
-  width: 100%;
-  text-align: center;
+	width: 100%;
+	text-align: center;
 }
 
 button {
-  margin: 5px 10px;
+	margin: 5px 10px;
 }
 
 .name:hover {
-  color: red;
-  text-decoration: underline;
+	color: red;
+	text-decoration: underline;
 }

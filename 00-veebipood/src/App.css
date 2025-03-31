@@ -1,61 +1,61 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
 }
 
 .pilt {
-  height: 500px;
-  border-radius: 30px;
+	height: 500px;
+	border-radius: 30px;
 }
 
 .aktiivne,
 .inaktiivne {
-  padding: 30px 50px;
-  border: 3px solid;
+	padding: 30px 50px;
+	border: 3px solid;
 }
 
 .aktiivne {
-  border-color: darkmagenta;
-  color: darkmagenta;
-  font-weight: bold;
+	border-color: darkmagenta;
+	color: darkmagenta;
+	font-weight: bold;
 }
 
 .inaktiivne {
-  border-color: darkgray;
-  color: darkgray;
+	border-color: darkgray;
+	color: darkgray;
 }
 
 .aktiivne-keel {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .aktiivne-linn {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 input,
 select {
-  margin: 10px 20px;
+	margin: 10px 20px;
 }
 
 table,
 td,
 th {
-  margin: 10px auto;
-  border: 2px solid black;
-  border-collapse: collapse;
+	margin: 10px auto;
+	border: 2px solid black;
+	border-collapse: collapse;
 }
 th {
-  width: 200px;
-  padding: 10px 0;
+	width: 200px;
+	padding: 10px 0;
 }
 
 .auto-pilt {
-  width: 200px;
+	width: 200px;
 }
 
 .ostukorv-toode {
-  width: 100px;
+	width: 100px;
 }

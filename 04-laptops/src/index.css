@@ -1,21 +1,21 @@
 :root {
-  font-family: system-ui, sans-serif;
-  background-color: #1a1a1a;
-  color: #eee;
+	font-family: system-ui, sans-serif;
+	background-color: #1a1a1a;
+	color: #eee;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid #eee;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #555;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin: 10px;
+	border-radius: 8px;
+	border: 1px solid #eee;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #555;
+	cursor: pointer;
+	transition: border-color 0.25s;
+	margin: 10px;
 }
 button:hover {
-  border-color: #646cff;
+	border-color: #646cff;
 }

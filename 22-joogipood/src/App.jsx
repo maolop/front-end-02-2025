@@ -5,25 +5,25 @@ import Lisa from "./pages/Lisa";
 import Halda from "./pages/Halda";
 
 function App() {
-  return (
-    <>
-      <Link to="/">
-        <button className="menu">Avaleht</button>
-      </Link>
-      <Link to="/lisa">
-        <button className="menu">Lisa</button>
-      </Link>
-      <Link to="/halda">
-        <button className="menu">Halda</button>
-      </Link>
+	return (
+		<>
+			<Link to="/">
+				<button className="menu">Avaleht</button>
+			</Link>
+			<Link to="/lisa">
+				<button className="menu">Lisa</button>
+			</Link>
+			<Link to="/halda">
+				<button className="menu">Halda</button>
+			</Link>
 
-      <Routes>
-        <Route path="/" element={<Avaleht />} />
-        <Route path="/lisa" element={<Lisa />} />
-        <Route path="/halda" element={<Halda />} />
-      </Routes>
-    </>
-  );
+			<Routes>
+				<Route path="/" element={<Avaleht />} />
+				<Route path="/lisa" element={<Lisa />} />
+				<Route path="/halda" element={<Halda />} />
+			</Routes>
+		</>
+	);
 }
 
 export default App;

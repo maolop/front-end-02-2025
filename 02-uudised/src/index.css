@@ -1,10 +1,10 @@
 :root {
-  font-family: sans-serif;
-  color: #ddd;
-  background-color: darkslategray;
+	font-family: sans-serif;
+	color: #ddd;
+	background-color: darkslategray;
 }
 
 body {
-  margin: 0;
-  font-size: 20px;
+	margin: 0;
+	font-size: 20px;
 }

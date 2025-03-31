@@ -1,5 +1,5 @@
 function HaldaEsindused() {
-  return <div>HaldaEsindused</div>;
+	return <div>HaldaEsindused</div>;
 }
 
 export default HaldaEsindused;

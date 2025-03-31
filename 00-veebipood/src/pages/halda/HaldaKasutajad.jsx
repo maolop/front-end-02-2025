@@ -1,5 +1,5 @@
 function HaldaKasutajad() {
-  return <div>HaldaKasutajad</div>;
+	return <div>HaldaKasutajad</div>;
 }
 
 export default HaldaKasutajad;

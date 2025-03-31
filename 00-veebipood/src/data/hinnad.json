@@ -1,12 +1,12 @@
 [
-  { "arv": 513, "lisaja": "Aadu" },
-  { "arv": 22, "lisaja": "Pets" },
-  { "arv": 9, "lisaja": "Juku" },
-  { "arv": 1512, "lisaja": "Pets" },
-  { "arv": 33, "lisaja": "Kalle" },
-  { "arv": 785, "lisaja": "Aadu" },
-  { "arv": 88, "lisaja": "Pets" },
-  { "arv": 99, "lisaja": "Kati" },
-  { "arv": 23, "lisaja": "Mati" },
-  { "arv": 6, "lisaja": "Mati" }
+	{ "arv": 513, "lisaja": "Aadu" },
+	{ "arv": 22, "lisaja": "Pets" },
+	{ "arv": 9, "lisaja": "Juku" },
+	{ "arv": 1512, "lisaja": "Pets" },
+	{ "arv": 33, "lisaja": "Kalle" },
+	{ "arv": 785, "lisaja": "Aadu" },
+	{ "arv": 88, "lisaja": "Pets" },
+	{ "arv": 99, "lisaja": "Kati" },
+	{ "arv": 23, "lisaja": "Mati" },
+	{ "arv": 6, "lisaja": "Mati" }
 ]

@@ -1,74 +1,74 @@
 #root {
-  margin: 0;
-  text-align: center;
-  color: #ddd;
-  font-size: 16px;
+	margin: 0;
+	text-align: center;
+	color: #ddd;
+	font-size: 16px;
 }
 
 .main-picture {
-  width: 50%;
-  border-radius: 30px;
+	width: 50%;
+	border-radius: 30px;
 }
 
 .rectangle {
-  height: 4px;
-  margin: 20px 40%;
-  background-color: #ddd;
-  border-radius: 3px;
+	height: 4px;
+	margin: 20px 40%;
+	background-color: #ddd;
+	border-radius: 3px;
 }
 
 .navigation-pictures {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 40px 20%;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 40px 20%;
 }
 .nav-image {
-  height: 120px;
-  border-radius: 10%;
-  cursor: pointer;
-  margin-left: 20px;
+	height: 120px;
+	border-radius: 10%;
+	cursor: pointer;
+	margin-left: 20px;
 }
 
 button {
-  border-style: none;
-  border-radius: 5px;
-  padding: 3px 15px;
-  margin: 30px;
-  background-color: lightseagreen;
-  font-size: 16px;
+	border-style: none;
+	border-radius: 5px;
+	padding: 3px 15px;
+	margin: 30px;
+	background-color: lightseagreen;
+	font-size: 16px;
 }
 
 .projects {
-  text-align: left;
-  margin: 10px 30%;
+	text-align: left;
+	margin: 10px 30%;
 }
 
 p {
-  margin: 10px 30%;
-  text-align: justify;
+	margin: 10px 30%;
+	text-align: justify;
 }
 
 .subtext {
-  font-size: 12px;
-  font-weight: bold;
-  color: #ddd;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ddd;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
-  text-decoration-color: #ddd;
+	text-decoration: underline;
+	text-decoration-color: #ddd;
 }
 
 .fa-brands {
-  font-size: 40px;
-  margin: 20px;
-  cursor: pointer;
+	font-size: 40px;
+	margin: 20px;
+	cursor: pointer;
 }
 
 .active-button {
-  background-color: white;
+	background-color: white;
 }

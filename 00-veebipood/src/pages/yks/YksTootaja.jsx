@@ -1,5 +1,5 @@
 function YksTootaja() {
-  return <div>YksTootaja</div>;
+	return <div>YksTootaja</div>;
 }
 
 export default YksTootaja;

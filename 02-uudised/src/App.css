@@ -1,32 +1,32 @@
 #root {
-  margin: 0;
-  text-align: center;
+	margin: 0;
+	text-align: center;
 }
 
 button.menu {
-  height: 50px;
-  width: 120px;
-  margin: 30px 10px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: lightblue;
-  border-radius: 25px;
+	height: 50px;
+	width: 120px;
+	margin: 30px 10px;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: lightblue;
+	border-radius: 25px;
 }
 
 img {
-  border: 2px solid black;
-  margin: 20px;
+	border: 2px solid black;
+	margin: 20px;
 }
 
 .heading {
-  font-size: 40px;
-  font-weight: bold;
+	font-size: 40px;
+	font-weight: bold;
 }
 
 button.contact {
-  margin: 10px 0 50px 0;
+	margin: 10px 0 50px 0;
 }
 
 .active-store {
-  color: red;
+	color: red;
 }
