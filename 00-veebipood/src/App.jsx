@@ -28,6 +28,14 @@ import YksHind from './pages/yks/YksHind'
 import YksTootaja from './pages/yks/YksTootaja'
 import YksToode from './pages/yks/YksToode'
 import YksEsindus from './pages/yks/YksEsindus'
+import MuudaAuto from './pages/muuda/MuudaAuto'
+import MuudaKasutaja from './pages/muuda/MuudaKasutaja'
+import MuudaHind from './pages/muuda/MuudaHind'
+import MuudaTootaja from './pages/muuda/MuudaTootaja'
+import MuudaToode from './pages/muuda/MuudaToode'
+import MuudaEsindus from './pages/muuda/MuudaEsindus'
+import LogiSisse from './pages/LogiSisse'
+import Registreeru from './pages/Registreeru'
 
 function App() {
 
@@ -45,6 +53,8 @@ function App() {
           <Route path="/lisa-toode" element={ <LisaToode />} />
           <Route path="/osta-kinkekaart" element={ <Kinkekaart/> }/>
           <Route path="/kalkulaator" element={ <Kalkulaator/> }/>
+          <Route path="/logi-sisse" element={ <LogiSisse/> }/>
+          <Route path="/registreeru" element={ <Registreeru/> }/>
 
           <Route path="/arrays-home" element={ <ArraysHome />} />
           <Route path="/autod" element={ <Autod />} />
@@ -53,7 +63,7 @@ function App() {
           <Route path="/tootajad" element={ <Tootajad />} />
           <Route path="/tooted" element={ <Tooted />} />
           <Route path="/esindused" element={ <Esindused />} />
-
+    
           <Route path="/halda-home" element={ <HaldaHome/>} />
           <Route path="/halda-autod" element={ <HaldaAutod/>} />
           <Route path="/halda-kasutajad" element={ <HaldaKasutajad/>} />
@@ -68,6 +78,13 @@ function App() {
           <Route path="/tootaja" element={ <YksTootaja />} />
           <Route path="/toode" element={ <YksToode />} />
           <Route path="/esindus/:jrknr" element={ <YksEsindus />} />
+
+          <Route path="/muuda-auto/:index" element={ <MuudaAuto/>} />
+          <Route path="/muuda-kasutaja" element={ <MuudaKasutaja/>} />
+          <Route path="/muuda-hind/:index" element={ <MuudaHind/>} />
+          <Route path="/muuda-tootaja" element={ <MuudaTootaja />} />
+          <Route path="/muuda-toode" element={ <MuudaToode/>} />
+          <Route path="/muuda-esindus" element={ <MuudaEsindus />} />
 
           <Route path="/*" element={ <NotFound/> }/>
         </Routes>

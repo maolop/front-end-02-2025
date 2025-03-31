@@ -4,6 +4,9 @@ import esindusedFailist from "../../data/esindused.json"
 function YksEsindus() {
   const {jrknr} = useParams()
   const leitud = esindusedFailist[jrknr]
+  
+  if (leitud === undefined)
+    return <div>Esindust ei leitud</div>
 
   return (
     <>

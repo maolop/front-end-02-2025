@@ -1,0 +1,10 @@
+[
+    {"nimi": "Coca-Cola", "hind": 0.99, "aktiivne": true, "pilt": ""},
+    {"nimi": "Snickers", "hind": 0.49, "aktiivne": true, "pilt": ""},
+    {"nimi": "Pringles", "hind": 1.89, "aktiivne": false, "pilt": ""},
+    {"nimi": "Starter", "hind": 1.09, "aktiivne": true, "pilt": ""},
+    {"nimi": "Pepsi Max", "hind": 0.94, "aktiivne": true, "pilt": ""},
+    {"nimi": "Fanta Zero", "hind": 1.19, "aktiivne": true, "pilt": ""},
+    {"nimi": "Red Bull", "hind": 2.19, "aktiivne": true, "pilt": ""},
+    {"nimi": "Monster", "hind": 1.39, "aktiivne": true, "pilt": ""}
+]

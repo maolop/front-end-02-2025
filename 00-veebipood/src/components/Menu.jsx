@@ -34,6 +34,14 @@ export default function Menu() {
         <Link to='/halda-home'>
           <button>Halda Home</button>
         </Link>
+
+        <Link to='/logi-sisse'>
+          <button>Logi sisse</button>
+        </Link>
+
+        <Link to='/registreeru'>
+          <button>Registreeru</button>
+        </Link>
     </div>
   )
 }

@@ -7,8 +7,9 @@ function Ostukorv() {
   const [tooted, setTooted] = useState(ostukorvJSON.slice())
 
   const kustuta = (index) => {
-    tooted.splice(index, 1)
-    setTooted(tooted.slice())
+    ostukorvJSON.splice(index, 1)
+    setTooted(ostukorvJSON)
+    
   }
 
   const hinnadKokku = () => {
@@ -22,8 +23,10 @@ function Ostukorv() {
       {tooted.length > 0 && <button onClick={() => setTooted([])}>Tühjenda</button>}
 
       {tooted.map((toode, index) => <div key={toode.nimi}>
-        {toode.nimi}: {toode.hind}
+        {toode.nimi}: {toode.hind}€
         <button onClick={() => kustuta(index)}>x</button>
+        <br/>
+        <img className="ostukorv-toode" src={toode.pilt} alt="" />
       </div>)}
 
       {tooted.length === 0 && <div>Ostukorv on tühi. <Link to="/">Mine tooteid lisama</Link></div>}

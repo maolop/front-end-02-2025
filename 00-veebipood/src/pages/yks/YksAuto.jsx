@@ -5,6 +5,9 @@ function YksAuto() {
   const {index} = useParams()
   const leitud = autodFailist[index]
 
+  if (leitud === undefined)
+    return <div>Autot ei leitud</div>
+
   return (
     <>
       <div>{leitud.nimi}</div>

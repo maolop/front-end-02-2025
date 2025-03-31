@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import ostukorvFailist from "../data/ostukorv.json"
 
 function Kinkekaart() {
     const [summa, setSumma] = useState(20)
@@ -6,17 +7,15 @@ function Kinkekaart() {
     const [sonum, setSonum] = useState("")
     const emailRef = useRef()
 
-    const sisesta = () => {
-        if (emailRef.current.value.includes("@") === false) {
-            setSonum("E-mail pole korrektne")
-            return
+    const lisaOstukorvi = () => {
+        const toode = {
+           "nimi": "Kinkekaart",
+           "hind": summa * kogus,
+           "aktiivne": true,
+           "pilt": "https://shop.msonic.ee/cdn/shop/products/e38bd83af578077b65a31424bd24d085_500x.png"
         }
-        if (emailRef.current.value.length < 6) {
-            setSonum("E-mail pole korrektne")
-            return
-        }
-        
-        setSonum("E-mail edukalt lisatud")
+        ostukorvFailist.push(toode)
+        setSonum(`Kinkekaardid lisatud`)
     }
 
     return (
@@ -36,7 +35,9 @@ function Kinkekaart() {
             <br/><br/>
             <label>E-mail </label>
             <input ref={emailRef} type="text" name="" id="" />
-            <button onClick={sisesta}>Lisa</button>
+            <br/>
+            <div>Kokku {summa * kogus}€</div>
+            <button onClick={lisaOstukorvi}>Lisa ostukorvi</button>
             <div>{sonum}</div>
         </>
   )

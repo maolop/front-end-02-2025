@@ -1,8 +1,8 @@
+import tootetFailist from "../../data/tooted.json"
 import { useState } from "react"
 
 function HaldaTooted() {
-  const esialgsedTooted = ["Coca-Cola", "Fanta", "Sprite", "Vichy", "Red Bull", "Aura", "Monster", "Starter", "Battery", "Vitautas"]
-  const [tooted, setTooted] = useState(esialgsedTooted)
+  const [tooted, setTooted] = useState(tootetFailist)
 
   const kustuta = (index) => {
     const uuedTooted = tooted.slice()
@@ -14,17 +14,23 @@ function HaldaTooted() {
     <>
       <table>
         <tr>
-          <th>Järjekorranr</th>
           <th>Index</th>
-          <th>Toote nimi</th>
+          <th>Nimi</th>
+          <th>Hind </th>
+          <th>Aktiivne?</th>
+          <th>Pilt</th>
+          <th>Muuda</th>
           <th>Kustuta</th>
         </tr>
 
         {tooted.map((toode, index) => 
         <tr key={toode}>
-          <td>{index + 1}</td>
           <td>{index}</td>
-          <td>{toode}</td>
+          <td>{toode.nimi}</td>
+          <td>{toode.hind}</td>
+          <td>{toode.aktiivne}</td>
+          <td>{toode.pilt}</td>
+          <td><button>&gt;</button></td>
           <td><button onClick={() => kustuta(index)}>x</button></td>
         </tr>)}
         

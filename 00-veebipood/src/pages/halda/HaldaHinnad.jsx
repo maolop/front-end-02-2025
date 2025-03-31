@@ -1,5 +1,6 @@
 import { useState, useRef } from "react"
 import hinnadFailist from "../../data/hinnad.json"
+import { Link } from "react-router-dom"
 
 
 function HaldaHinnad() {
@@ -55,6 +56,7 @@ function HaldaHinnad() {
               <td>{hind.arv}</td>
               <td>{hind.lisaja}</td>
               <td><button onClick={() => kustuta(index)}>x</button></td>
+              <Link to={"/muuda-hind/" + index}><td><button>Muuda hinda</button></td></Link>
             </tr>)}
         </tbody>
       </table>

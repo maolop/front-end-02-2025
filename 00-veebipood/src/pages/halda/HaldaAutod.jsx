@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import autodFailist from "../../data/autod.json"
 import { ToastContainer, toast } from 'react-toastify'
+import { Link } from "react-router-dom"
 
 
 function HaldaAutod() {
@@ -14,6 +15,7 @@ function HaldaAutod() {
       autodFailist.splice(index, 1)
       setAutod(autodFailist.slice())
     }
+
 
     const sisesta = () => {
       if (nimiRef.current.value === "")
@@ -93,6 +95,7 @@ function HaldaAutod() {
               <td><img src={auto.pilt} alt="" className="auto-pilt"/></td>
               <td>{auto.aktiivne ? "aktiivne" : "mitteaktiivne"}</td>
               <td><button onClick={() => kustuta(index)}>x</button></td>
+              <td><Link to={"/muuda-auto/" + index}><button>Muuda</button></Link></td>
             </tr>)}
         </tbody>
       </table>
