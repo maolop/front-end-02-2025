@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import tootajadJson from "../../data/tootajad.json";
+import { Link } from "react-router-dom";
 
 function HaldaTootajad() {
 	const [tootajad, setTootajad] = useState(tootajadJson);
@@ -37,6 +38,7 @@ function HaldaTootajad() {
 					<th>Nimi</th>
 					<th>Ala</th>
 					<th>Telefon</th>
+					<th>Muuda</th>
 					<th>Kustuta</th>
 				</tr>
 				{tootajad.map((tootaja, index) => (
@@ -45,6 +47,11 @@ function HaldaTootajad() {
 						<td>{tootaja.nimi}</td>
 						<td>{tootaja.ala}</td>
 						<td>{tootaja.telefon}</td>
+						<td>
+							<Link to={"/muuda-tootaja/" + tootaja.nimi}>
+								<button>&gt;</button>
+							</Link>
+						</td>
 						<td>
 							<button onClick={() => kustuta(index)}>&nbsp;x&nbsp;</button>
 						</td>

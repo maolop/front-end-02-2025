@@ -84,7 +84,7 @@ function App() {
 				<Route path="/muuda-auto/:index" element={<MuudaAuto />} />
 				<Route path="/muuda-kasutaja/:email" element={<MuudaKasutaja />} />
 				<Route path="/muuda-hind/:index" element={<MuudaHind />} />
-				<Route path="/muuda-tootaja" element={<MuudaTootaja />} />
+				<Route path="/muuda-tootaja/:nimi" element={<MuudaTootaja />} />
 				<Route path="/muuda-toode/:index" element={<MuudaToode />} />
 				<Route path="/muuda-esindus/:nimi" element={<MuudaEsindus />} />
 

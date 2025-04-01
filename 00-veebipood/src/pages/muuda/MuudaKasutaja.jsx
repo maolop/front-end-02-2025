@@ -10,10 +10,10 @@ function MuudaKasutaja() {
 	const navigate = useNavigate();
 
 	const uuenda = () => {
-		index = kasutajadJson.findIndex((i) => i.email === email);
+		const index = kasutajadJson.findIndex((i) => i.email === email);
 		kasutajadJson[index].email = emailRef.current.value;
 		kasutajadJson[index].parool = pwRef.current.value;
-		navigate("/halda-esindused");
+		navigate("/halda-kasutajad");
 	};
 
 	if (kasutaja === undefined) return <h1>Kasutajat ei leitud</h1>;
