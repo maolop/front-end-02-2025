@@ -1,102 +1,94 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import tootajadJson from "../../data/tootajad.json";
 
 function Tootajad() {
 	const [tootajad, setTootajad] = useState(tootajadJson);
 	const [kontakt, setKontakt] = useState("");
+	const otsingRef = useRef();
 
 	function votaYhendust(votaYhendustNimi) {
 		const tootaja = tootajadJson.find((i) => i.nimi === votaYhendustNimi);
 		setKontakt(`${tootaja.nimi} - tel ${tootaja.telefon}`);
 	}
 
-	/* 	const sorteeriAZ = () => {
-		const uuedTootajad = tootajad.slice().sort((a, b) => a.localeCompare(b));
-		setTootajad(uuedTootajad);
+	const reset = () => {
+		setTootajad(tootajadJson);
+		setKontakt("");
+	};
+
+	const sorteeriAZ = () => {
+		setTootajad(tootajad.toSorted((a, b) => a.nimi.localeCompare(b.nimi)));
 	};
 
 	const sorteeriZA = () => {
-		const uuedTootajad = tootajad.slice().sort((a, b) => b.localeCompare(a));
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.toSorted((a, b) => b.nimi.localeCompare(a.nimi)));
 	};
 
 	const sorteeriTahedKasvavalt = () => {
-		const uuedTootajad = tootajad.slice().sort((a, b) => a.length - b.length);
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.toSorted((a, b) => a.nimi.length - b.nimi.length));
 	};
 
 	const sorteeriTahedKahanevalt = () => {
-		const uuedTootajad = tootajad.slice().sort((a, b) => b.length - a.length);
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.toSorted((a, b) => b.nimi.length - a.nimi.length));
 	};
 
 	const sorteeriNeljasAZ = () => {
-		const uuedTootajad = tootajad
-			.slice()
-			.sort((a, b) => a[3].localeCompare(b[3]));
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.toSorted((a, b) => a.nimi[3].localeCompare(b.nimi[3])));
 	};
 
 	const sorteeriNimedeArvuJargi = () => {
-		const uuedTootajad = tootajad
-			.slice()
-			.sort((a, b) => b.split("-").length - a.split("-").length);
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.toSorted((a, b) => b.nimi.split("-").length - a.nimi.split("-").length));
 	};
 
 	const filtreeriLopebI = () => {
-		const uuedTootajad = tootajad.slice().filter((a) => a.endsWith("i"));
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.filter((i) => i.nimi.endsWith("i")));
 	};
 
 	const filtreeriVahemaltKuueTahelised = () => {
-		const uuedTootajad = tootajad.slice().filter((a) => a.length >= 6);
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.filter((i) => i.nimi.length >= 6));
 	};
 
 	const filtreeriViieTahelised = () => {
-		const uuedTootajad = tootajad.slice().filter((a) => a.length === 5);
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.filter((i) => i.nimi.length === 5));
 	};
 
 	const filtreeriSisaldabLuhendit = () => {
-		const uuedTootajad = tootajad
-			.slice()
-			.filter((a) => a.includes("hr") || a.includes("pr"));
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.filter((i) => i.nimi.includes("hr") || i.nimi.includes("pr")));
 	};
 
 	const filtreeriNeljasTahtOnA = () => {
-		const uuedTootajad = tootajad.slice().filter((a) => a[3] === "a");
-		setTootajad(uuedTootajad);
+		setTootajad(tootajad.filter((i) => i.nimi[3] === "a"));
 	};
 
 	const filtreeriPaarisArvuline = () => {
-		const uuedTootajad = tootajad.slice().filter((a) => a.length % 2 === 0);
-		setTootajad(uuedTootajad);
-	}; */
+		setTootajad(tootajad.filter((i) => i.nimi.length % 2 === 0));
+	};
+
+	const otsi = () => {
+		setTootajad(tootajadJson.filter((i) => i.nimi.toLowerCase().includes(otsingRef.current.value.toLowerCase())));
+	};
 
 	return (
 		<>
-			{/*
 			<button onClick={sorteeriAZ}>Sorteeri A-Z</button>
 			<button onClick={sorteeriZA}>Sorteeri Z-A</button>
 			<button onClick={sorteeriTahedKasvavalt}>Sorteeri kasvavalt</button>
 			<button onClick={sorteeriTahedKahanevalt}>Sorteeri kahanevalt</button>
 			<button onClick={sorteeriNeljasAZ}>Sorteeri 4. täht A-Z</button>
-			<button onClick={sorteeriNimedeArvuJargi}>
-				Sorteeri nimede arvu järgi
-			</button>
+			<button onClick={sorteeriNimedeArvuJargi}>Sorteeri nimede arvu järgi</button>
 			<br />
 			<button onClick={filtreeriLopebI}>I-ga lõppevad</button>
-			<button onClick={filtreeriVahemaltKuueTahelised}>
-				Vähemalt 6-tähelised
-			</button>
+			<button onClick={filtreeriVahemaltKuueTahelised}>Vähemalt 6-tähelised</button>
 			<button onClick={filtreeriViieTahelised}>Täpselt 5-tähelised</button>
 			<button onClick={filtreeriSisaldabLuhendit}>Sisaldab lühendit</button>
 			<button onClick={filtreeriNeljasTahtOnA}>Neljas täht on a</button>
 			<button onClick={filtreeriPaarisArvuline}>Paarisarvulised</button>
-			*/}
+
+			<br />
+			<br />
+			<label>Otsi töötajat: </label>
+			<input ref={otsingRef} onChange={otsi} type="text" />
+			<br />
 			<br />
 			<table>
 				<tr>
@@ -114,12 +106,9 @@ function Tootajad() {
 					</tr>
 				))}
 			</table>
-
+			<div>Näitan {tootajad.length} töötajat</div>
+			<button onClick={reset}>Reset</button>
 			{kontakt !== "" && <div>{kontakt}</div>}
-
-			{/*<br />
-			<div>Näitan {tootajad.length} töötajat.</div>
-			<button onClick={() => setTootajad(esialgsedTootajad)}>Reset</button> */}
 		</>
 	);
 }
