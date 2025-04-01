@@ -4,6 +4,7 @@ import Uudised from "./pages/Uudised";
 import Avaleht from "./pages/Avaleht";
 import Kontakt from "./pages/Kontakt";
 import Meist from "./pages/Meist";
+import Kasutajad from "./pages/Kasutajad";
 
 function App() {
 	return (
@@ -14,6 +15,9 @@ function App() {
 			<Link to="/uudised">
 				<button className="menu">Uudised</button>
 			</Link>
+			<Link to="/kasutajad">
+				<button className="menu">Kasutajad</button>
+			</Link>
 			<Link to="/kontakt">
 				<button className="menu">Kontakt</button>
 			</Link>
@@ -23,9 +27,10 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<Avaleht />} />
-				<Route path="uudised" element={<Uudised />} />
-				<Route path="kontakt" element={<Kontakt />} />
-				<Route path="meist" element={<Meist />} />
+				<Route path="/uudised" element={<Uudised />} />
+				<Route path="/kasutajad" element={<Kasutajad />} />
+				<Route path="/kontakt" element={<Kontakt />} />
+				<Route path="/meist" element={<Meist />} />
 			</Routes>
 		</>
 	);
