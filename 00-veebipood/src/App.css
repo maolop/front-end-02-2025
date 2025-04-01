@@ -70,5 +70,9 @@ img.drink {
 }
 
 input {
-	margin: 0 5px;
+	margin: 0;
+}
+
+.invis-tab {
+	border: none;
 }

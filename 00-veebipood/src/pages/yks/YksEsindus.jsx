@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import esindusedFailist from "../../data/esindused.json";
+import esindusImg from "../../assets/esindus.jpg";
 
 function YksEsindus() {
 	const { jrknr } = useParams();
@@ -9,9 +10,14 @@ function YksEsindus() {
 
 	return (
 		<>
-			<div>{leitud.keskus}</div>
-			<div>{leitud.tel}</div>
-			<div>{leitud.aadress}</div>
+			<img style={{ width: "800px" }} src={esindusImg} alt="" />
+			<div style={{ fontSize: "20px" }}>
+				<div>
+					<b>{leitud.keskus} esindus</b>
+				</div>
+				<div>Telefon: {leitud.tel}</div>
+				<div>Aadress: {leitud.aadress}</div>
+			</div>
 		</>
 	);
 }

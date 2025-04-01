@@ -1,12 +1,33 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import tootajadJson from "../../data/tootajad.json";
 
 function HaldaTootajad() {
 	const [tootajad, setTootajad] = useState(tootajadJson);
+	const nimiRef = useRef();
+	const alaRef = useRef();
+	const telRef = useRef();
 
 	const kustuta = (index) => {
-		setTootajad(tootajad.filter((i, index) => )
-	}
+		tootajadJson.splice(index, 1);
+		setTootajad(tootajadJson.slice());
+	};
+
+	const lisa = () => {
+		const uusTootaja = {
+			nimi: nimiRef.current.value,
+			ala: alaRef.current.value,
+			telefon: telRef.current.value,
+		};
+
+		tootajadJson.push(uusTootaja);
+		setTootajad(tootajadJson.slice());
+	};
+
+	const countChars = () => {
+		let count = 0;
+		tootajad.forEach((i) => (count += i.nimi.length));
+		return count;
+	};
 
 	return (
 		<>
@@ -30,7 +51,31 @@ function HaldaTootajad() {
 					</tr>
 				))}
 			</table>
-			<div>Näitan {tootajad.length} töötajat.</div>
+			<div>
+				Näitan {tootajad.length} töötajat. Tähemärke kokku {countChars()}
+			</div>
+			<br />
+			<div>Lisa uus töötaja:</div>
+			<table className="invis-tab">
+				<tr>
+					<td className="invis-tab">
+						<label>Nimi: </label>
+						<br />
+						<label>Ala: </label>
+						<br />
+						<label>Telefon: </label>
+					</td>
+					<td className="invis-tab">
+						<input ref={nimiRef} type="text" />
+						<br />
+						<input ref={alaRef} type="text" />
+						<br />
+						<input ref={telRef} type="text" />
+						<br />
+					</td>
+				</tr>
+			</table>
+			<button onClick={lisa}>Lisa</button>
 		</>
 	);
 }

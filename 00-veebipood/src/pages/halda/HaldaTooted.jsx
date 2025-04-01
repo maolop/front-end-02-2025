@@ -1,13 +1,13 @@
-import tootetFailist from "../../data/tooted.json";
+import { Link } from "react-router-dom";
+import tootedFailist from "../../data/tooted.json";
 import { useState } from "react";
 
 function HaldaTooted() {
-	const [tooted, setTooted] = useState(tootetFailist);
+	const [, setTooted] = useState(tootedFailist);
 
 	const kustuta = (index) => {
-		const uuedTooted = tooted.slice();
-		uuedTooted.splice(index, 1);
-		setTooted(uuedTooted);
+		tootedFailist.splice(index, 1);
+		setTooted(tootedFailist.slice());
 	};
 
 	return (
@@ -23,15 +23,19 @@ function HaldaTooted() {
 					<th>Kustuta</th>
 				</tr>
 
-				{tooted.map((toode, index) => (
+				{tootedFailist.map((toode, index) => (
 					<tr key={toode}>
 						<td>{index}</td>
 						<td>{toode.nimi}</td>
 						<td>{toode.hind}</td>
-						<td>{toode.aktiivne}</td>
-						<td>{toode.pilt}</td>
+						<td>{toode.aktiivne ? "jah" : "ei"}</td>
 						<td>
-							<button>&gt;</button>
+							<img style={{ width: "100px" }} src={toode.pilt} alt="" />
+						</td>
+						<td>
+							<Link to={"/muuda-toode/" + index}>
+								<button>&gt;</button>
+							</Link>
 						</td>
 						<td>
 							<button onClick={() => kustuta(index)}>x</button>
@@ -39,7 +43,7 @@ function HaldaTooted() {
 					</tr>
 				))}
 			</table>
-			<div>Näitan {tooted.length} toodet.</div>
+			<div>Näitan {tootedFailist.length} toodet.</div>
 		</>
 	);
 }

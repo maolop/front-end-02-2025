@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import tootajadJson from "../../data/tootajad.json";
+import { Link } from "react-router-dom";
 
 function Tootajad() {
 	const [tootajad, setTootajad] = useState(tootajadJson);
@@ -33,11 +34,17 @@ function Tootajad() {
 	};
 
 	const sorteeriNeljasAZ = () => {
-		setTootajad(tootajad.toSorted((a, b) => a.nimi[3].localeCompare(b.nimi[3])));
+		setTootajad(
+			tootajad.toSorted((a, b) => a.nimi[3].localeCompare(b.nimi[3]))
+		);
 	};
 
 	const sorteeriNimedeArvuJargi = () => {
-		setTootajad(tootajad.toSorted((a, b) => b.nimi.split("-").length - a.nimi.split("-").length));
+		setTootajad(
+			tootajad.toSorted(
+				(a, b) => b.nimi.split("-").length - a.nimi.split("-").length
+			)
+		);
 	};
 
 	const filtreeriLopebI = () => {
@@ -53,7 +60,9 @@ function Tootajad() {
 	};
 
 	const filtreeriSisaldabLuhendit = () => {
-		setTootajad(tootajad.filter((i) => i.nimi.includes("hr") || i.nimi.includes("pr")));
+		setTootajad(
+			tootajad.filter((i) => i.nimi.includes("hr") || i.nimi.includes("pr"))
+		);
 	};
 
 	const filtreeriNeljasTahtOnA = () => {
@@ -65,7 +74,11 @@ function Tootajad() {
 	};
 
 	const otsi = () => {
-		setTootajad(tootajadJson.filter((i) => i.nimi.toLowerCase().includes(otsingRef.current.value.toLowerCase())));
+		setTootajad(
+			tootajadJson.filter((i) =>
+				i.nimi.toLowerCase().includes(otsingRef.current.value.toLowerCase())
+			)
+		);
 	};
 
 	return (
@@ -75,10 +88,14 @@ function Tootajad() {
 			<button onClick={sorteeriTahedKasvavalt}>Sorteeri kasvavalt</button>
 			<button onClick={sorteeriTahedKahanevalt}>Sorteeri kahanevalt</button>
 			<button onClick={sorteeriNeljasAZ}>Sorteeri 4. täht A-Z</button>
-			<button onClick={sorteeriNimedeArvuJargi}>Sorteeri nimede arvu järgi</button>
+			<button onClick={sorteeriNimedeArvuJargi}>
+				Sorteeri nimede arvu järgi
+			</button>
 			<br />
 			<button onClick={filtreeriLopebI}>I-ga lõppevad</button>
-			<button onClick={filtreeriVahemaltKuueTahelised}>Vähemalt 6-tähelised</button>
+			<button onClick={filtreeriVahemaltKuueTahelised}>
+				Vähemalt 6-tähelised
+			</button>
 			<button onClick={filtreeriViieTahelised}>Täpselt 5-tähelised</button>
 			<button onClick={filtreeriSisaldabLuhendit}>Sisaldab lühendit</button>
 			<button onClick={filtreeriNeljasTahtOnA}>Neljas täht on a</button>
@@ -95,13 +112,19 @@ function Tootajad() {
 					<th>Nimi</th>
 					<th>Amet</th>
 					<th>Kontakt</th>
+					<th>Vt Lisaks</th>
 				</tr>
 				{tootajad.map((tootaja) => (
-					<tr>
+					<tr key={tootaja.nimi}>
 						<td>{tootaja.nimi}</td>
 						<td>{tootaja.ala}</td>
 						<td style={{ textDecoration: "underline", fontWeight: "bold" }}>
-							<span onClick={() => votaYhendust(tootaja.nimi)}>Võta ühendust</span>
+							<span onClick={() => votaYhendust(tootaja.nimi)}>
+								Võta ühendust
+							</span>
+						</td>
+						<td>
+							<Link to={"/tootajad/" + tootaja.nimi}>Vaata</Link>
 						</td>
 					</tr>
 				))}
