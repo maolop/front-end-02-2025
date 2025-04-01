@@ -1,40 +1,31 @@
 import { useState } from "react";
+import tootajadJson from "../../data/tootajad.json";
 
 function HaldaTootajad() {
-	const esialgsedTootajad = [
-		"Aivar",
-		"hr Kalvi-Kalle",
-		"Pärtel",
-		"Kerli",
-		"Mari-Liis",
-		"pr Ulvi",
-		"Juhan",
-		"Mats",
-		"hr Raul-Jaak-Ervin",
-		"Milvi",
-	];
-	const [tootajad, setTootajad] = useState(esialgsedTootajad);
+	const [tootajad, setTootajad] = useState(tootajadJson);
 
-	const kustuta = (tootaja) => {
-		const uuedTootajad = tootajad.slice().filter((a) => a !== tootaja);
-		setTootajad(uuedTootajad);
-	};
+	const kustuta = (index) => {
+		setTootajad(tootajad.filter((i, index) => )
+	}
+
 	return (
 		<>
 			<table>
 				<tr>
-					<th>Järjekorranr</th>
-					<th>Index</th>
+					<th>Jrk nr</th>
 					<th>Nimi</th>
+					<th>Ala</th>
+					<th>Telefon</th>
 					<th>Kustuta</th>
 				</tr>
 				{tootajad.map((tootaja, index) => (
-					<tr key={tootaja}>
+					<tr key={tootaja.nimi}>
 						<td>{index + 1}</td>
-						<td>{index}</td>
-						<td>{tootaja}</td>
+						<td>{tootaja.nimi}</td>
+						<td>{tootaja.ala}</td>
+						<td>{tootaja.telefon}</td>
 						<td>
-							<button onClick={() => kustuta(tootaja)}>x</button>
+							<button onClick={() => kustuta(index)}>&nbsp;x&nbsp;</button>
 						</td>
 					</tr>
 				))}
@@ -45,4 +36,3 @@ function HaldaTootajad() {
 }
 
 export default HaldaTootajad;
-// objektideks => nimi, vanus, amet
