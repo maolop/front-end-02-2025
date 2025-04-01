@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import kasutajadJson from "../../data/kasutajad.json";
+import { Link } from "react-router-dom";
 
 function HaldaKasutajad() {
 	const [, setKasutajad] = useState(kasutajadJson);
@@ -36,6 +37,7 @@ function HaldaKasutajad() {
 					<tr>
 						<th>email</th>
 						<th>parool</th>
+						<th>muuda</th>
 						<th>kustuta</th>
 					</tr>
 				</thead>
@@ -44,6 +46,11 @@ function HaldaKasutajad() {
 						<tr key={kasutaja.email}>
 							<td>{kasutaja.email}</td>
 							<td>{kasutaja.parool}</td>
+							<td>
+								<Link to={"/muuda-kasutaja/" + kasutaja.email}>
+									<button>&gt;</button>
+								</Link>
+							</td>
 							<td>
 								<button onClick={() => kustuta(index)}>X</button>
 							</td>

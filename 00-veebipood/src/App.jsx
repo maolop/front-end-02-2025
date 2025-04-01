@@ -75,18 +75,18 @@ function App() {
 
 				<Route path="/auto/:index" element={<YksAuto />} />
 				<Route path="/jook/:index" element={<YksJook />} />
-				<Route path="/kasutaja" element={<YksKasutaja />} />
+				<Route path="/kasutajad/:email" element={<YksKasutaja />} />
 				<Route path="/hind/:index" element={<YksHind />} />
 				<Route path="/tootajad/:nimi" element={<YksTootaja />} />
 				<Route path="/tooted/:index" element={<YksToode />} />
 				<Route path="/esindus/:jrknr" element={<YksEsindus />} />
 
 				<Route path="/muuda-auto/:index" element={<MuudaAuto />} />
-				<Route path="/muuda-kasutaja" element={<MuudaKasutaja />} />
+				<Route path="/muuda-kasutaja/:email" element={<MuudaKasutaja />} />
 				<Route path="/muuda-hind/:index" element={<MuudaHind />} />
 				<Route path="/muuda-tootaja" element={<MuudaTootaja />} />
 				<Route path="/muuda-toode/:index" element={<MuudaToode />} />
-				<Route path="/muuda-esindus" element={<MuudaEsindus />} />
+				<Route path="/muuda-esindus/:nimi" element={<MuudaEsindus />} />
 
 				<Route path="/*" element={<NotFound />} />
 			</Routes>

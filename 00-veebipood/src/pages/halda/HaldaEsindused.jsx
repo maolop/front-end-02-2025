@@ -32,7 +32,7 @@ function HaldaEsindused() {
 						<th>keskus</th>
 						<th>telefon</th>
 						<th>aadress</th>
-						<th>lisainfo</th>
+						<th>muuda</th>
 						<th>kustuta</th>
 					</tr>
 				</thead>
@@ -44,7 +44,9 @@ function HaldaEsindused() {
 							<td>{esindus.tel}</td>
 							<td>{esindus.aadress}</td>
 							<td>
-								<Link to={"/esindus/" + index}>Vaata</Link>
+								<Link to={"/muuda-esindus/" + esindus.keskus}>
+									<button>&gt;</button>
+								</Link>
 							</td>
 							<td>
 								<button onClick={() => kustuta(index)}>X</button>

@@ -66,15 +66,19 @@ function Esindused() {
 						<th>Keskus</th>
 						<th>Tel</th>
 						<th>Aadress</th>
+						<th>Vt lisaks</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					{esindused.map((i) => (
-						<tr>
+					{esindused.map((i, index) => (
+						<tr key={i.keskus}>
 							<td>{i.keskus}</td>
 							<td>{i.tel}</td>
 							<td>{i.aadress}</td>
+							<td>
+								<Link to={"/esindus/" + index}>Vaata</Link>
+							</td>
 						</tr>
 					))}
 				</tbody>
