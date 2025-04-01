@@ -3,6 +3,12 @@ import tootajadJson from "../../data/tootajad.json";
 
 function Tootajad() {
 	const [tootajad, setTootajad] = useState(tootajadJson);
+	const [kontakt, setKontakt] = useState("");
+
+	function votaYhendust(votaYhendustNimi) {
+		const tootaja = tootajadJson.find((i) => i.nimi === votaYhendustNimi);
+		setKontakt(`${tootaja.nimi} - tel ${tootaja.telefon}`);
+	}
 
 	/* 	const sorteeriAZ = () => {
 		const uuedTootajad = tootajad.slice().sort((a, b) => a.localeCompare(b));
@@ -96,16 +102,20 @@ function Tootajad() {
 				<tr>
 					<th>Nimi</th>
 					<th>Amet</th>
-					<th>Telefon</th>
+					<th>Kontakt</th>
 				</tr>
 				{tootajad.map((tootaja) => (
 					<tr>
 						<td>{tootaja.nimi}</td>
 						<td>{tootaja.ala}</td>
-						<td>{tootaja.telefon}</td>
+						<td style={{ textDecoration: "underline", fontWeight: "bold" }}>
+							<span onClick={() => votaYhendust(tootaja.nimi)}>Võta ühendust</span>
+						</td>
 					</tr>
 				))}
 			</table>
+
+			{kontakt !== "" && <div>{kontakt}</div>}
 
 			{/*<br />
 			<div>Näitan {tootajad.length} töötajat.</div>
