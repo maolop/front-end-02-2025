@@ -1,21 +1,10 @@
 import { useState } from "react";
+import tootajadJson from "../../data/tootajad.json";
 
 function Tootajad() {
-	const esialgsedTootajad = [
-		"Aivar",
-		"hr Kalvi-Kalle",
-		"Pärtel",
-		"Kerli",
-		"Mari-Liis",
-		"pr Ulvi",
-		"Juhan",
-		"Mats",
-		"hr Raul-Jaak-Ervin",
-		"Milvi",
-	];
-	const [tootajad, setTootajad] = useState(esialgsedTootajad);
+	const [tootajad, setTootajad] = useState(tootajadJson);
 
-	const sorteeriAZ = () => {
+	/* 	const sorteeriAZ = () => {
 		const uuedTootajad = tootajad.slice().sort((a, b) => a.localeCompare(b));
 		setTootajad(uuedTootajad);
 	};
@@ -79,10 +68,11 @@ function Tootajad() {
 	const filtreeriPaarisArvuline = () => {
 		const uuedTootajad = tootajad.slice().filter((a) => a.length % 2 === 0);
 		setTootajad(uuedTootajad);
-	};
+	}; */
 
 	return (
 		<>
+			{/*
 			<button onClick={sorteeriAZ}>Sorteeri A-Z</button>
 			<button onClick={sorteeriZA}>Sorteeri Z-A</button>
 			<button onClick={sorteeriTahedKasvavalt}>Sorteeri kasvavalt</button>
@@ -100,12 +90,26 @@ function Tootajad() {
 			<button onClick={filtreeriSisaldabLuhendit}>Sisaldab lühendit</button>
 			<button onClick={filtreeriNeljasTahtOnA}>Neljas täht on a</button>
 			<button onClick={filtreeriPaarisArvuline}>Paarisarvulised</button>
-			{tootajad.map((tootaja) => (
-				<div key={tootaja}>{tootaja}</div>
-			))}
+			*/}
 			<br />
+			<table>
+				<tr>
+					<th>Nimi</th>
+					<th>Amet</th>
+					<th>Telefon</th>
+				</tr>
+				{tootajad.map((tootaja) => (
+					<tr>
+						<td>{tootaja.nimi}</td>
+						<td>{tootaja.ala}</td>
+						<td>{tootaja.telefon}</td>
+					</tr>
+				))}
+			</table>
+
+			{/*<br />
 			<div>Näitan {tootajad.length} töötajat.</div>
-			<button onClick={() => setTootajad(esialgsedTootajad)}>Reset</button>
+			<button onClick={() => setTootajad(esialgsedTootajad)}>Reset</button> */}
 		</>
 	);
 }
