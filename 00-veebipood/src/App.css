@@ -63,3 +63,12 @@ th {
 img.drink {
 	width: 300px;
 }
+
+.tegevused {
+	margin: 20px 30%;
+	text-align: left;
+}
+
+input {
+	margin: 0 5px;
+}

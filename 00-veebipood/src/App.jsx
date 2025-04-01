@@ -38,6 +38,7 @@ import LogiSisse from "./pages/LogiSisse";
 import Registreeru from "./pages/Registreeru";
 import Jook from "./pages/Jook";
 import YksJook from "./pages/yks/YksJook";
+import Tegevused from "./pages/Tegevused";
 
 function App() {
 	return (
@@ -48,6 +49,7 @@ function App() {
 				<Route path="/" element={<Avaleht />} />
 				<Route path="/ostukorv" element={<Ostukorv />} />
 				<Route path="/jook" element={<Jook />} />
+				<Route path="/tegevused" element={<Tegevused />} />
 				<Route path="/seaded" element={<Seaded />} />
 				<Route path="/lisa-toode" element={<LisaToode />} />
 				<Route path="/osta-kinkekaart" element={<Kinkekaart />} />
