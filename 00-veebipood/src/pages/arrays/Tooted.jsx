@@ -1,74 +1,63 @@
-import { useState } from "react";
+import tootedJson from "../../data/tooted.json";
+
+import { useRef, useState } from "react";
 
 function Tooted() {
-	const esialgsedTooted = [
-		"Coca-Cola",
-		"Fanta",
-		"Sprite",
-		"Vichy",
-		"Red Bull",
-		"Aura",
-		"Monster",
-		"Starter",
-		"Battery",
-		"Vitautas",
-	];
-	const [tooted, setTooted] = useState(esialgsedTooted);
+	const [tooted, setTooted] = useState(tootedJson);
+	const otsingRef = useRef();
 
 	const sorteeriAZ = () => {
-		const sorteeritudTooted = tooted.slice().sort((a, b) => a.localeCompare(b));
+		const sorteeritudTooted = tooted.slice().sort((a, b) => a.nimi.localeCompare(b.nimi));
 		setTooted(sorteeritudTooted);
 	};
 
 	const sorteeriZA = () => {
-		const sorteeritudTooted = tooted.slice().sort((a, b) => b.localeCompare(a));
+		const sorteeritudTooted = tooted.slice().sort((a, b) => b.nimi.localeCompare(a.nimi));
 		setTooted(sorteeritudTooted);
 	};
 
 	const sorteeriKasvavalt = () => {
-		const sorteeritudTooted = tooted
-			.slice()
-			.sort((a, b) => a.length - b.length);
+		const sorteeritudTooted = tooted.slice().sort((a, b) => a.nimi.length - b.nimi.length);
 		setTooted(sorteeritudTooted);
 	};
 
 	const sorteeriKahanevalt = () => {
-		const sorteeritudTooted = tooted
-			.slice()
-			.sort((a, b) => b.length - a.length);
+		const sorteeritudTooted = tooted.slice().sort((a, b) => b.nimi.length - a.nimi.length);
 		setTooted(sorteeritudTooted);
 	};
 
 	const sorteeriTeineTahtAZ = () => {
-		const sorteeritudTooted = tooted
-			.slice()
-			.sort((a, b) => a[1].localeCompare(b[1]));
+		const sorteeritudTooted = tooted.slice().sort((a, b) => a.nimi[1].localeCompare(b.nimi[1]));
 		setTooted(sorteeritudTooted);
 	};
 
 	const filtreeriKuni6tahelised = () => {
-		const filtreeritudTooted = tooted.slice().filter((a) => a.length <= 6);
+		const filtreeritudTooted = tooted.slice().filter((a) => a.nimi.length <= 6);
 		setTooted(filtreeritudTooted);
 	};
 
 	const filtreeri6tahelised = () => {
-		const filtreeritudTooted = tooted.slice().filter((a) => a.length === 6);
+		const filtreeritudTooted = tooted.slice().filter((a) => a.nimi.length === 6);
 		setTooted(filtreeritudTooted);
 	};
 
 	const filtreeriLopebA = () => {
-		const filtreeritudTooted = tooted.slice().filter((a) => a.endsWith("a"));
+		const filtreeritudTooted = tooted.slice().filter((a) => a.nimi.endsWith("a"));
 		setTooted(filtreeritudTooted);
 	};
 
 	const filtreeriLopebY = () => {
-		const filtreeritudTooted = tooted.slice().filter((a) => a.endsWith("y"));
+		const filtreeritudTooted = tooted.slice().filter((a) => a.nimi.endsWith("y"));
 		setTooted(filtreeritudTooted);
 	};
 
 	const filtreeriPaarisarvulised = () => {
-		const filtreeritudTooted = tooted.slice().filter((a) => a.length % 2 === 0);
+		const filtreeritudTooted = tooted.slice().filter((a) => a.nimi.length % 2 === 0);
 		setTooted(filtreeritudTooted);
+	};
+
+	const otsi = () => {
+		setTooted(tootedJson.filter((i) => i.nimi.toLowerCase().includes(otsingRef.current.value.toLowerCase())));
 	};
 
 	return (
@@ -84,13 +73,17 @@ function Tooted() {
 			<button onClick={filtreeriLopebA}>a-ga lõppevad</button>
 			<button onClick={filtreeriLopebY}>y-ga lõppevad</button>
 			<button onClick={filtreeriPaarisarvulised}>paarisarvulised</button>
-
+			<br />
+			<br /> <label>Otsi toodet:</label>
+			<input onChange={otsi} ref={otsingRef} type="text" />
+			<br />
+			<br />
 			{tooted.map((toode) => (
-				<div key={toode}>{toode}</div>
+				<div key={toode.nimi}>{toode.nimi}</div>
 			))}
 			<br />
 			<div>Näitan {tooted.length} toodet.</div>
-			<button onClick={() => setTooted(esialgsedTooted)}>Reset</button>
+			<button onClick={() => setTooted(tootedJson)}>Reset</button>
 		</>
 	);
 }

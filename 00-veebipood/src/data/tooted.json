@@ -1,10 +1,13 @@
 [
-	{ "nimi": "Coca-Cola", "hind": 0.99, "aktiivne": true, "pilt": "" },
-	{ "nimi": "Snickers", "hind": 0.49, "aktiivne": true, "pilt": "" },
-	{ "nimi": "Pringles", "hind": 1.89, "aktiivne": false, "pilt": "" },
-	{ "nimi": "Starter", "hind": 1.09, "aktiivne": true, "pilt": "" },
-	{ "nimi": "Pepsi Max", "hind": 0.94, "aktiivne": true, "pilt": "" },
-	{ "nimi": "Fanta Zero", "hind": 1.19, "aktiivne": true, "pilt": "" },
-	{ "nimi": "Red Bull", "hind": 2.19, "aktiivne": true, "pilt": "" },
-	{ "nimi": "Monster", "hind": 1.39, "aktiivne": true, "pilt": "" }
+	{ "nimi": "Coca", "hind": 2, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Fanta", "hind": 1, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Sprite", "hind": 1.5, "aktiivne": false, "pilt": "" },
+	{ "nimi": "Red bull", "hind": 4, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Vichy", "hind": 1.3, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Aura", "hind": 1.7, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Monster Energy", "hind": 1.9, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Vytautas", "hind": 0.9, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Starter", "hind": 0.99, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Dynamite", "hind": 0.94, "aktiivne": true, "pilt": "" },
+	{ "nimi": "Evian", "hind": 1.29, "aktiivne": false, "pilt": "" }
 ]
