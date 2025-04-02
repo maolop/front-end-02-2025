@@ -39,16 +39,35 @@ import Registreeru from "./pages/Registreeru";
 import Jook from "./pages/Jook";
 import YksJook from "./pages/yks/YksJook";
 import Tegevused from "./pages/Tegevused";
+import Kaart from "./pages/Kaart";
+import { useState } from "react";
+import { Kontakteeru } from "./pages/Kontakteeru";
 
 function App() {
+	const [dark, setDark] = useState(localStorage.getItem("dark") || "true");
+
+	const muudaDark = () => {
+		setDark("true");
+		localStorage.setItem("dark", "true");
+	};
+
+	const muudaLight = () => {
+		setDark("false");
+		localStorage.setItem("dark", "false");
+	};
+
 	return (
-		<>
+		<div className={dark === "true" ? "dark" : "light"}>
 			<Menu />
+
+			<button onClick={muudaLight}>Light</button>
+			<button onClick={muudaDark}>Dark</button>
 
 			<Routes>
 				<Route path="/" element={<Avaleht />} />
 				<Route path="/ostukorv" element={<Ostukorv />} />
 				<Route path="/jook" element={<Jook />} />
+				<Route path="/kaart" element={<Kaart />} />
 				<Route path="/tegevused" element={<Tegevused />} />
 				<Route path="/seaded" element={<Seaded />} />
 				<Route path="/lisa-toode" element={<LisaToode />} />
@@ -56,6 +75,7 @@ function App() {
 				<Route path="/kalkulaator" element={<Kalkulaator />} />
 				<Route path="/logi-sisse" element={<LogiSisse />} />
 				<Route path="/registreeru" element={<Registreeru />} />
+				<Route path="/kontakteeru" element={<Kontakteeru />} />
 
 				<Route path="/arrays-home" element={<ArraysHome />} />
 				<Route path="/autod" element={<Autod />} />
@@ -90,7 +110,7 @@ function App() {
 
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
-		</>
+		</div>
 	);
 }
 

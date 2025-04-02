@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ostukorvJSON from "../data/ostukorv.json";
 
 function Ostukorv() {
 	const [tooted, setTooted] = useState(ostukorvJSON.slice());
+	const { t } = useTranslation();
 
 	const kustuta = (index) => {
 		ostukorvJSON.splice(index, 1);
@@ -33,7 +35,9 @@ function Ostukorv() {
 
 			{tooted.length === 0 && (
 				<div>
-					Ostukorv on tühi. <Link to="/">Mine tooteid lisama</Link>
+					{t("cart.is-empty")}
+					<br />
+					<Link to="/">Mine tooteid lisama</Link>
 				</div>
 			)}
 			{tooted.length > 0 && <div>Ostukorvis on {tooted.length} toodet</div>}

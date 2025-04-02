@@ -1,11 +1,18 @@
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ToastContainer, toast } from "react-toastify";
 
 function Seaded() {
-	const [keel, setKeel] = useState("est");
+	const [keel, setKeel] = useState(localStorage.getItem("keel"));
 	const aadressRef = useRef();
 	const emailRef = useRef();
 	const telefonRef = useRef();
+	const { t, i18n } = useTranslation();
+
+	if (keel === null) {
+		setKeel("et");
+		localStorage.setItem("keel", "et");
+	}
 
 	const sisestaAadress = () => {
 		if (aadressRef.current.value === "")
@@ -31,74 +38,99 @@ function Seaded() {
 		else toast.success("Telefon sisestatud: " + telefonRef.current.value);
 	};
 
+	const muudaKeelEst = () => {
+		setKeel("et");
+		localStorage.setItem("keel", "et");
+		i18n.changeLanguage("et");
+	};
+
+	const muudaKeelEng = () => {
+		setKeel("en");
+		localStorage.setItem("keel", "en");
+		i18n.changeLanguage("en");
+	};
+
+	const muudaKeelRus = () => {
+		setKeel("ru");
+		localStorage.setItem("keel", "ru");
+		i18n.changeLanguage("ru");
+	};
+
+	const muudaKeelEsp = () => {
+		setKeel("es");
+		localStorage.setItem("keel", "es");
+		i18n.changeLanguage("es");
+	};
+
 	return (
 		<>
-			<label>Aadress</label>
+			<br />
+			<label>{t("settings.aadress")}</label>
 			<input ref={aadressRef} type="text" />
-			<button onClick={sisestaAadress}>Sisesta</button>
+			<button onClick={sisestaAadress}>{t("button.insert")}</button>
 
 			<br />
 			<br />
 
-			<label>Email</label>
+			<label>{t("settings.email")}</label>
 			<input ref={emailRef} type="text" />
-			<button onClick={sisestaEmail}>Sisesta</button>
+			<button onClick={sisestaEmail}>{t("button.insert")}</button>
 
 			<br />
 			<br />
 
-			<label>Telefon</label>
+			<label>{t("settings.telephone")}</label>
 			<input ref={telefonRef} type="text" />
-			<button onClick={sisestaTelefon}>Sisesta</button>
+			<button onClick={sisestaTelefon}>{t("button.insert")}</button>
 
 			<br />
 			<br />
 
 			<div>Hetkel aktiivne keel: {keel}</div>
 			<button
-				className={keel === "est" ? "aktiivne-keel" : undefined}
-				onClick={() => setKeel("est")}
+				className={keel === "et" ? "aktiivne-keel" : undefined}
+				onClick={muudaKeelEst}
 			>
 				Eesti
 			</button>
 			<button
-				className={keel === "eng" ? "aktiivne-keel" : undefined}
-				onClick={() => setKeel("eng")}
+				className={keel === "en" ? "aktiivne-keel" : undefined}
+				onClick={muudaKeelEng}
 			>
 				English
 			</button>
 			<button
-				className={keel === "rus" ? "aktiivne-keel" : undefined}
-				onClick={() => setKeel("rus")}
+				className={keel === "ru" ? "aktiivne-keel" : undefined}
+				onClick={muudaKeelRus}
 			>
 				Pycckij
 			</button>
 			<button
-				className={keel === "esp" ? "aktiivne-keel" : undefined}
-				onClick={() => setKeel("esp")}
+				className={keel === "es" ? "aktiivne-keel" : undefined}
+				onClick={muudaKeelEsp}
 			>
 				Espanol
 			</button>
 
-			{keel === "est" && (
+			{keel === "et" && (
 				<>
 					<div>Leht on eesti keeles</div>
 				</>
 			)}
 
-			{keel === "eng" && (
+			{keel === "en" && (
 				<>
 					<div>Page is in English</div>
 				</>
 			)}
 
-			{keel === "rus" && (
+			{keel === "ru" && (
 				<>
 					<div>Привет</div>
 				</>
 			)}
 
-			{keel === "esp" && (
+			{keel === "es" && (
 				<>
 					<div>Como esta</div>
 				</>
@@ -106,7 +138,7 @@ function Seaded() {
 
 			<br />
 
-			{keel !== "est" && (
+			{keel !== "et" && (
 				<>
 					<div>
 						<i>Languages other than Estonian are not ready</i>

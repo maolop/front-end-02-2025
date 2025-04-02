@@ -5,9 +5,7 @@ function Kasutajad() {
 	const [kasutajad, setKasutajad] = useState(kasutajadJson);
 
 	const reset = () => {
-		const newArr = JSON.parse(JSON.stringify(kasutajadJson)); // Deep copy
-		setKasutajad(newArr); // Updates the state with the new array
-		// setKasutajad(kasutajadJson)
+		setKasutajad(kasutajadJson);
 	};
 
 	const filterLongerThan10 = () => {
@@ -29,7 +27,7 @@ function Kasutajad() {
 
 	const findFirstC = () => {
 		const firstC = kasutajad.find((i) => i.name.startsWith("C"));
-		console.log(`Esimene C-ga algav kasutaja: ${firstC.name}`);
+		console.log(`Esimene C-ga algav nimi: ${firstC.name}`);
 	};
 
 	const looEmailid = () => {
@@ -53,7 +51,7 @@ function Kasutajad() {
 	};
 
 	const catchPhraseAtoE = () => {
-		const uuedKasutajad = kasutajad.slice();
+		const uuedKasutajad = JSON.parse(JSON.stringify(kasutajad));
 		uuedKasutajad.forEach((i) => (i.company.catchPhrase = i.company.catchPhrase.replaceAll("a", "e")));
 		setKasutajad(uuedKasutajad);
 	};

@@ -1,0 +1,10 @@
+{
+	"Welcome to React": "Welcome to React and react-i18next",
+	"settings.aadress": "Address",
+	"settings.email": "E-mail",
+	"settings.telephone": "Telephone",
+	"button.insert": "Insert",
+	"cart.is-empty": "No items in cart",
+	"menu.to-cart": "Shopping Cart",
+	"menu.drink": "Drink"
+}

@@ -11,7 +11,7 @@ export default function Kontakt() {
 			<div className="heading">Kontaktid</div>
 			<div>Võta meiega ühendust:</div>
 			<br />
-			<div className={iskuressaareActive && "active-store"}>Kuressaare</div>
+			<div className={iskuressaareActive ? "active-store" : ""}>Kuressaare</div>
 			<div>Jõhvika 42</div>
 			<button
 				className="contact"
@@ -25,7 +25,7 @@ export default function Kontakt() {
 				Võta ühendust
 			</button>
 			<br />
-			<div className={isRakvereActive && "active-store"}>Rakvere</div>
+			<div className={isRakvereActive ? "active-store" : ""}>Rakvere</div>
 			<div>Kure 24A</div>
 			<button
 				className="contact"
@@ -39,7 +39,7 @@ export default function Kontakt() {
 				Võta ühendust
 			</button>{" "}
 			<br />
-			<div className={isTapaActive && "active-store"}>Tapa</div>
+			<div className={isTapaActive ? "active-store" : ""}>Tapa</div>
 			<div>Kastani 16</div>
 			<button
 				className="contact"
