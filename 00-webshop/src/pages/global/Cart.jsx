@@ -35,7 +35,9 @@ function Cart() {
 	return (
 		<>
 			{cartState()}
-			Näitan {cart.length} toodet. Kokku {findTotal()}€
+			<div>
+				Näitan {cart.length} toodet. Kokku {findTotal()}€.
+			</div>
 			{cart.map((product, index) => (
 				<div className="product" key={product.id}>
 					<img style={{ width: "100px" }} src={product.image} />

@@ -42,6 +42,18 @@ import Tegevused from "./pages/Tegevused";
 import Kaart from "./pages/Kaart";
 import { useState } from "react";
 import { Kontakteeru } from "./pages/Kontakteeru";
+import Autod2 from "./pages/api/Autod2";
+import Raamatud1 from "./pages/api/Raamatud1";
+import Raamatud2 from "./pages/api/Raamatud2";
+import Riigid1 from "./pages/api/Riigid1";
+import Riigid2 from "./pages/api/Riigid2";
+import Sonastik from "./pages/api/Sonastik";
+import Tarnija1 from "./pages/api/Tarnija1";
+import Tarnija2 from "./pages/api/Tarnija2";
+import Tarnija3 from "./pages/api/Tarnija3";
+import Ujutused from "./pages/api/Ujutused";
+import ApiHome from "./pages/api/ApiHome";
+import Pakiautomaadid from "./pages/api/Pakiautomaadid";
 
 function App() {
 	const [dark, setDark] = useState(localStorage.getItem("dark") || "true");
@@ -60,8 +72,8 @@ function App() {
 		<div className={dark === "true" ? "dark" : "light"}>
 			<Menu />
 
-			<button onClick={muudaLight}>Light</button>
-			<button onClick={muudaDark}>Dark</button>
+			{/* <button onClick={muudaLight}>Light</button>
+			<button onClick={muudaDark}>Dark</button> */}
 
 			<Routes>
 				<Route path="/" element={<Avaleht />} />
@@ -107,6 +119,19 @@ function App() {
 				<Route path="/muuda-tootaja/:nimi" element={<MuudaTootaja />} />
 				<Route path="/muuda-toode/:index" element={<MuudaToode />} />
 				<Route path="/muuda-esindus/:nimi" element={<MuudaEsindus />} />
+
+				<Route path="api-home" element={<ApiHome />} />
+				<Route path="/autod2" element={<Autod2 />} />
+				<Route path="pakiautomaadid" element={<Pakiautomaadid />} />
+				<Route path="/raamatud1" element={<Raamatud1 />} />
+				<Route path="/raamatud2" element={<Raamatud2 />} />
+				<Route path="/riigid1" element={<Riigid1 />} />
+				<Route path="/riigid2" element={<Riigid2 />} />
+				<Route path="/sonastik" element={<Sonastik />} />
+				<Route path="/tarnija1" element={<Tarnija1 />} />
+				<Route path="/tarnija2" element={<Tarnija2 />} />
+				<Route path="/tarnija3" element={<Tarnija3 />} />
+				<Route path="/ujutused" element={<Ujutused />} />
 
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
