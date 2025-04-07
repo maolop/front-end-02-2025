@@ -26,10 +26,16 @@ function Cart() {
 		}
 	};
 
+	const findTotal = () => {
+		let total = 0;
+		cart.forEach((i) => (total += i.price));
+		return total;
+	};
+
 	return (
 		<>
 			{cartState()}
-
+			Näitan {cart.length} toodet. Kokku {findTotal()}€
 			{cart.map((product, index) => (
 				<div className="product" key={product.id}>
 					<img style={{ width: "100px" }} src={product.image} />

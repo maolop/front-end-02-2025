@@ -9,6 +9,7 @@ function HomePage() {
 					<img style={{ width: "100px" }} src={product.image} />
 					<div>{product.title}</div>
 					<div>{product.price}</div>
+					<button>Lisainfo</button>
 					<button onClick={() => cart.push(product)}>Lisa ostukorvi</button>
 				</div>
 			))}

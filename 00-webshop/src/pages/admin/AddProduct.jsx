@@ -1,7 +1,77 @@
+import { useRef } from "react";
+import products from "../../data/products.json";
+
 function AddProduct() {
+	const idRef = useRef();
+	const titleRef = useRef();
+	const priceRef = useRef();
+	const descriptionRef = useRef();
+	const categoryRef = useRef();
+	const imageRef = useRef();
+	const ratingRef = useRef();
+	const voteCountRef = useRef();
+
+	const AddProduct = () => {
+		const newProduct = {
+			id: idRef.current.value,
+			title: titleRef.current.value,
+			price: priceRef.current.value,
+			description: descriptionRef.current.value,
+			category: categoryRef.current.value,
+			image: imageRef.current.value,
+			rating: { rate: ratingRef.current.value, count: voteCountRef.current.value },
+		};
+
+		products.push(newProduct);
+	};
+
 	return (
 		<>
-			<div>AddProduct</div>
+			<h1>Add Product</h1>
+
+			<div style={{ marginRight: "45%", textAlign: "right" }}>
+				<div>
+					<label>id</label>
+					<input ref={idRef} type="text" />
+				</div>
+
+				<div>
+					<label>title</label>
+					<input ref={titleRef} type="text" />
+				</div>
+
+				<div>
+					<label>price</label>
+					<input ref={priceRef} type="text" />
+				</div>
+
+				<div>
+					<label>description</label>
+					<input ref={descriptionRef} type="text" />
+				</div>
+
+				<div>
+					<label>category</label>
+					<input ref={categoryRef} type="text" />
+				</div>
+
+				<div>
+					<label>image</label>
+					<input ref={imageRef} type="text" />
+				</div>
+
+				<div>
+					<label>rating</label>
+					<input ref={ratingRef} type="text" />
+				</div>
+
+				<div>
+					<label>vote count</label>
+					<input ref={voteCountRef} type="text" />
+				</div>
+			</div>
+
+			<button onClick={AddProduct}>Add</button>
 		</>
 	);
 }
