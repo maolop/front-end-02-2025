@@ -1,21 +1,30 @@
 import { useState } from "react";
-import cart from "../../data/cart";
 
 function Cart() {
-	const [, setCart] = useState();
+	const [, setRender] = useState(false);
+
+	const getCurrentCart = () => {
+		const currentCart = JSON.parse(localStorage.getItem("cart"));
+		return currentCart;
+	};
+
+	if (getCurrentCart() === null || getCurrentCart() === "")
+		localStorage.setItem("cart", "[]");
 
 	const deleteProduct = (index) => {
-		cart.splice(index, 1);
-		setCart(cart.slice());
+		let newCart = getCurrentCart().slice();
+		newCart.splice(index, 1);
+		localStorage.setItem("cart", JSON.stringify(newCart));
+		setRender((i) => !i);
 	};
 
 	const deleteAll = () => {
-		cart.length = 0;
-		setCart(cart.slice());
+		localStorage.setItem("cart", "[]");
+		setRender((i) => !i);
 	};
 
 	const cartState = () => {
-		if (cart.length === 0) {
+		if (getCurrentCart().length === 0) {
 			return <div>Ostukorv on tühi!</div>;
 		} else {
 			return (
@@ -28,7 +37,7 @@ function Cart() {
 
 	const findTotal = () => {
 		let total = 0;
-		cart.forEach((i) => (total += i.price));
+		getCurrentCart().forEach((i) => (total += i.price));
 		return total;
 	};
 
@@ -36,10 +45,10 @@ function Cart() {
 		<>
 			{cartState()}
 			<div>
-				Näitan {cart.length} toodet. Kokku {findTotal()}€.
+				Näitan {getCurrentCart().length} toodet. Kokku {findTotal()}€.
 			</div>
-			{cart.map((product, index) => (
-				<div className="product" key={product.id}>
+			{getCurrentCart().map((product, index) => (
+				<div className="product" key={`${index}-${product.id}`}>
 					<img style={{ width: "100px" }} src={product.image} />
 					<div>{product.title}</div>
 					<div>{product.price}</div>
