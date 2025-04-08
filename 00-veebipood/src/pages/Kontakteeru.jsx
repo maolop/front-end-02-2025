@@ -17,7 +17,7 @@ export const Kontakteeru = () => {
 				},
 				(error) => {
 					console.log("FAILED...", error.text);
-				}
+				},
 			);
 	};
 

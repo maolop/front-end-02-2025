@@ -4,7 +4,9 @@ import { useTranslation } from "react-i18next";
 // import ostukorvJSON from "../data/ostukorv.json";
 
 function Ostukorv() {
-	const [tooted, setTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
+	const [tooted, setTooted] = useState(
+		JSON.parse(localStorage.getItem("ostukorv")) || [],
+	);
 	const { t } = useTranslation();
 
 	const kustuta = (index) => {
@@ -28,11 +30,14 @@ function Ostukorv() {
 
 	return (
 		<>
-			{tooted.length > 0 && <button onClick={() => setTooted([])}>Tühjenda</button>}
+			{tooted.length > 0 && (
+				<button onClick={() => setTooted([])}>Tühjenda</button>
+			)}
 
 			{tooted.map((toode, index) => (
 				<div key={index}>
-					{toode.nimi}: {toode.hind}€<button onClick={() => kustuta(index)}>x</button>
+					{toode.nimi}: {toode.hind}€
+					<button onClick={() => kustuta(index)}>x</button>
 					<br />
 					<img className="ostukorv-toode" src={toode.pilt} alt="" />
 				</div>

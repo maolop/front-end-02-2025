@@ -20,7 +20,12 @@ function Raamatud1() {
 	return (
 		<>
 			<label>Otsi raamatut</label>
-			<input defaultValue={searchField} onChange={search} ref={searchRef} type="text" />
+			<input
+				defaultValue={searchField}
+				onChange={search}
+				ref={searchRef}
+				type="text"
+			/>
 
 			<table>
 				<thead>

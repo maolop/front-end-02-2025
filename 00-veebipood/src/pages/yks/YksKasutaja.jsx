@@ -12,7 +12,14 @@ function YksKasutaja() {
 	return (
 		<>
 			<div>Kasutaja email: {kasutaja.email}</div>
-			<div>Kasutaja parool: {showPw ? kasutaja.parool : <button onClick={() => setShowPw(true)}>Näita parooli</button>}</div>
+			<div>
+				Kasutaja parool:{" "}
+				{showPw ? (
+					kasutaja.parool
+				) : (
+					<button onClick={() => setShowPw(true)}>Näita parooli</button>
+				)}
+			</div>
 		</>
 	);
 }

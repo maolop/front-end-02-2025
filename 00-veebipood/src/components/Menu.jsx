@@ -21,7 +21,11 @@ export default function Menu() {
 			<button onClick={muudaKeelEng}>en</button>
 
 			<Link to="/">
-				<img className="pilt" src="https://upload.wikimedia.org/wikipedia/en/5/5f/Original_Doge_meme.jpg" alt="" />
+				<img
+					className="pilt"
+					src="https://upload.wikimedia.org/wikipedia/en/5/5f/Original_Doge_meme.jpg"
+					alt=""
+				/>
 			</Link>
 
 			<br />

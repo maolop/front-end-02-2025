@@ -23,21 +23,48 @@ function Esindused() {
 	// kellel on 4's täht "s"
 	// paarisarv tähti sisaldavad
 
-	const sortAZ = () => setEsindused(esindused.toSorted((a, b) => a.keskus.localeCompare(b.keskus)));
-	const sortZA = () => setEsindused(esindused.toSorted((a, b) => b.keskus.localeCompare(a.keskus)));
-	const sortCharsInc = () => setEsindused(esindused.toSorted((a, b) => a.keskus.length - b.keskus.length));
-	const sortCharsDec = () => setEsindused(esindused.toSorted((a, b) => b.keskus.length - a.keskus.length));
-	const sort4thAZ = () => setEsindused(esindused.toSorted((a, b) => a.keskus[3].localeCompare(b.keskus[3])));
-	const sortWordCount = () => setEsindused(esindused.toSorted((a, b) => b.keskus.split(" ").length - a.keskus.split(" ").length));
+	const sortAZ = () =>
+		setEsindused(
+			esindused.toSorted((a, b) => a.keskus.localeCompare(b.keskus)),
+		);
+	const sortZA = () =>
+		setEsindused(
+			esindused.toSorted((a, b) => b.keskus.localeCompare(a.keskus)),
+		);
+	const sortCharsInc = () =>
+		setEsindused(
+			esindused.toSorted((a, b) => a.keskus.length - b.keskus.length),
+		);
+	const sortCharsDec = () =>
+		setEsindused(
+			esindused.toSorted((a, b) => b.keskus.length - a.keskus.length),
+		);
+	const sort4thAZ = () =>
+		setEsindused(
+			esindused.toSorted((a, b) => a.keskus[3].localeCompare(b.keskus[3])),
+		);
+	const sortWordCount = () =>
+		setEsindused(
+			esindused.toSorted(
+				(a, b) => b.keskus.split(" ").length - a.keskus.split(" ").length,
+			),
+		);
 
-	const filterEndsE = () => setEsindused(esindused.filter((i) => i.keskus.endsWith("e")));
-	const filter7pluschars = () => setEsindused(esindused.filter((i) => i.keskus.length >= 7));
-	const filter9chars = () => setEsindused(esindused.filter((i) => i.keskus.length === 9));
-	const filter4thisS = () => setEsindused(esindused.filter((i) => i.keskus[3] === "s"));
-	const filterEven = () => setEsindused(esindused.filter((i) => i.keskus.length % 2 === 0));
+	const filterEndsE = () =>
+		setEsindused(esindused.filter((i) => i.keskus.endsWith("e")));
+	const filter7pluschars = () =>
+		setEsindused(esindused.filter((i) => i.keskus.length >= 7));
+	const filter9chars = () =>
+		setEsindused(esindused.filter((i) => i.keskus.length === 9));
+	const filter4thisS = () =>
+		setEsindused(esindused.filter((i) => i.keskus[3] === "s"));
+	const filterEven = () =>
+		setEsindused(esindused.filter((i) => i.keskus.length % 2 === 0));
 
 	const otsi = () => {
-		setEsindused(esindusedJson.filter((i) => i.keskus.includes(otsingRef.current.value)));
+		setEsindused(
+			esindusedJson.filter((i) => i.keskus.includes(otsingRef.current.value)),
+		);
 	};
 
 	return (
