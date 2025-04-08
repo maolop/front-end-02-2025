@@ -19,7 +19,10 @@ function AddProduct() {
 			description: descriptionRef.current.value,
 			category: categoryRef.current.value,
 			image: imageRef.current.value,
-			rating: { rate: ratingRef.current.value, count: voteCountRef.current.value },
+			rating: {
+				rate: ratingRef.current.value,
+				count: voteCountRef.current.value,
+			},
 		};
 
 		products.push(newProduct);
