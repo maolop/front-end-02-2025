@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function Cart() {
 	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart"));
@@ -13,11 +14,13 @@ function Cart() {
 		newCart.splice(index, 1);
 		setCart(newCart);
 		localStorage.setItem("cart", JSON.stringify(newCart));
+		toast.success("Product removed!");
 	};
 
 	const deleteAll = () => {
 		localStorage.setItem("cart", "[]");
 		setCart([]);
+		toast.success("Cart is now empty!");
 	};
 
 	const cartState = () => {
@@ -35,11 +38,12 @@ function Cart() {
 	const findTotal = () => {
 		let total = 0;
 		cart.forEach((i) => (total += i.price));
-		return total;
+		return total.toFixed(2);
 	};
 
 	return (
 		<>
+			<h1>Ostukorv </h1>
 			{cartState()}
 			<div>
 				Näitan {cart.length} toodet. Kokku {findTotal()}€.
@@ -52,6 +56,8 @@ function Cart() {
 					<button onClick={() => deleteProduct(index)}>Kustuta</button>
 				</div>
 			))}
+
+			<ToastContainer theme="dark" />
 		</>
 	);
 }

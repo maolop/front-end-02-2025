@@ -30,7 +30,7 @@ function AddProduct() {
 
 	return (
 		<>
-			<h1>Add Product</h1>
+			<h1>Admin Home &gt; Lisa Toode</h1>
 
 			<div style={{ marginRight: "45%", textAlign: "right" }}>
 				<div>

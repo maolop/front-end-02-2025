@@ -1,7 +1,7 @@
 function MaintainCategories() {
 	return (
 		<>
-			<div>MaintainCategories</div>
+			<h1>Halda Kategooriaid</h1>
 		</>
 	);
 }

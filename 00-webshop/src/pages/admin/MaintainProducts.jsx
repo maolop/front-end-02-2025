@@ -11,7 +11,7 @@ function MaintainProducts() {
 
 	return (
 		<>
-			<div>MaintainProducts</div>
+			<h1>Admin Home &gt; Halda Tooteid</h1>
 			<table>
 				<thead>
 					<tr>
