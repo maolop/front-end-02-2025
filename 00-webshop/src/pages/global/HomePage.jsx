@@ -1,17 +1,11 @@
+import { Link } from "react-router-dom";
 import products from "../../data/products";
 import { ToastContainer, toast } from "react-toastify";
-// import { useTranslation } from "react-i18next";
+import CarouselGallery from "../../components/CarouselGallery";
+import styles from "../../css/HomePage.module.css";
 
 function HomePage() {
-	// const { t, i18n } = useTranslation();
-	const getCurrentCart = () => {
-		const currentCart = JSON.parse(localStorage.getItem("cart"));
-		return currentCart;
-	};
-
-	// i18n.changeLanguage("en");
-
-	if (getCurrentCart() === null || getCurrentCart() === "")
+	if (JSON.parse(localStorage.getItem("cart")) === null)
 		localStorage.setItem("cart", "[]");
 
 	const addToCart = (product) => {
@@ -23,18 +17,26 @@ function HomePage() {
 
 	return (
 		<>
-			<h1>Avaleht</h1>
-			{products.map((product) => (
-				<div className="product" key={product.id}>
-					<img style={{ width: "100px" }} src={product.image} />
-					<div>{product.title}</div>
-					<div>{product.price}</div>
-					<button>Lisainfo</button>
-					<button onClick={() => addToCart(product)}>Lisa ostukorvi</button>
-				</div>
-			))}
+			<CarouselGallery />
 
-			<ToastContainer theme="dark" />
+			<h1>Avaleht</h1>
+			<div className={styles.products}>
+				{products.map((product, index) => (
+					<div className={styles.product} key={index}>
+						<img className={styles.image} src={product.image} />
+						<div className={styles.title}>{product.title}</div>
+						<div className={styles.price}>{product.price.toFixed(2)} eur</div>
+						<Link to={"/product/" + product.id}>
+							<button className={styles.btn}>Lisainfo</button>
+						</Link>
+						<button className={styles.btn} onClick={() => addToCart(product)}>
+							Lisa ostukorvi
+						</button>
+					</div>
+				))}
+			</div>
+
+			<ToastContainer />
 		</>
 	);
 }

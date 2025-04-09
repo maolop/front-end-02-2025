@@ -1,5 +1,9 @@
 :root {
 	font-family: sans-serif;
-	background-color: #151515;
-	color: #ccc;
+	/* background-color: #151515;
+	color: #ccc; */
+}
+
+input {
+	margin-bottom: 5px;
 }

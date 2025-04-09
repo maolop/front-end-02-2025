@@ -1,5 +1,6 @@
 import { useState } from "react";
 import products from "../../data/products.json";
+import styles from "../../css/MaintainProducts.module.css";
 
 function MaintainProducts() {
 	const [, render] = useState(false);
@@ -28,7 +29,10 @@ function MaintainProducts() {
 
 				<tbody>
 					{products.map((item, index) => (
-						<tr>
+						<tr
+							key={`${index}-${item.id}`}
+							className={item.active ? styles.active : styles.inactive}
+						>
 							<td>{item.id}</td>
 							<td>{item.title}</td>
 							<td>{item.price}</td>

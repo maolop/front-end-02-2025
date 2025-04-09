@@ -4,9 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 function Cart() {
 	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart"));
 
-	if (getCurrentCart() === null || getCurrentCart() === "")
-		localStorage.setItem("cart", "[]");
-
+	if (getCurrentCart() === null) localStorage.setItem("cart", "[]");
 	const [cart, setCart] = useState(() => getCurrentCart());
 
 	const deleteProduct = (index) => {
@@ -37,7 +35,7 @@ function Cart() {
 
 	const findTotal = () => {
 		let total = 0;
-		cart.forEach((i) => (total += i.price));
+		cart.forEach((e) => (total += e.price));
 		return total.toFixed(2);
 	};
 
@@ -57,7 +55,7 @@ function Cart() {
 				</div>
 			))}
 
-			<ToastContainer theme="dark" />
+			<ToastContainer />
 		</>
 	);
 }
