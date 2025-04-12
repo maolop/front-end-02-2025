@@ -2,7 +2,6 @@ import { useRef } from "react";
 import products from "../../data/products.json";
 
 function AddProduct() {
-	const idRef = useRef();
 	const titleRef = useRef();
 	const priceRef = useRef();
 	const descriptionRef = useRef();
