@@ -1,7 +1,104 @@
+import { Link, useParams } from "react-router-dom";
+import { useRef, useState } from "react";
+
+import items from "../../data/products.json";
+
 function EditProduct() {
+	const itemId = Number(useParams().id);
+	const index = items.findIndex((i) => i.id === itemId);
+	const [modified, setModified] = useState(false);
+
+	const titleRef = useRef();
+	const priceRef = useRef();
+	const descRef = useRef();
+	const catRef = useRef();
+	const imgRef = useRef();
+	const ratingRef = useRef();
+	const voteCountRef = useRef();
+	const activeRef = useRef();
+
+	const updateitem = () => {
+		const updateditem = {
+			id: itemId,
+			title: titleRef.current.value,
+			price: Number(priceRef.current.value),
+			description: descRef.current.value,
+			category: catRef.current.value,
+			active: activeRef.current.value,
+			image: imgRef.current.value,
+			rating: {
+				rate: Number(ratingRef.current.value),
+				count: Number(voteCountRef.current.value),
+			},
+		};
+
+		items[index] = updateditem;
+		setModified(true);
+	};
+
 	return (
 		<>
-			<div>EditProduct</div>
+			<img
+				style={{ marginTop: "30px", width: "300px" }}
+				src={items[index].image}
+				alt=""
+			/>
+
+			<div
+				style={{ marginTop: "30px", marginRight: "45%", textAlign: "right" }}
+			>
+				<div>
+					<label>Title: </label>
+					<input ref={titleRef} defaultValue={items[index].title}></input>
+				</div>
+				<div>
+					<label>Price: </label>
+					<input ref={priceRef} defaultValue={items[index].price}></input>
+				</div>
+				<div>
+					<label>Description: </label>
+					<input ref={descRef} defaultValue={items[index].description}></input>
+				</div>
+				<div>
+					<label>Category: </label>
+					<input ref={catRef} defaultValue={items[index].category}></input>
+				</div>
+				<div>
+					<label>Image: </label>
+					<input ref={imgRef} defaultValue={items[index].image}></input>
+				</div>
+				<div>
+					<label>Rating: </label>
+					<input
+						ref={ratingRef}
+						defaultValue={items[index].rating.rate}
+					></input>
+				</div>
+				<div>
+					<label>Nr of Votes: </label>
+					<input
+						ref={voteCountRef}
+						defaultValue={items[index].rating.count}
+					></input>
+				</div>
+				<div style={{ paddingRight: "80px" }}>
+					<label>Active: </label>
+					<input
+						type="checkbox"
+						ref={activeRef}
+						defaultChecked={items[index].active}
+					></input>
+				</div>
+			</div>
+			<button style={{ marginTop: "20px" }} onClick={updateitem}>
+				Submit
+			</button>
+			{modified && (
+				<>
+					<div>Toode {itemId} muudetud!</div>
+					<Link to="/admin/maintain-products">Mine tagasi</Link>
+				</>
+			)}
 		</>
 	);
 }

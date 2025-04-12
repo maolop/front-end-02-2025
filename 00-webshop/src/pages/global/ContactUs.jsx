@@ -1,7 +1,12 @@
+import ContactUsMap from "../../components/ContactUsMap";
+import ContactUsForm from "../../components/ContactUsForm";
+
 function ContactUs() {
 	return (
 		<>
-			<div>ContactUs</div>
+			<h1>Contact us</h1>
+			<ContactUsMap />
+			<ContactUsForm />
 		</>
 	);
 }

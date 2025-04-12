@@ -13,15 +13,15 @@ function AddProduct() {
 
 	const AddProduct = () => {
 		const newProduct = {
-			id: idRef.current.value,
+			id: products.length + 1,
 			title: titleRef.current.value,
-			price: priceRef.current.value,
+			price: Number(priceRef.current.value),
 			description: descriptionRef.current.value,
 			category: categoryRef.current.value,
 			image: imageRef.current.value,
 			rating: {
-				rate: ratingRef.current.value,
-				count: voteCountRef.current.value,
+				rate: Number(ratingRef.current.value),
+				count: Number(voteCountRef.current.value),
 			},
 		};
 
@@ -33,11 +33,6 @@ function AddProduct() {
 			<h1>Admin Home &gt; Lisa Toode</h1>
 
 			<div style={{ marginRight: "45%", textAlign: "right" }}>
-				<div>
-					<label>id</label>
-					<input ref={idRef} type="text" />
-				</div>
-
 				<div>
 					<label>title</label>
 					<input ref={titleRef} type="text" />

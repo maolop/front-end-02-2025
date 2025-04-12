@@ -13,8 +13,27 @@ input {
 button {
 	font-size: 14px;
 	border-color: black;
-
 	padding: 5px 10px;
-	margin: 5px;
+	margin: 5px !important;
 	background-color: orange;
+}
+
+table {
+	border: 2px solid black;
+	width: 50%;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+td,
+th {
+	border: 2px solid black;
+}
+
+.contact-map {
+	height: 35vh;
+	margin-left: 30%;
+	margin-right: 30%;
+	border: 1px solid gray;
+	margin-bottom: 30px;
 }

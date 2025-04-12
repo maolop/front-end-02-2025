@@ -8,10 +8,21 @@ function SingleProduct() {
 	return (
 		<>
 			<h1>Lisainfo</h1>
-			<div>
-				<img style={{ width: "200px" }} src={product.image} alt="" />
-				<div>{product.title}</div>
-				<div></div>
+			<div style={{ width: "40%", margin: "auto" }}>
+				<img
+					style={{ width: "200px", marginBottom: "20px" }}
+					src={product.image}
+					alt=""
+				/>
+				<div style={{ marginBottom: "20px" }}>
+					<b>
+						{product.title} - {product.price.toFixed(2)}€
+					</b>
+				</div>
+				<div style={{ marginBottom: "20px" }}>{product.description}</div>
+				<div>
+					Rated {product.rating.rate} ({product.rating.count} votes)
+				</div>
 			</div>
 		</>
 	);
