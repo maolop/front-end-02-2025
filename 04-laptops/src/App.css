@@ -9,3 +9,11 @@ input {
 	display: block;
 	margin: 20px auto;
 }
+
+table {
+	margin: auto auto;
+}
+
+th {
+	width: 200px;
+}
