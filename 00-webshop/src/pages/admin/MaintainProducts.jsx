@@ -1,19 +1,34 @@
-import { useState } from "react";
-import products from "../../data/products.json";
+import { useRef, useState } from "react";
+import productsJson from "../../data/products.json";
 import styles from "../../css/MaintainProducts.module.css";
 import { Link } from "react-router-dom";
 
 function MaintainProducts() {
-	const [, render] = useState(false);
+	const searchRef = useRef();
+	const [products, setProducts] = useState(productsJson);
 
 	const deleteProduct = (index) => {
 		products.splice(index, 1);
-		render((x) => !x);
+		setProducts(products.slice());
+	};
+
+	const search = () => {
+		const result = productsJson.filter((i) =>
+			i.title.includes(searchRef.current.value)
+		);
+
+		setProducts(result);
 	};
 
 	return (
 		<>
 			<h1>Admin Home &gt; Halda Tooteid</h1>
+
+			<div>
+				<label>Otsi toodete seast:</label>
+				<input ref={searchRef} onChange={search} type="text" />
+			</div>
+
 			<table>
 				<thead>
 					<tr>

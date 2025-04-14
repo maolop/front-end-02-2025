@@ -28,6 +28,8 @@ function NavigationBar() {
 						</Nav.Link>
 					</Nav>
 					<Nav>
+						<img className="icon" src="uk.png" />
+						<img className="icon" src="estonia.png" />
 						<Nav.Link as={Link} to="/login">
 							Login
 						</Nav.Link>

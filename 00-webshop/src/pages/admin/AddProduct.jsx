@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import products from "../../data/products.json";
+import categoriesJson from "../../data/categories.json";
+import { ToastContainer, toast } from "react-toastify";
 
 function AddProduct() {
 	const titleRef = useRef();
@@ -25,6 +27,16 @@ function AddProduct() {
 		};
 
 		products.push(newProduct);
+
+		toast.success(`${titleRef.current.value} added`);
+
+		titleRef.current.value = "";
+		priceRef.current.value = "";
+		descriptionRef.current.value = "";
+		categoryRef.current.value = "";
+		imageRef.current.value = "";
+		ratingRef.current.value = "";
+		voteCountRef.current.value = "";
 	};
 
 	return (
@@ -47,9 +59,18 @@ function AddProduct() {
 					<input ref={descriptionRef} type="text" />
 				</div>
 
-				<div>
+				{/* <div>
 					<label>category</label>
 					<input ref={categoryRef} type="text" />
+				</div> */}
+
+				<div>
+					<label>category</label>
+					<select ref={categoryRef}>
+						{categoriesJson.map((cat) => (
+							<option key={cat.name}>{cat.name}</option>
+						))}
+					</select>
 				</div>
 
 				<div>
@@ -69,6 +90,8 @@ function AddProduct() {
 			</div>
 
 			<button onClick={AddProduct}>Add</button>
+
+			<ToastContainer />
 		</>
 	);
 }

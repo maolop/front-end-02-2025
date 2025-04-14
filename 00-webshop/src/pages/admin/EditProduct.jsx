@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useRef, useState } from "react";
 
 import items from "../../data/products.json";
+import categoriesJson from "../../data/categories.json";
 
 function EditProduct() {
 	const itemId = Number(useParams().id);
@@ -59,9 +60,17 @@ function EditProduct() {
 					<label>Description: </label>
 					<input ref={descRef} defaultValue={items[index].description}></input>
 				</div>
-				<div>
+				{/* <div>
 					<label>Category: </label>
 					<input ref={catRef} defaultValue={items[index].category}></input>
+				</div> */}
+				<div>
+					<label>Category: </label>
+					<select ref={catRef} defaultValue={items[index].category}>
+						{categoriesJson.map((e) => (
+							<option key={e.name}>{e.name}</option>
+						))}
+					</select>
 				</div>
 				<div>
 					<label>Image: </label>
