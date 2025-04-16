@@ -92,8 +92,7 @@ function Employees() {
 	};
 
 	const deleteEmployee = (id) => {
-		const newEmployees = employees.filter((e) => e.id !== id);
-		setEmployees(newEmployees);
+		setEmployees(employees.filter((e) => e.id !== id));
 		setAddEmployeeMsg("Employee deleted!");
 	};
 
