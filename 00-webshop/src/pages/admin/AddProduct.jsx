@@ -2,6 +2,7 @@ import { useRef } from "react";
 import products from "../../data/products.json";
 import categoriesJson from "../../data/categories.json";
 import { ToastContainer, toast } from "react-toastify";
+import { invalidField } from "../../util/validations";
 
 function AddProduct() {
 	const titleRef = useRef();
@@ -13,6 +14,8 @@ function AddProduct() {
 	const voteCountRef = useRef();
 
 	const AddProduct = () => {
+		if (invalidField(titleRef.current.value, priceRef.current.value)) return;
+
 		const newProduct = {
 			id: products.length + 1,
 			title: titleRef.current.value,

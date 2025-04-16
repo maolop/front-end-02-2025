@@ -12,8 +12,11 @@ import products from "../../data/products";
 import { ToastContainer, toast } from "react-toastify";
 import CarouselGallery from "../../components/CarouselGallery";
 import styles from "../../css/HomePage.module.css";
+import { useTranslation } from "react-i18next";
 
 function HomePage() {
+	const { t, i18n } = useTranslation();
+
 	if (JSON.parse(localStorage.getItem("cart")) === null)
 		localStorage.setItem("cart", "[]");
 
@@ -36,7 +39,7 @@ function HomePage() {
 		<>
 			<CarouselGallery />
 
-			<h1>Avaleht</h1>
+			<h1>{t("mainpage")}</h1>
 			<div className={styles.products}>
 				{products.map((product, index) => (
 					<div className={styles.product} key={index}>
