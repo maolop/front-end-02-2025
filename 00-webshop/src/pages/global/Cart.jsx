@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import styles from "../../css/Cart.module.css";
 import { Link } from "react-router-dom";
 
 function Cart() {
 	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart"));
+	const [parcelMachinesDB, setParcelMachinesDB] = useState([]);
+	const [parcelMachines, setParcelMachines] = useState([]);
+	const pmRef = useRef();
+
+	useEffect(() => {
+		fetch("https://www.omniva.ee/locations.json")
+			.then((data) => data.json())
+			.then((data) => {
+				setParcelMachinesDB(data);
+				setParcelMachines(data);
+			});
+	}, []);
 
 	if (getCurrentCart() === null) localStorage.setItem("cart", "[]");
 	const [cart, setCart] = useState(() => getCurrentCart());
@@ -57,6 +69,12 @@ function Cart() {
 		localStorage.setItem("cart", JSON.stringify(cart));
 	};
 
+	const searchPMs = () => {
+		setParcelMachines(
+			parcelMachinesDB.filter((i) => i.NAME.includes(pmRef.current.value))
+		);
+	};
+
 	return (
 		<>
 			<h1>Ostukorv </h1>
@@ -99,6 +117,23 @@ function Cart() {
 					/>
 				</div>
 			))}
+
+			<br />
+
+			{cart.length > 0 && (
+				<>
+					<label>Otsi pakiautomaatidest:</label>
+					<input onChange={searchPMs} ref={pmRef} type="text" />
+					<br />
+					<select>
+						{parcelMachines
+							.filter((pm) => pm.A0_NAME === "EE")
+							.map((pm) => (
+								<option key={pm.NAME}>{pm.NAME}</option>
+							))}
+					</select>
+				</>
+			)}
 
 			<ToastContainer />
 		</>
