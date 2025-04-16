@@ -5,12 +5,7 @@ function Kaart() {
 		<>
 			<h1>Ülemist järv</h1>
 			<div>
-				<MapContainer
-					className="kaart"
-					center={[59.396, 24.765]}
-					zoom={10}
-					scrollWheelZoom={false}
-				>
+				<MapContainer className="kaart" center={[59.396, 24.765]} zoom={10} scrollWheelZoom={false}>
 					<TileLayer
 						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -32,12 +27,7 @@ function Kaart() {
 
 			<h1>Harku järv</h1>
 			<div>
-				<MapContainer
-					className="kaart"
-					center={[59.416, 24.615]}
-					zoom={10}
-					scrollWheelZoom={false}
-				>
+				<MapContainer className="kaart" center={[59.416, 24.615]} zoom={10} scrollWheelZoom={false}>
 					<TileLayer
 						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

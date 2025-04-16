@@ -93,33 +93,20 @@ function Autod() {
 			<button onClick={sorteeriZA}>Sorteeri Z-A</button>
 			<button onClick={sorteeriKolmasTahtAZ}>Sorteeri 3. täht A-Z</button>
 			<button onClick={sorteeriKasvavalt}>Sorteeri tähemärgid kasvavalt</button>
-			<button onClick={sorteeriKahanevalt}>
-				Sorteeri tähemärgid kahanevalt
-			</button>
+			<button onClick={sorteeriKahanevalt}>Sorteeri tähemärgid kahanevalt</button>
 			<button onClick={sorteeriHindKasv}>Sorteeri hind kasvavalt</button>
 			<button onClick={sorteeriHindKah}>Sorteeri hind kahanevalt</button>
 			<br />
 			<br />
-			<button onClick={sorteeriTeineO}>
-				Jäta alles need, mille 2. täht on &quot;o&quot;
-			</button>
-			<button onClick={sorteeriSisaldabA}>
-				Jäta alles need, milles on väike &quot;a&quot;
-			</button>
-			<button onClick={sorteeriPikkus4}>
-				Jäta alles need, millel tähemärke täpselt 4
-			</button>
-			<button onClick={sorteeriPikkus5plus}>
-				Jäta alles need, millel tähemärke vähemalt 5
-			</button>
-			<button onClick={sorteeriLopebI}>
-				Jäta alles need, mis lõppevad &quot;i&quot; tähega
-			</button>
+			<button onClick={sorteeriTeineO}>Jäta alles need, mille 2. täht on &quot;o&quot;</button>
+			<button onClick={sorteeriSisaldabA}>Jäta alles need, milles on väike &quot;a&quot;</button>
+			<button onClick={sorteeriPikkus4}>Jäta alles need, millel tähemärke täpselt 4</button>
+			<button onClick={sorteeriPikkus5plus}>Jäta alles need, millel tähemärke vähemalt 5</button>
+			<button onClick={sorteeriLopebI}>Jäta alles need, mis lõppevad &quot;i&quot; tähega</button>
 
 			{autod.map((auto, index) => (
 				<div key={auto.nimi}>
-					{auto.nimi} - {auto.hind}€
-					<button onClick={() => lisaOstukorvi(auto)}>Lisa ostukorvi</button>
+					{auto.nimi} - {auto.hind}€<button onClick={() => lisaOstukorvi(auto)}>Lisa ostukorvi</button>
 					<Link to={"/auto/" + index}>
 						<button>Vt lähemalt</button>
 					</Link>

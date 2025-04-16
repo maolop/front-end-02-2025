@@ -11,9 +11,7 @@ function Tegevused() {
 	};
 
 	const filterByLen = () => {
-		setTegevused(
-			tegevused.filter((i) => i.title.length > Number(lenRef.current.value)),
-		);
+		setTegevused(tegevused.filter((i) => i.title.length > Number(lenRef.current.value)));
 	};
 
 	const filterbyCompleted = (completed) => {
@@ -30,18 +28,14 @@ function Tegevused() {
 			<div className="tegevused">
 				<div>Tegevusi: {tegevused.length}</div>
 				<div>
-					Näita <b>id</b> järgi:{" "}
-					<input ref={idRef} type="number" onChange={filterById} />
+					Näita <b>id</b> järgi: <input ref={idRef} type="number" onChange={filterById} />
 				</div>
 				<div>
-					Näita <b>pikemaid kui</b>:{" "}
-					<input ref={lenRef} type="number" onChange={filterByLen} />
+					Näita <b>pikemaid kui</b>: <input ref={lenRef} type="number" onChange={filterByLen} />
 				</div>
 				<div>
-					Näita <button onClick={() => filterbyCompleted(true)}>valmis</button>{" "}
-					/{" "}
-					<button onClick={() => filterbyCompleted(false)}>mittevalmis</button>{" "}
-					tegevusi
+					Näita <button onClick={() => filterbyCompleted(true)}>valmis</button> /{" "}
+					<button onClick={() => filterbyCompleted(false)}>mittevalmis</button> tegevusi
 				</div>
 				<div>
 					<button onClick={reset}>Reset</button>

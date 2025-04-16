@@ -32,11 +32,7 @@ function MuudaToode() {
 			<input ref={piltRef} defaultValue={toode.pilt} type="text" />
 			<br />
 			<label>Aktiivne: </label>
-			<input
-				ref={aktiivneRef}
-				defaultChecked={toode.aktiivne}
-				type="checkbox"
-			/>
+			<input ref={aktiivneRef} defaultChecked={toode.aktiivne} type="checkbox" />
 			<br />
 			<button onClick={uuenda}>Valmis</button>
 		</>

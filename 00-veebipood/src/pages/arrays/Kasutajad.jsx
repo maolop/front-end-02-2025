@@ -11,9 +11,7 @@ function Kasutajad() {
 	};
 
 	const sorteeriTahedKasv = () => {
-		const vastus = kasutajad.toSorted(
-			(a, b) => a.email.length - b.email.length,
-		);
+		const vastus = kasutajad.toSorted((a, b) => a.email.length - b.email.length);
 		setKasutajad(vastus);
 	};
 

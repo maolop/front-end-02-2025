@@ -7,9 +7,7 @@ function LogiSisse() {
 	const pwRef = useRef();
 
 	const logiSisse = () => {
-		const kasutaja = kasutajadFailist.find(
-			(i) => i.email === emailRef.current.value,
-		);
+		const kasutaja = kasutajadFailist.find((i) => i.email === emailRef.current.value);
 
 		if (kasutaja === undefined) {
 			toast.error("Vale kasutaja");

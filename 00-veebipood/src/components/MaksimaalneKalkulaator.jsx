@@ -9,12 +9,10 @@ export default function MaksimaalneKalkulaator() {
 
 	const uuendaMaxSumma = () => {
 		setMaxSumma(
-			(sissetulekRef.current.value - kohustusedRef.current.value) * 1000 -
-				ylalpeetavadRef.current.value * 10000,
+			(sissetulekRef.current.value - kohustusedRef.current.value) * 1000 - ylalpeetavadRef.current.value * 10000,
 		);
 
-		if (sissetulekRef.current.value - kohustusedRef.current.value < 700)
-			setVaikeSissetulek(true);
+		if (sissetulekRef.current.value - kohustusedRef.current.value < 700) setVaikeSissetulek(true);
 		else setVaikeSissetulek(false);
 	};
 
@@ -30,27 +28,15 @@ export default function MaksimaalneKalkulaator() {
 			<br />
 
 			<label>Netosissetulek</label>
-			<input
-				type="number"
-				ref={sissetulekRef}
-				onChange={uuendaMaxSumma}
-				defaultValue="1500"
-			/>
+			<input type="number" ref={sissetulekRef} onChange={uuendaMaxSumma} defaultValue="1500" />
 			<br />
 
 			<label>Igakuised kohustused</label>
-			<input
-				type="number"
-				ref={kohustusedRef}
-				onChange={uuendaMaxSumma}
-				defaultValue="600"
-			/>
+			<input type="number" ref={kohustusedRef} onChange={uuendaMaxSumma} defaultValue="600" />
 			<br />
 
 			{!vaikeSissetulek && <div>Maksimaalne summa: {maxSumma}</div>}
-			{vaikeSissetulek && (
-				<div>Netosissetulek on liiga väike või kohustused liiga suured.</div>
-			)}
+			{vaikeSissetulek && <div>Netosissetulek on liiga väike või kohustused liiga suured.</div>}
 		</>
 	);
 }

@@ -18,11 +18,7 @@ function Avaleht() {
 
 	return (
 		<div>
-			{laigitud ? (
-				<img src="/laigitud.svg" alt="" />
-			) : (
-				<img src="/mittelaigitud.svg" alt="" />
-			)}
+			{laigitud ? <img src="/laigitud.svg" alt="" /> : <img src="/mittelaigitud.svg" alt="" />}
 			<br />
 			<button onClick={() => setLaigitud(!laigitud)}>Muuda like-i</button>
 			<br />

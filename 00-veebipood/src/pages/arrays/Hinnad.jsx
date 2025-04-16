@@ -37,9 +37,7 @@ function Hinnad() {
 	};
 
 	const otsi = () => {
-		const vastus = hinnadFailist.filter((hind) =>
-			hind.arv.toString().includes(otsingRef.current.value),
-		);
+		const vastus = hinnadFailist.filter((hind) => hind.arv.toString().includes(otsingRef.current.value));
 		setHinnad(vastus);
 	};
 

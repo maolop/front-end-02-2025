@@ -13,9 +13,7 @@ function YksToode() {
 			<div>Hind: {toode.hind}</div>
 			<div>Aktiivne: {toode.aktiivne ? "jah" : "ei"}</div>
 			<div>Pilt: {toode.pilt !== "" ? toode.pilt : "puudub"}</div>
-			{toode.pilt != "" && (
-				<img style={{ width: "300px" }} src={toode.pilt} alt="" />
-			)}
+			{toode.pilt != "" && <img style={{ width: "300px" }} src={toode.pilt} alt="" />}
 		</>
 	);
 }

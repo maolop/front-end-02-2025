@@ -7,12 +7,7 @@ export default function LaenuKalkulaator() {
 	const [ostuHind, setOstuHind] = useState(0);
 
 	const uuendaKuumakse = () => {
-		setKuumakse(
-			(
-				(ostuHindRef.current.value / perioodRef.current.value / 12) *
-				1.2
-			).toFixed(2),
-		);
+		setKuumakse(((ostuHindRef.current.value / perioodRef.current.value / 12) * 1.2).toFixed(2));
 		setOstuHind(ostuHindRef.current.value);
 	};
 
@@ -20,12 +15,7 @@ export default function LaenuKalkulaator() {
 		<>
 			<label>Kinnisvara ostuhind</label>
 			<br />
-			<input
-				type="number"
-				ref={ostuHindRef}
-				onChange={uuendaKuumakse}
-				defaultValue="75000"
-			/>
+			<input type="number" ref={ostuHindRef} onChange={uuendaKuumakse} defaultValue="75000" />
 			<br />
 
 			<label>Periood</label>
@@ -37,12 +27,8 @@ export default function LaenuKalkulaator() {
 				<option>30</option>
 			</select>
 
-			{ostuHind >= 20000 && ostuHind <= 10000000 && (
-				<div>Kuumakse: {kuumakse}</div>
-			)}
-			{(ostuHind < 20000 || ostuHind > 10000000) && (
-				<div>Laenusumma peab olema vahemikus 20,000 - 10,000,000</div>
-			)}
+			{ostuHind >= 20000 && ostuHind <= 10000000 && <div>Kuumakse: {kuumakse}</div>}
+			{(ostuHind < 20000 || ostuHind > 10000000) && <div>Laenusumma peab olema vahemikus 20,000 - 10,000,000</div>}
 		</>
 	);
 }

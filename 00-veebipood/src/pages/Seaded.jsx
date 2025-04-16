@@ -15,26 +15,20 @@ function Seaded() {
 	}
 
 	const sisestaAadress = () => {
-		if (aadressRef.current.value === "")
-			toast.error("Tühja aadressi ei saa sisestada!");
-		else if (aadressRef.current.value.length < 4)
-			toast.error("Aadress on liiga lühike!");
+		if (aadressRef.current.value === "") toast.error("Tühja aadressi ei saa sisestada!");
+		else if (aadressRef.current.value.length < 4) toast.error("Aadress on liiga lühike!");
 		else toast.success("Aadress sisestatud: " + aadressRef.current.value);
 	};
 
 	const sisestaEmail = () => {
-		if (emailRef.current.value === "")
-			toast.error("Tühja e-maili ei saa sisestada!");
-		else if (emailRef.current.value.includes("@") === false)
-			toast.error("E-mailis puudub '@'!");
+		if (emailRef.current.value === "") toast.error("Tühja e-maili ei saa sisestada!");
+		else if (emailRef.current.value.includes("@") === false) toast.error("E-mailis puudub '@'!");
 		else toast.success("E-mail sisestatud: " + emailRef.current.value);
 	};
 
 	const sisestaTelefon = () => {
-		if (telefonRef.current.value === "")
-			toast.error("Tühja numbrit ei saa sisestada!");
-		else if (telefonRef.current.value.startsWith("+372") === false)
-			toast.error("Sisesta Eesti suunakood!");
+		if (telefonRef.current.value === "") toast.error("Tühja numbrit ei saa sisestada!");
+		else if (telefonRef.current.value.startsWith("+372") === false) toast.error("Sisesta Eesti suunakood!");
 		else toast.success("Telefon sisestatud: " + telefonRef.current.value);
 	};
 
@@ -87,28 +81,16 @@ function Seaded() {
 			<br />
 
 			<div>Hetkel aktiivne keel: {keel}</div>
-			<button
-				className={keel === "et" ? "aktiivne-keel" : undefined}
-				onClick={muudaKeelEst}
-			>
+			<button className={keel === "et" ? "aktiivne-keel" : undefined} onClick={muudaKeelEst}>
 				Eesti
 			</button>
-			<button
-				className={keel === "en" ? "aktiivne-keel" : undefined}
-				onClick={muudaKeelEng}
-			>
+			<button className={keel === "en" ? "aktiivne-keel" : undefined} onClick={muudaKeelEng}>
 				English
 			</button>
-			<button
-				className={keel === "ru" ? "aktiivne-keel" : undefined}
-				onClick={muudaKeelRus}
-			>
+			<button className={keel === "ru" ? "aktiivne-keel" : undefined} onClick={muudaKeelRus}>
 				Pycckij
 			</button>
-			<button
-				className={keel === "es" ? "aktiivne-keel" : undefined}
-				onClick={muudaKeelEsp}
-			>
+			<button className={keel === "es" ? "aktiivne-keel" : undefined} onClick={muudaKeelEsp}>
 				Espanol
 			</button>
 
