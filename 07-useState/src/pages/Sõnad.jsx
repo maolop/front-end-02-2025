@@ -1,23 +1,14 @@
 import { useState } from "react";
 
 function Sõnad() {
-	const [sõnad, setSõnad] = useState([
-		"spray",
-		"elite",
-		"exuberant",
-		"destruction",
-		"present",
-	]);
+	const [sõnad, setSõnad] = useState(["spray", "elite", "exuberant", "destruction", "present"]);
 
 	return (
 		<>
 			{sõnad.map((i) => (
 				<div>
 					<span>{i}</span>
-					<span onClick={() => setSõnad(sõnad.filter((j) => j !== i))}>
-						{" "}
-						[x]
-					</span>
+					<span onClick={() => setSõnad(sõnad.filter((j) => j !== i))}> [x]</span>
 				</div>
 			))}
 

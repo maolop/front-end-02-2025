@@ -13,9 +13,7 @@ function MaintainProducts() {
 	};
 
 	const search = () => {
-		const result = productsJson.filter((i) =>
-			i.title.includes(searchRef.current.value)
-		);
+		const result = productsJson.filter((i) => i.title.includes(searchRef.current.value));
 
 		setProducts(result);
 	};

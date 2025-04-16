@@ -25,11 +25,7 @@ function SingleProduct() {
 		<>
 			<h1>Lisainfo</h1>
 			<div style={{ width: "40%", margin: "auto" }}>
-				<img
-					style={{ width: "200px", marginBottom: "20px" }}
-					src={product.image}
-					alt=""
-				/>
+				<img style={{ width: "200px", marginBottom: "20px" }} src={product.image} alt="" />
 				<div style={{ marginBottom: "20px" }}>
 					<b>
 						{product.title} - {product.price.toFixed(2)}€

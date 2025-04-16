@@ -37,9 +37,7 @@ function App() {
 				</div>
 			)}
 
-			{sisseLogitud === "ei" && (
-				<button onClick={() => logiSisse()}>Logi sisse</button>
-			)}
+			{sisseLogitud === "ei" && <button onClick={() => logiSisse()}>Logi sisse</button>}
 			{sisseLogitud === "jah" && (
 				<button
 					onClick={() => {

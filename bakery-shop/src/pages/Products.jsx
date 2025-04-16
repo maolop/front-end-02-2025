@@ -6,29 +6,21 @@ function Products() {
 	const priceRef = useRef();
 	const quantityRef = useRef();
 	const storeRef = useRef();
-	const [productsSorted, setProductsSorted] = useState(false);
-	const [products, setProducts] = useState([
-		{ name: "Cupcake", price: 1.99, quantity: 7, store: "Downtown store" },
-		{ name: "Cheesecake", price: 2, quantity: 2, store: "Ülemiste store" },
-		{ name: "Bread", price: 3, quantity: 5, store: "Lasnamäe store" },
-		{ name: "Apple pie", price: 4, quantity: 2, store: "Nõmme store" },
-		{ name: "Éclair", price: 3.25, quantity: 1, store: "Mustamäe store" },
-		{ name: "Croissant", price: 1.99, quantity: 4, store: "Downtown store" },
-		{ name: "Cupcake", price: 2, quantity: 6, store: "Ülemiste store" },
-		{ name: "Bread", price: 5, quantity: 10, store: "Lasnamäe store" },
-		{ name: "Croissant", price: 1.8, quantity: 1, store: "Lasnamäe store" },
-		{
-			name: "Chocolate chip cookie",
-			price: 3.25,
-			quantity: 3,
-			store: "Mustamäe store",
-		},
-	]);
 
-	if (!productsSorted) {
-		setProducts(products.toSorted((a, b) => b.price - a.price));
-		setProductsSorted(true);
-	}
+	const [products, setProducts] = useState(
+		[
+			{ name: "Cupcake", price: 1.99, quantity: 7, store: "Downtown store" },
+			{ name: "Cheesecake", price: 2, quantity: 2, store: "Ülemiste store" },
+			{ name: "Bread", price: 3, quantity: 5, store: "Lasnamäe store" },
+			{ name: "Apple pie", price: 4, quantity: 2, store: "Nõmme store" },
+			{ name: "Éclair", price: 3.25, quantity: 1, store: "Mustamäe store" },
+			{ name: "Croissant", price: 1.99, quantity: 4, store: "Downtown store" },
+			{ name: "Cupcake", price: 2, quantity: 6, store: "Ülemiste store" },
+			{ name: "Bread", price: 5, quantity: 10, store: "Lasnamäe store" },
+			{ name: "Croissant", price: 1.8, quantity: 1, store: "Lasnamäe store" },
+			{ name: "Chocolate chip cookie", price: 3.25, quantity: 3, store: "Mustamäe store" },
+		].toSorted((a, b) => b.price - a.price),
+	);
 
 	const addProduct = () => {
 		const newProduct = {
@@ -37,8 +29,7 @@ function Products() {
 			quantity: quantityRef.current.value,
 			store: storeRef.current.value,
 		};
-		products.push(newProduct);
-		setProducts(products.slice());
+		setProducts(products.concat(newProduct));
 	};
 
 	return (
@@ -60,52 +51,26 @@ function Products() {
 								<td>{product.name}</td>
 								<td>{product.price}</td>
 								<td>
-									<span className={product.quantity < 3 ? "fewer-than-3" : ""}>
-										{product.quantity}
-									</span>
+									<span className={product.quantity < 3 ? "fewer-than-3" : ""}>{product.quantity}</span>
 								</td>
 								<td>{product.store}</td>
 							</tr>
 						))}
 						<tr className="input-row">
 							<td>
-								<input
-									type="text"
-									ref={nameRef}
-									placeholder="Product"
-									className="form-control"
-								/>
+								<input type="text" ref={nameRef} placeholder="Product" className="form-control" />
 							</td>
 							<td>
-								<input
-									type="text"
-									ref={priceRef}
-									placeholder="Price"
-									className="form-control"
-								/>
+								<input type="text" ref={priceRef} placeholder="Price" className="form-control" />
 							</td>
 							<td>
-								<input
-									type="text"
-									ref={quantityRef}
-									placeholder="Quantity"
-									className="form-control"
-								/>
+								<input type="text" ref={quantityRef} placeholder="Quantity" className="form-control" />
 							</td>
 							<td>
-								<input
-									type="text"
-									ref={storeRef}
-									placeholder="Store"
-									className="form-control"
-								/>
+								<input type="text" ref={storeRef} placeholder="Store" className="form-control" />
 							</td>
 							<td>
-								<Button
-									variant="success"
-									type="submit"
-									onClick={() => addProduct()}
-								>
+								<Button variant="success" type="submit" onClick={() => addProduct()}>
 									Add
 								</Button>
 							</td>

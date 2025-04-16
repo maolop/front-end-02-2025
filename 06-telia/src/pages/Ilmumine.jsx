@@ -21,10 +21,7 @@ function Ilmumine() {
 	return (
 		<>
 			<h1>Vali pakett</h1>
-			<button
-				className={`pakett ${homeAktiivne ? "aktiivne-pakett" : ""}`}
-				onClick={() => aktiveeriPakett("home")}
-			>
+			<button className={`pakett ${homeAktiivne ? "aktiivne-pakett" : ""}`} onClick={() => aktiveeriPakett("home")}>
 				Home
 			</button>
 			<button
@@ -33,10 +30,7 @@ function Ilmumine() {
 			>
 				Home+
 			</button>
-			<button
-				className={`pakett ${addictAktiivne ? "aktiivne-pakett" : ""}`}
-				onClick={() => aktiveeriPakett("addict")}
-			>
+			<button className={`pakett ${addictAktiivne ? "aktiivne-pakett" : ""}`} onClick={() => aktiveeriPakett("addict")}>
 				Addict
 			</button>
 			<button
@@ -46,10 +40,7 @@ function Ilmumine() {
 				Fanatic
 			</button>
 
-			{(homeAktiivne ||
-				homePlusAktiivne ||
-				addictAktiivne ||
-				fanaticAktiivne) && <h2>Pakett sisaldab:</h2>}
+			{(homeAktiivne || homePlusAktiivne || addictAktiivne || fanaticAktiivne) && <h2>Pakett sisaldab:</h2>}
 
 			{homeAktiivne && (
 				<>

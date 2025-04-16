@@ -39,15 +39,9 @@ function EditProduct() {
 
 	return (
 		<>
-			<img
-				style={{ marginTop: "30px", width: "300px" }}
-				src={items[index].image}
-				alt=""
-			/>
+			<img style={{ marginTop: "30px", width: "300px" }} src={items[index].image} alt="" />
 
-			<div
-				style={{ marginTop: "30px", marginRight: "45%", textAlign: "right" }}
-			>
+			<div style={{ marginTop: "30px", marginRight: "45%", textAlign: "right" }}>
 				<div>
 					<label>Title: </label>
 					<input ref={titleRef} defaultValue={items[index].title}></input>
@@ -78,25 +72,15 @@ function EditProduct() {
 				</div>
 				<div>
 					<label>Rating: </label>
-					<input
-						ref={ratingRef}
-						defaultValue={items[index].rating.rate}
-					></input>
+					<input ref={ratingRef} defaultValue={items[index].rating.rate}></input>
 				</div>
 				<div>
 					<label>Nr of Votes: </label>
-					<input
-						ref={voteCountRef}
-						defaultValue={items[index].rating.count}
-					></input>
+					<input ref={voteCountRef} defaultValue={items[index].rating.count}></input>
 				</div>
 				<div style={{ paddingRight: "80px" }}>
 					<label>Active: </label>
-					<input
-						type="checkbox"
-						ref={activeRef}
-						defaultChecked={items[index].active}
-					></input>
+					<input type="checkbox" ref={activeRef} defaultChecked={items[index].active}></input>
 				</div>
 			</div>
 			<button style={{ marginTop: "20px" }} onClick={updateitem}>

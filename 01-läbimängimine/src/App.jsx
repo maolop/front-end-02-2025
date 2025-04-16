@@ -6,27 +6,22 @@ function App() {
 			<p>
 				Tee rohelise tagataustaga nupp, mille sees on helehall tekst
 				<br />
-				Hiirega peale minnes muuda nupu kõrgust (nt height: 100px) –
-				css-klass:hover
+				Hiirega peale minnes muuda nupu kõrgust (nt height: 100px) – css-klass:hover
 				<br />
-				Hiirega vajutades muuda cursorit haaramiseks (cursor: grab) –
-				css-klass:active
+				Hiirega vajutades muuda cursorit haaramiseks (cursor: grab) – css-klass:active
 			</p>
 			<button>Nupp</button>
 
 			<p>
-				Tee sinine tekst, millele hiirega peale minnes muuda selle teksti suurus
-				suuremaks (font-size: 24px) – hover
+				Tee sinine tekst, millele hiirega peale minnes muuda selle teksti suurus suuremaks (font-size: 24px) – hover
 				<br />
 				Pane sinine tekst kaldkirja (võimalik teha nii HTML-s kui CSS-s)
 			</p>
 			<p className="blue-text">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nunc nisl,
-				dictum quis ullamcorper sed, egestas fermentum urna. Suspendisse ac leo
-				pellentesque, tristique nisl sit amet, lacinia neque. In vestibulum
-				bibendum nulla sed congue. Cras consequat rhoncus nunc, id pretium elit.
-				Curabitur id aliquet sapien. Mauris fringilla ut magna id vulputate.
-				Nulla facilisi. Nullam elementum ipsum vel ipsum vulputate tincidunt.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nunc nisl, dictum quis ullamcorper sed, egestas
+				fermentum urna. Suspendisse ac leo pellentesque, tristique nisl sit amet, lacinia neque. In vestibulum bibendum
+				nulla sed congue. Cras consequat rhoncus nunc, id pretium elit. Curabitur id aliquet sapien. Mauris fringilla ut
+				magna id vulputate. Nulla facilisi. Nullam elementum ipsum vel ipsum vulputate tincidunt.
 			</p>
 
 			<p>
@@ -34,16 +29,13 @@ function App() {
 				<br />
 				Pane roheline tekst tugevaks kirjaviisiks (bold)
 				<br />
-				Pane rohelise teksti piirjoon (border) punaseks, mis läheb hiirega peale
-				minnes pruuniks
+				Pane rohelise teksti piirjoon (border) punaseks, mis läheb hiirega peale minnes pruuniks
 			</p>
 			<p className="green-text">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nunc nisl,
-				dictum quis ullamcorper sed, egestas fermentum urna. Suspendisse ac leo
-				pellentesque, tristique nisl sit amet, lacinia neque. In vestibulum
-				bibendum nulla sed congue. Cras consequat rhoncus nunc, id pretium elit.
-				Curabitur id aliquet sapien. Mauris fringilla ut magna id vulputate.
-				Nulla facilisi. Nullam elementum ipsum vel ipsum vulputate tincidunt.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nunc nisl, dictum quis ullamcorper sed, egestas
+				fermentum urna. Suspendisse ac leo pellentesque, tristique nisl sit amet, lacinia neque. In vestibulum bibendum
+				nulla sed congue. Cras consequat rhoncus nunc, id pretium elit. Curabitur id aliquet sapien. Mauris fringilla ut
+				magna id vulputate. Nulla facilisi. Nullam elementum ipsum vel ipsum vulputate tincidunt.
 			</p>
 
 			<p>
@@ -58,11 +50,7 @@ function App() {
 				Muuda pildi läbipaistvus (opacity) kui pildil hiirt peal hoiad
 			</p>
 			<div className="beluga-cat-div">
-				<img
-					className="beluga-cat-img"
-					src="https://i.redd.it/1rxdhjjf67791.jpg"
-					alt="Beluga Cat"
-				/>
+				<img className="beluga-cat-img" src="https://i.redd.it/1rxdhjjf67791.jpg" alt="Beluga Cat" />
 			</div>
 
 			<p>Tabel</p>
@@ -105,11 +93,7 @@ function App() {
 			</table>
 
 			<p>Youtube Video</p>
-			<iframe
-				width="800"
-				height="600"
-				src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-			></iframe>
+			<iframe width="800" height="600" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
 		</>
 	);
 }

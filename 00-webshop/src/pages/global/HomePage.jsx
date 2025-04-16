@@ -17,8 +17,7 @@ import { useTranslation } from "react-i18next";
 function HomePage() {
 	const { t, i18n } = useTranslation();
 
-	if (JSON.parse(localStorage.getItem("cart")) === null)
-		localStorage.setItem("cart", "[]");
+	if (JSON.parse(localStorage.getItem("cart")) === null) localStorage.setItem("cart", "[]");
 
 	const addToCart = (product) => {
 		const currentCart = JSON.parse(localStorage.getItem("cart"));

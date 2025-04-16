@@ -14,11 +14,7 @@ function ParcelMachines() {
 	}, []);
 
 	const searchPMs = () => {
-		setParcelMachines(
-			parcelMachinesDB.filter((i) =>
-				i.NAME.toLowerCase().includes(pmRef.current.value.toLowerCase())
-			)
-		);
+		setParcelMachines(parcelMachinesDB.filter((i) => i.NAME.toLowerCase().includes(pmRef.current.value.toLowerCase())));
 	};
 
 	return (

@@ -49,38 +49,22 @@ function Hind() {
 			/>
 
 			<br />
-			<button
-				onClick={() => setValitudRam(4)}
-				className={valitudRam == 4 && "valitud-ram"}
-			>
+			<button onClick={() => setValitudRam(4)} className={valitudRam == 4 && "valitud-ram"}>
 				4MB
 			</button>
-			<button
-				onClick={() => setValitudRam(8)}
-				className={valitudRam == 8 && "valitud-ram"}
-			>
+			<button onClick={() => setValitudRam(8)} className={valitudRam == 8 && "valitud-ram"}>
 				8MB
 			</button>
-			<button
-				onClick={() => setValitudRam(16)}
-				className={valitudRam == 16 && "valitud-ram"}
-			>
+			<button onClick={() => setValitudRam(16)} className={valitudRam == 16 && "valitud-ram"}>
 				16MB
 			</button>
-			<button
-				onClick={() => setValitudRam(32)}
-				className={valitudRam == 32 && "valitud-ram"}
-			>
+			<button onClick={() => setValitudRam(32)} className={valitudRam == 32 && "valitud-ram"}>
 				32MB
 			</button>
 
-			{valitudTelefon == "" && valitudRam != "" && (
-				<div>Telefon on valimata.</div>
-			)}
+			{valitudTelefon == "" && valitudRam != "" && <div>Telefon on valimata.</div>}
 			{valitudTelefon != "" && valitudRam == "" && <div>RAM on valimata.</div>}
-			{valitudTelefon == "" && valitudRam == "" && (
-				<div>Telefon ja RAM on valimata.</div>
-			)}
+			{valitudTelefon == "" && valitudRam == "" && <div>Telefon ja RAM on valimata.</div>}
 
 			{valitudTelefon != "" && valitudRam != "" && (
 				<>

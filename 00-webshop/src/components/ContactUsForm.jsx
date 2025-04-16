@@ -17,7 +17,7 @@ const ContactUs = () => {
 				},
 				(error) => {
 					console.log("FAILED...", error.text);
-				}
+				},
 			);
 	};
 

@@ -70,8 +70,7 @@ function Cart() {
 			<h1>Ostukorv </h1>
 			{cartState()}
 			<div>
-				Näitan {cart.length} erinevat toodet, kokku {totalProductsCount()}{" "}
-				toodet. Summa {findTotal()}€.
+				Näitan {cart.length} erinevat toodet, kokku {totalProductsCount()} toodet. Summa {findTotal()}€.
 			</div>
 			{cart.map((product, index) => (
 				<div className={styles.product} key={`${index}-${product.id}`}>
@@ -83,29 +82,14 @@ function Cart() {
 					<div className={styles.price}>{product.product.price}€</div>
 
 					<div className={styles.amount}>
-						<img
-							src="minus.png"
-							className={styles.button}
-							onClick={() => decQuantity(index)}
-						/>
+						<img src="minus.png" className={styles.button} onClick={() => decQuantity(index)} />
 						<span> {product.amount} </span>
 
-						<img
-							src="plus.png"
-							className={styles.button}
-							onClick={() => incQuantity(index)}
-						/>
+						<img src="plus.png" className={styles.button} onClick={() => incQuantity(index)} />
 						<div></div>
 					</div>
-					<div className={styles.total}>
-						Kokku {product.product.price * product.amount}€
-					</div>
-					<img
-						className={styles.rm}
-						src="remove.png"
-						onClick={() => deleteProduct(index)}
-						alt=""
-					/>
+					<div className={styles.total}>Kokku {product.product.price * product.amount}€</div>
+					<img className={styles.rm} src="remove.png" onClick={() => deleteProduct(index)} alt="" />
 				</div>
 			))}
 

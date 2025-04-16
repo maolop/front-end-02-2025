@@ -34,16 +34,8 @@ function NavigationBar() {
 						</Nav.Link>
 					</Nav>
 					<Nav>
-						<img
-							className="icon"
-							src="uk.png"
-							onClick={() => changeLang("en")}
-						/>
-						<img
-							className="icon"
-							src="estonia.png"
-							onClick={() => changeLang("et")}
-						/>
+						<img className="icon" src="uk.png" onClick={() => changeLang("en")} />
+						<img className="icon" src="estonia.png" onClick={() => changeLang("et")} />
 						<Nav.Link as={Link} to="/login">
 							Login
 						</Nav.Link>

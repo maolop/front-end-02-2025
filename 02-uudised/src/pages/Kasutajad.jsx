@@ -37,9 +37,7 @@ function Kasutajad() {
 	};
 
 	const sorteeriLat = () => {
-		setKasutajad(
-			kasutajad.toSorted((a, b) => a.address.geo.lat - b.address.geo.lat),
-		);
+		setKasutajad(kasutajad.toSorted((a, b) => a.address.geo.lat - b.address.geo.lat));
 	};
 
 	const sorteeriPosLng = () => {
@@ -54,10 +52,7 @@ function Kasutajad() {
 
 	const catchPhraseAtoE = () => {
 		const uuedKasutajad = JSON.parse(JSON.stringify(kasutajad));
-		uuedKasutajad.forEach(
-			(i) =>
-				(i.company.catchPhrase = i.company.catchPhrase.replaceAll("a", "e")),
-		);
+		uuedKasutajad.forEach((i) => (i.company.catchPhrase = i.company.catchPhrase.replaceAll("a", "e")));
 		setKasutajad(uuedKasutajad);
 	};
 
@@ -72,33 +67,28 @@ function Kasutajad() {
 					Nulli nimekiri <button onClick={reset}>OK</button>
 				</div>
 				<div>
-					Kuva kasutajad, kelle kasutajanimi on pikem kui 10 tähte{" "}
-					<button onClick={filterLongerThan10}>OK</button>
+					Kuva kasutajad, kelle kasutajanimi on pikem kui 10 tähte <button onClick={filterLongerThan10}>OK</button>
 				</div>
 				<div>
 					Leia ja logi Lucio Hettinger <button onClick={findLucio}>OK</button>
 				</div>
 				<div>
-					Leia ja logi esimene C-ga algav kasutaja{" "}
-					<button onClick={findFirstC}>OK</button>
+					Leia ja logi esimene C-ga algav kasutaja <button onClick={findFirstC}>OK</button>
 				</div>
 				<div>
 					Sorteeri Lat järgi <button onClick={sorteeriLat}>OK</button>
 				</div>
 				<div>
-					Näita ainult positiivse Lng-ga kasutajad{" "}
-					<button onClick={sorteeriPosLng}>OK</button>
+					Näita ainult positiivse Lng-ga kasutajad <button onClick={sorteeriPosLng}>OK</button>
 				</div>
 				<div>
-					Liida kokku ja logi kõikide kasutajate id-d{" "}
-					<button onClick={liidaId}>OK</button>
+					Liida kokku ja logi kõikide kasutajate id-d <button onClick={liidaId}>OK</button>
 				</div>
 				<div>
 					Loo emailide massiiv ja logi <button onClick={looEmailid}>OK</button>
 				</div>
 				<div>
-					Asenda catchphrase-is kõik a-tähed e-tähtedega{" "}
-					<button onClick={catchPhraseAtoE}>OK</button>
+					Asenda catchphrase-is kõik a-tähed e-tähtedega <button onClick={catchPhraseAtoE}>OK</button>
 				</div>
 			</div>
 
@@ -132,8 +122,7 @@ function Kasutajad() {
 								<div>{kasutaja.address.city}</div>
 								<div>Zip: {kasutaja.address.zipcode}</div>
 								<div>
-									lat: {kasutaja.address.geo.lat} lng:{" "}
-									{kasutaja.address.geo.lng}
+									lat: {kasutaja.address.geo.lat} lng: {kasutaja.address.geo.lng}
 								</div>
 							</td>
 							<td>

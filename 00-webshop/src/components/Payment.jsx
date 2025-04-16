@@ -21,8 +21,7 @@ function Payment() {
 			api_username: "92ddcfab96e34a5f",
 		};
 		const paymentHeaders = {
-			Authorization:
-				"Basic OTJkZGNmYWI5NmUzNGE1Zjo4Y2QxOWU5OWU5YzJjMjA4ZWU1NjNhYmY3ZDBlNGRhZA==",
+			Authorization: "Basic OTJkZGNmYWI5NmUzNGE1Zjo4Y2QxOWU5OWU5YzJjMjA4ZWU1NjNhYmY3ZDBlNGRhZA==",
 			"Content-Type": "application/json",
 		};
 

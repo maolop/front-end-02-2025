@@ -17,9 +17,8 @@ th {
 	vertical-align: middle;
 }
 
-/*TODO: Set the font weight of the first table column to bold*/
-table td:first-child,
-table th:first-child {
+td:first-child,
+th:first-child {
 	font-weight: bold;
 }
 

@@ -7,8 +7,7 @@ export default function Lisa() {
 	const modelRef = useRef();
 	const priceRef = useRef();
 
-	if (localStorage.getItem("laptops") === null)
-		localStorage.setItem("laptops", "[]");
+	if (localStorage.getItem("laptops") === null) localStorage.setItem("laptops", "[]");
 
 	function addProduct() {
 		const laptops = JSON.parse(localStorage.getItem("laptops"));
@@ -22,9 +21,7 @@ export default function Lisa() {
 		laptops.push(newLaptop);
 		localStorage.setItem("laptops", JSON.stringify(laptops));
 
-		setMessage(
-			`${manufactRef.current.value} ${modelRef.current.value} lisatud`
-		);
+		setMessage(`${manufactRef.current.value} ${modelRef.current.value} lisatud`);
 	}
 
 	return (

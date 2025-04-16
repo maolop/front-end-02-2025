@@ -28,9 +28,7 @@ function Employees() {
 			return false;
 		}
 
-		if (
-			employees.find((e) => e.id === Number(idRef.current.value)) !== undefined
-		) {
+		if (employees.find((e) => e.id === Number(idRef.current.value)) !== undefined) {
 			setAddEmployeeMsg("Please set ID to be unique!");
 			return false;
 		}
@@ -48,10 +46,7 @@ function Employees() {
 	};
 
 	const checkName = () => {
-		if (
-			!nameRef.current.value.includes(" ") ||
-			nameRef.current.value.length < 3
-		) {
+		if (!nameRef.current.value.includes(" ") || nameRef.current.value.length < 3) {
 			setAddEmployeeMsg("Please enter full name!");
 			return false;
 		}
@@ -128,11 +123,7 @@ function Employees() {
 									<img src={e.avatar} alt="" />
 								</td>
 								<td>
-									<Button
-										type="button"
-										variant="danger"
-										onClick={() => deleteEmployee(e.id)}
-									>
+									<Button type="button" variant="danger" onClick={() => deleteEmployee(e.id)}>
 										Delete
 									</Button>
 								</td>
@@ -146,39 +137,19 @@ function Employees() {
 
 						<tr className="input-row">
 							<td>
-								<input
-									type="text"
-									placeholder="ID"
-									className="form-control"
-									ref={idRef}
-								/>
+								<input type="text" placeholder="ID" className="form-control" ref={idRef} />
 							</td>
 
 							<td>
-								<input
-									type="text"
-									placeholder="Name"
-									className="form-control"
-									ref={nameRef}
-								/>
+								<input type="text" placeholder="Name" className="form-control" ref={nameRef} />
 							</td>
 
 							<td>
-								<input
-									type="text"
-									placeholder="Email"
-									className="form-control"
-									ref={emailRef}
-								/>
+								<input type="text" placeholder="Email" className="form-control" ref={emailRef} />
 							</td>
 
 							<td>
-								<input
-									type="text"
-									placeholder="Avatar"
-									className="form-control"
-									ref={avatarRef}
-								/>
+								<input type="text" placeholder="Avatar" className="form-control" ref={avatarRef} />
 							</td>
 
 							<td>
