@@ -65,6 +65,11 @@ function Employees() {
 	};
 
 	const checkAvatar = () => {
+		if (avatarRef.current.value === "") {
+			setAddEmployeeMsg("Please enter an URL for the avatar!");
+			return false;
+		}
+
 		return true;
 	};
 

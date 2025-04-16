@@ -22,3 +22,7 @@ table td:first-child,
 table th:first-child {
 	font-weight: bold;
 }
+
+.fewer-than-3 {
+	color: red;
+}
