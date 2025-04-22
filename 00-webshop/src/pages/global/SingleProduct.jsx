@@ -1,8 +1,17 @@
 import { useParams } from "react-router-dom";
-import products from "../../data/products";
 import { ToastContainer, toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 function SingleProduct() {
+	const [products, setProducts] = useState([]);
+	const productUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+
+	useEffect(() => {
+		fetch(productUrl)
+			.then((res) => res.json())
+			.then((data) => setProducts(data));
+	}, []);
+
 	const { id } = useParams();
 	const product = products.find((e) => e.id === Number(id));
 

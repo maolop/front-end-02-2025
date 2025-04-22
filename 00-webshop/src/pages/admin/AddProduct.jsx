@@ -1,6 +1,4 @@
-import { useRef } from "react";
-import products from "../../data/products.json";
-import categoriesJson from "../../data/categories.json";
+import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { invalidField } from "../../util/validations";
 
@@ -12,6 +10,23 @@ function AddProduct() {
 	const imageRef = useRef();
 	const ratingRef = useRef();
 	const voteCountRef = useRef();
+
+	const [products, setProducts] = useState([]);
+	const [categories, setCategories] = useState([]);
+	const productUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+	const categoriesUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
+
+	useEffect(() => {
+		fetch(productUrl)
+			.then((res) => res.json())
+			.then((data) => setProducts(data));
+	}, []);
+
+	useEffect(() => {
+		fetch(categoriesUrl)
+			.then((res) => res.json())
+			.then((data) => setCategories(data));
+	}, []);
 
 	const AddProduct = () => {
 		if (invalidField(titleRef.current.value, priceRef.current.value)) return;
@@ -30,6 +45,7 @@ function AddProduct() {
 		};
 
 		products.push(newProduct);
+		fetch(productUrl, { method: "PUT", body: JSON.stringify(products) });
 
 		toast.success(`${titleRef.current.value} added`);
 
@@ -70,7 +86,7 @@ function AddProduct() {
 				<div>
 					<label>category</label>
 					<select ref={categoryRef}>
-						{categoriesJson.map((cat) => (
+						{categories.map((cat) => (
 							<option key={cat.name}>{cat.name}</option>
 						))}
 					</select>

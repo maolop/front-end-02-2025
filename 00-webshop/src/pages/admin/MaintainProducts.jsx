@@ -1,19 +1,32 @@
-import { useRef, useState } from "react";
-import productsJson from "../../data/products.json";
+import { useEffect, useRef, useState } from "react";
+// import productsJson from "../../data/products.json";
 import styles from "../../css/MaintainProducts.module.css";
 import { Link } from "react-router-dom";
 
 function MaintainProducts() {
 	const searchRef = useRef();
-	const [products, setProducts] = useState(productsJson);
+	const [products, setProducts] = useState([]);
+	const [productsDb, setProductsDb] = useState([]);
+	const productsUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 
-	const deleteProduct = (index) => {
-		products.splice(index, 1);
-		setProducts(products.slice());
+	useEffect(() => {
+		fetch(productsUrl)
+			.then((res) => res.json())
+			.then((data) => {
+				setProducts(data || []);
+				setProductsDb(data || []);
+			});
+	}, []);
+
+	const deleteProduct = (id) => {
+		const index = productsDb.findIndex((product) => product.id === id);
+		productsDb.splice(index, 1);
+		setProducts(productsDb.slice());
+		fetch(productsUrl, { method: "PUT", body: JSON.stringify(productsDb) });
 	};
 
 	const search = () => {
-		const result = productsJson.filter((i) => i.title.includes(searchRef.current.value));
+		const result = productsDb.filter((i) => i.title.includes(searchRef.current.value));
 
 		setProducts(result);
 	};
@@ -67,7 +80,7 @@ function MaintainProducts() {
 								</Link>
 							</td>
 							<td style={{ width: "100px" }}>
-								<button onClick={() => deleteProduct(index)}>X</button>
+								<button onClick={() => deleteProduct(item.id)}>X</button>
 							</td>
 						</tr>
 					))}

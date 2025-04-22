@@ -1,23 +1,41 @@
-//11.K 09.04 Webshopis - kujundus, Bootstrap (navbar+karusell-galerii)
-//12.E 14.04 KOJU: Proovitöö (Nortal Bakery-shop). Aga proovige enne API faile teha + API asjad veebipoes (riigid2, autod2).
-//13.K 16.04 API päring, pakiautomaadid ostukorvi. Andmebaas
-//14.E 21.04 KOJU: Proovitöö
-//15.K 23.04
-//16.E 28.04 KOJU: Lõpuprojekt
-//17.E 05.05
-//18.E 12.05 - lõpuprojekti esitlemine
-
 import { Link } from "react-router-dom";
-import products from "../../data/products";
+// import products from "../../data/products";
 import { ToastContainer, toast } from "react-toastify";
 import CarouselGallery from "../../components/CarouselGallery";
 import styles from "../../css/HomePage.module.css";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 function HomePage() {
 	const { t, i18n } = useTranslation();
 
+	const productUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+	const categoryUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
+	const [products, setProducts] = useState([]);
+	const [productsDb, setProductsDb] = useState([]);
+	const [categories, setCategories] = useState([]);
+
+	useEffect(() => {
+		fetch(productUrl)
+			.then((res) => res.json())
+			.then((json) => {
+				setProducts(json);
+				setProductsDb(json);
+			});
+	}, []);
+
+	useEffect(() => {
+		fetch(categoryUrl)
+			.then((res) => res.json())
+			.then((json) => setCategories(json));
+	}, []);
+
 	if (JSON.parse(localStorage.getItem("cart")) === null) localStorage.setItem("cart", "[]");
+
+	const filterCategory = (cat) => {
+		const filtered = productsDb.filter((product) => product.category === cat);
+		setProducts(filtered);
+	};
 
 	const addToCart = (product) => {
 		const currentCart = JSON.parse(localStorage.getItem("cart"));
@@ -39,6 +57,11 @@ function HomePage() {
 			<CarouselGallery />
 
 			<h1>{t("mainpage")}</h1>
+
+			{categories.map((category) => (
+				<button onClick={() => filterCategory(category.name)}>{category.name}</button>
+			))}
+
 			<div className={styles.products}>
 				{products.map((product, index) => (
 					<div className={styles.product} key={index}>
