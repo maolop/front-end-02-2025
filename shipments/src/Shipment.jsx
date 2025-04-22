@@ -2,17 +2,18 @@ import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Shipment() {
-	const { orderNo } = useParams();
-	const shipments = JSON.parse(localStorage.getItem("shipments"));
-	const shipment = shipments.find((e) => e.orderNo === orderNo);
-	const index = shipments.findIndex((e) => e.orderNo === orderNo);
-
 	const orderNoRef = useRef();
 	const customerRef = useRef();
 	const consigneeRef = useRef();
 	const dateRef = useRef();
 	const trackingNoRef = useRef();
 	const statusRef = useRef();
+
+	const { orderNo } = useParams();
+	const shipments = JSON.parse(localStorage.getItem("shipments")) || [];
+	const index = shipments.findIndex((e) => e.orderNo === orderNo);
+	if (index === -1) return <h1>Shipment not found</h1>;
+	const shipment = shipments[index];
 
 	const editShipment = () => {
 		const changedShipment = {
