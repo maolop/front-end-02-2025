@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import ContactUsMap from "../../components/ContactUsMap";
+import { Shop } from "../../models/Shop";
 
 function MaintainShops() {
 	const url = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/shops.json";
-	const [shops, setShops] = useState([]);
+	const [shops, setShops] = useState<Shop[]>([]);
 
-	const nameRef = useRef();
-	const addressRef = useRef();
-	const linkRef = useRef();
-	const longitudeRef = useRef();
-	const latitudeRef = useRef();
+	const nameRef = useRef<HTMLInputElement>(null);
+	const addressRef = useRef<HTMLInputElement>(null);
+	const linkRef = useRef<HTMLInputElement>(null);
+	const longitudeRef = useRef<HTMLInputElement>(null);
+	const latitudeRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
 		fetch(url)
@@ -18,12 +19,21 @@ function MaintainShops() {
 	}, []);
 
 	const addShop = () => {
+		if (
+			nameRef.current === null ||
+			addressRef.current === null ||
+			linkRef.current === null ||
+			longitudeRef.current === null ||
+			latitudeRef.current === null
+		)
+			return;
+
 		const newShop = {
 			name: nameRef.current.value,
 			address: addressRef.current.value,
 			link: linkRef.current.value,
-			longitude: longitudeRef.current.value,
-			latitude: latitudeRef.current.value,
+			longitude: Number(longitudeRef.current.value),
+			latitude: Number(latitudeRef.current.value),
 		};
 
 		// setShops(shops.concat(newShop));
@@ -33,7 +43,7 @@ function MaintainShops() {
 		fetch(url, { method: "PUT", body: JSON.stringify(shops) });
 	};
 
-	const deleteShop = (index) => {
+	const deleteShop = (index: number) => {
 		shops.splice(index, 1);
 		setShops(shops.slice());
 		fetch(url, { method: "PUT", body: JSON.stringify(shops) });

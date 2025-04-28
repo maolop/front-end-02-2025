@@ -1,13 +1,25 @@
 import { Link, useParams } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import items from "../../data/products.json";
 import categoriesJson from "../../data/categories.json";
 
 function EditProduct() {
 	const itemId = Number(useParams().id);
-	const index = items.findIndex((i) => i.id === itemId);
 	const [modified, setModified] = useState(false);
+	const url = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+
+	const [items, setItems] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const index = items.findIndex((i) => i.id === itemId);
+
+	useEffect(() => {
+		fetch(url)
+			.then((res) => res.json())
+			.then((json) => {
+				setItems(json);
+				setLoading(false);
+			});
+	}, []);
 
 	const titleRef = useRef();
 	const priceRef = useRef();
@@ -34,8 +46,11 @@ function EditProduct() {
 		};
 
 		items[index] = updateditem;
-		setModified(true);
+		fetch(url, { method: "PUT", body: JSON.stringify(items) }).then(setModified(true));
 	};
+
+	if (loading) return <div>Loading..</div>;
+	if (items[index] === undefined) return <div>Product not found</div>;
 
 	return (
 		<>

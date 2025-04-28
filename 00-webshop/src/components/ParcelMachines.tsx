@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { ParcelMachine } from "../models/ParcelMachine";
 
 function ParcelMachines() {
-	const [parcelMachinesDB, setParcelMachinesDB] = useState([]);
-	const [parcelMachines, setParcelMachines] = useState([]);
-	const pmRef = useRef();
+	const [parcelMachinesDB, setParcelMachinesDB] = useState<ParcelMachine[]>([]);
+	const [parcelMachines, setParcelMachines] = useState<ParcelMachine[]>([]);
+	const pmRef = useRef<HTMLInputElement>(null);
 	useEffect(() => {
 		fetch("https://www.omniva.ee/locations.json")
 			.then((data) => data.json())
@@ -14,7 +15,9 @@ function ParcelMachines() {
 	}, []);
 
 	const searchPMs = () => {
-		setParcelMachines(parcelMachinesDB.filter((i) => i.NAME.toLowerCase().includes(pmRef.current.value.toLowerCase())));
+		const pmInput = pmRef.current;
+		if (pmInput === null) return;
+		setParcelMachines(parcelMachinesDB.filter((i) => i.NAME.toLowerCase().includes(pmInput.value.toLowerCase())));
 	};
 
 	return (

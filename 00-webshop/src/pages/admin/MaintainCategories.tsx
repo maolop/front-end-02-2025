@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 // import categoriesJson from "../../data/categories.json";
 import { ToastContainer, toast } from "react-toastify";
+import { Category } from "../../models/Category";
 
 function MaintainCategories() {
-	const [categories, setCategories] = useState([]);
-	const catRef = useRef();
+	const [categories, setCategories] = useState<Category[]>([]);
+	const catRef = useRef<HTMLInputElement>(null);
 	const url = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
 
 	useEffect(() => {
@@ -13,7 +14,7 @@ function MaintainCategories() {
 			.then((json) => setCategories(json || []));
 	}, []);
 
-	const deleteCategory = (index) => {
+	const deleteCategory = (index: number) => {
 		// toast.success(`${categoriesJson[index].name} deleted`);
 		// categoriesJson.splice(index, 1);
 		// setCategories(categoriesJson.slice());
@@ -23,6 +24,7 @@ function MaintainCategories() {
 	};
 
 	const saveCategory = () => {
+		if (catRef.current === null) return;
 		const newCat = { name: catRef.current.value };
 		categories.push(newCat);
 		setCategories(categories.slice());

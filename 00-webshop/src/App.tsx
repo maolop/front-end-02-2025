@@ -1,20 +1,20 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/global/HomePage";
-import ContactUs from "./pages/global/ContactUs";
-import Shops from "./pages/global/Shops";
-import Cart from "./pages/global/Cart";
-import SingleProduct from "./pages/global/SingleProduct";
-import AdminHome from "./pages/admin/AdminHome";
-import AddProduct from "./pages/admin/AddProduct";
-import EditProduct from "./pages/admin/EditProduct";
+import HomePage from "./pages/global/HomePage.tsx";
+import ContactUs from "./pages/global/ContactUs.tsx";
+import Shops from "./pages/global/Shops.tsx";
+import Cart from "./pages/global/Cart.tsx";
+import SingleProduct from "./pages/global/SingleProduct.tsx";
+import AdminHome from "./pages/admin/AdminHome.tsx";
+import AddProduct from "./pages/admin/AddProduct.tsx";
+import EditProduct from "./pages/admin/EditProduct.tsx";
 import MaintainProducts from "./pages/admin/MaintainProducts";
-import MaintainCategories from "./pages/admin/MaintainCategories";
-import MaintainShops from "./pages/admin/MaintainShops";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
-import NotFound from "./pages/global/NotFound";
-import NavigationBar from "./components/NavigationBar";
+import MaintainCategories from "./pages/admin/MaintainCategories.tsx";
+import MaintainShops from "./pages/admin/MaintainShops.tsx";
+import Login from "./pages/auth/Login.tsx";
+import Signup from "./pages/auth/Signup.tsx";
+import NotFound from "./pages/global/NotFound.tsx";
+import NavigationBar from "./components/NavigationBar.tsx";
 
 function App() {
 	return (

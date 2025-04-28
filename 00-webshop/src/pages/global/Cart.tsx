@@ -2,14 +2,15 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import styles from "../../css/Cart.module.css";
 import { Link } from "react-router-dom";
-import ParcelMachines from "../../components/ParcelMachines";
+import ParcelMachines from "../../components/ParcelMachines.tsx";
 import Payment from "../../components/Payment";
+import { CartProduct } from "../../models/CartProduct.ts";
 
 function Cart() {
-	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart"));
+	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart") || "[]");
 
 	if (getCurrentCart() === null) localStorage.setItem("cart", "[]");
-	const [cart, setCart] = useState(() => getCurrentCart());
+	const [cart, setCart] = useState<CartProduct[]>(() => getCurrentCart());
 
 	const cartState = () => {
 		if (cart.length === 0) {
@@ -37,11 +38,11 @@ function Cart() {
 
 	const totalProductsCount = () => {
 		let total = 0;
-		cart.forEach((e) => (total += e.amount));
+		cart.forEach((cp) => (total += cp.amount));
 		return total;
 	};
 
-	const decQuantity = (index) => {
+	const decQuantity = (index: number) => {
 		if (cart[index].amount > 1) {
 			cart[index].amount--;
 			setCart(cart.slice());
@@ -51,7 +52,7 @@ function Cart() {
 		}
 	};
 
-	const deleteProduct = (index) => {
+	const deleteProduct = (index: number) => {
 		const newCart = cart.slice();
 		newCart.splice(index, 1);
 		setCart(newCart);
@@ -59,7 +60,7 @@ function Cart() {
 		toast.success("Product removed!");
 	};
 
-	const incQuantity = (index) => {
+	const incQuantity = (index: number) => {
 		cart[index].amount++;
 		setCart(cart.slice());
 		localStorage.setItem("cart", JSON.stringify(cart));
@@ -72,23 +73,23 @@ function Cart() {
 			<div>
 				Näitan {cart.length} erinevat toodet, kokku {totalProductsCount()} toodet. Summa {findTotal()}€.
 			</div>
-			{cart.map((product, index) => (
-				<div className={styles.product} key={`${index}-${product.id}`}>
-					<Link to={"/product/" + product.product.id}>
-						<img className={styles.image} src={product.product.image} />
+			{cart.map((cp, index) => (
+				<div className={styles.product} key={`${index}-${cp.product.id}`}>
+					<Link to={"/product/" + cp.product.id}>
+						<img className={styles.image} src={cp.product.image} />
 					</Link>
 
-					<div className={styles.title}>{product.product.title}</div>
-					<div className={styles.price}>{product.product.price}€</div>
+					<div className={styles.title}>{cp.product.title}</div>
+					<div className={styles.price}>{cp.product.price}€</div>
 
 					<div className={styles.amount}>
 						<img src="minus.png" className={styles.button} onClick={() => decQuantity(index)} />
-						<span> {product.amount} </span>
+						<span> {cp.amount} </span>
 
 						<img src="plus.png" className={styles.button} onClick={() => incQuantity(index)} />
 						<div></div>
 					</div>
-					<div className={styles.total}>Kokku {product.product.price * product.amount}€</div>
+					<div className={styles.total}>Kokku {cp.product.price * cp.amount}€</div>
 					<img className={styles.rm} src="remove.png" onClick={() => deleteProduct(index)} alt="" />
 				</div>
 			))}

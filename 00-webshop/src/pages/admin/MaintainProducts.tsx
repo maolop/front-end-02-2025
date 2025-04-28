@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react";
 // import productsJson from "../../data/products.json";
 import styles from "../../css/MaintainProducts.module.css";
 import { Link } from "react-router-dom";
+import { Product } from "../../models/Product";
 
 function MaintainProducts() {
-	const searchRef = useRef();
-	const [products, setProducts] = useState([]);
-	const [productsDb, setProductsDb] = useState([]);
+	const searchRef = useRef<HTMLInputElement>(null);
+	const [products, setProducts] = useState<Product[]>([]);
+	const [productsDb, setProductsDb] = useState<Product[]>([]);
 	const productsUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 
 	useEffect(() => {
@@ -18,7 +19,7 @@ function MaintainProducts() {
 			});
 	}, []);
 
-	const deleteProduct = (id) => {
+	const deleteProduct = (id: number) => {
 		const index = productsDb.findIndex((product) => product.id === id);
 		productsDb.splice(index, 1);
 		setProducts(productsDb.slice());
@@ -26,7 +27,9 @@ function MaintainProducts() {
 	};
 
 	const search = () => {
-		const result = productsDb.filter((i) => i.title.includes(searchRef.current.value));
+		const searchInput = searchRef.current;
+		if (searchInput === null) return;
+		const result = productsDb.filter((i) => i.title.includes(searchInput.value));
 
 		setProducts(result);
 	};

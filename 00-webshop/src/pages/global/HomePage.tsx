@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 // import products from "../../data/products";
 import { ToastContainer, toast } from "react-toastify";
-import CarouselGallery from "../../components/CarouselGallery";
+import CarouselGallery from "../../components/CarouselGallery.tsx";
 import styles from "../../css/HomePage.module.css";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import { CartProduct } from "../../models/CartProduct.ts";
+import { Product } from "../../models/Product.ts";
+import { Category } from "../../models/Category.ts";
 
 function HomePage() {
 	const { t, i18n } = useTranslation();
 
 	const productUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 	const categoryUrl = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
-	const [products, setProducts] = useState([]);
-	const [productsDb, setProductsDb] = useState([]);
-	const [categories, setCategories] = useState([]);
+	const [products, setProducts] = useState<Product[]>([]);
+	const [productsDb, setProductsDb] = useState<Product[]>([]);
+	const [categories, setCategories] = useState<Category[]>([]);
 
 	useEffect(() => {
 		fetch(productUrl)
@@ -30,15 +33,15 @@ function HomePage() {
 			.then((json) => setCategories(json));
 	}, []);
 
-	if (JSON.parse(localStorage.getItem("cart")) === null) localStorage.setItem("cart", "[]");
+	if (localStorage.getItem("cart") === null) localStorage.setItem("cart", "[]");
 
-	const filterCategory = (cat) => {
+	const filterCategory = (cat: string) => {
 		const filtered = productsDb.filter((product) => product.category === cat);
 		setProducts(filtered);
 	};
 
-	const addToCart = (product) => {
-		const currentCart = JSON.parse(localStorage.getItem("cart"));
+	const addToCart = (product: Product) => {
+		const currentCart: CartProduct[] = JSON.parse(localStorage.getItem("cart") || "[]");
 		const productInCart = currentCart.find((p) => p.product.id === product.id);
 		if (productInCart !== undefined) {
 			// suurendan kogust

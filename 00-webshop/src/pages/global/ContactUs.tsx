@@ -1,5 +1,5 @@
-import ContactUsMap from "../../components/ContactUsMap";
-import ContactUsForm from "../../components/ContactUsForm";
+import ContactUsMap from "../../components/ContactUsMap.tsx";
+import ContactUsForm from "../../components/ContactUsForm.tsx";
 
 function ContactUs() {
 	return (

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Shop } from "../../models/Shop";
 
 function Shops() {
 	const url = "https://mattias-frontend-default-rtdb.europe-west1.firebasedatabase.app/shops.json";
-	const [shops, setShops] = useState([]);
+	const [shops, setShops] = useState<Shop[]>([]);
 
 	useEffect(() => {
 		fetch(url)

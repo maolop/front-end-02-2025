@@ -1,11 +1,11 @@
-// TODO: Argumentide kaasasaatmine
+import { CartProduct } from "../models/CartProduct";
 
 function Payment() {
-	const cart = JSON.parse(localStorage.getItem("cart")) || [];
+	const cart: CartProduct[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
 	const findTotal = () => {
 		let total = 0;
-		cart.forEach((e) => (total += e.product.price * e.amount));
+		cart.forEach((cp) => (total += cp.product.price * cp.amount));
 		return total.toFixed(2);
 	};
 

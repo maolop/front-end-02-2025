@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import i18n from "../i18n";
 
 function NavigationBar() {
-	const changeLang = (lang) => {
+	const changeLang = (lang: string) => {
 		localStorage.setItem("language", lang);
 		i18n.changeLanguage(lang);
 	};
