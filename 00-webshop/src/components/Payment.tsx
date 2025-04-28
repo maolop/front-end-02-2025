@@ -1,13 +1,13 @@
-import { CartProduct } from "../models/CartProduct";
+// import { CartProduct } from "../models/CartProduct";
 
-function Payment() {
-	const cart: CartProduct[] = JSON.parse(localStorage.getItem("cart") || "[]");
+function Payment(props: { sum: number }) {
+	// const cart: CartProduct[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
-	const findTotal = () => {
-		let total = 0;
-		cart.forEach((cp) => (total += cp.product.price * cp.amount));
-		return total.toFixed(2);
-	};
+	// const findTotal = () => {
+	// 	let total = 0;
+	// 	cart.forEach((cp) => (total += cp.product.price * cp.amount));
+	// 	return total.toFixed(2);
+	// };
 
 	const pay = () => {
 		const url = "https://igw-demo.every-pay.com/api/v4/payments/oneoff";
@@ -15,7 +15,7 @@ function Payment() {
 			account_name: "EUR3D1",
 			nonce: "1657da" + Math.random() * 9999999 + new Date(),
 			timestamp: new Date(),
-			amount: findTotal(),
+			amount: props.sum,
 			order_reference: Math.random() * 9999999,
 			customer_url: "https://err.ee",
 			api_username: "92ddcfab96e34a5f",

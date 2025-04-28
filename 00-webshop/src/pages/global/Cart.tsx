@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import styles from "../../css/Cart.module.css";
 import { Link } from "react-router-dom";
 import ParcelMachines from "../../components/ParcelMachines.tsx";
 import Payment from "../../components/Payment";
 import { CartProduct } from "../../models/CartProduct.ts";
+import { CartSumContext } from "../../context/CartSumContext.tsx";
 
 function Cart() {
 	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart") || "[]");
+	const { setCartSum } = useContext(CartSumContext);
 
 	if (getCurrentCart() === null) localStorage.setItem("cart", "[]");
 	const [cart, setCart] = useState<CartProduct[]>(() => getCurrentCart());
@@ -27,13 +29,14 @@ function Cart() {
 	const deleteAll = () => {
 		localStorage.setItem("cart", "[]");
 		setCart([]);
+		setCartSum(0);
 		toast.success("Cart is now empty!");
 	};
 
 	const findTotal = () => {
 		let total = 0;
 		cart.forEach((e) => (total += e.product.price * e.amount));
-		return total.toFixed(2);
+		return total;
 	};
 
 	const totalProductsCount = () => {
@@ -50,20 +53,23 @@ function Cart() {
 		} else {
 			deleteProduct(index);
 		}
+		setCartSum(findTotal());
 	};
 
 	const deleteProduct = (index: number) => {
-		const newCart = cart.slice();
-		newCart.splice(index, 1);
-		setCart(newCart);
-		localStorage.setItem("cart", JSON.stringify(newCart));
+		// const newCart = cart.slice();
+		cart.splice(index, 1);
+		setCart(cart.slice());
+		localStorage.setItem("cart", JSON.stringify(cart));
 		toast.success("Product removed!");
+		setCartSum(findTotal());
 	};
 
 	const incQuantity = (index: number) => {
 		cart[index].amount++;
 		setCart(cart.slice());
 		localStorage.setItem("cart", JSON.stringify(cart));
+		setCartSum(findTotal());
 	};
 
 	return (
@@ -71,7 +77,7 @@ function Cart() {
 			<h1>Ostukorv </h1>
 			{cartState()}
 			<div>
-				Näitan {cart.length} erinevat toodet, kokku {totalProductsCount()} toodet. Summa {findTotal()}€.
+				Näitan {cart.length} erinevat toodet, kokku {totalProductsCount()} toodet. Summa {findTotal().toFixed(2)}€.
 			</div>
 			{cart.map((cp, index) => (
 				<div className={styles.product} key={`${index}-${cp.product.id}`}>
@@ -89,7 +95,7 @@ function Cart() {
 						<img src="plus.png" className={styles.button} onClick={() => incQuantity(index)} />
 						<div></div>
 					</div>
-					<div className={styles.total}>Kokku {cp.product.price * cp.amount}€</div>
+					<div className={styles.total}>Kokku {(cp.product.price * cp.amount).toFixed(2)}€</div>
 					<img className={styles.rm} src="remove.png" onClick={() => deleteProduct(index)} alt="" />
 				</div>
 			))}
@@ -98,7 +104,7 @@ function Cart() {
 			{cart.length > 0 && (
 				<>
 					<ParcelMachines />
-					<Payment />
+					<Payment sum={findTotal()} />
 				</>
 			)}
 			<ToastContainer />

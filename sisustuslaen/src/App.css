@@ -1,0 +1,49 @@
+#root {
+	text-align: center;
+}
+
+table {
+	margin-right: 50px;
+}
+
+.intro-box {
+	background-color: rgb(142, 205, 209);
+	margin: 30px 20%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 400px;
+	padding-right: 30px;
+	text-align: left;
+}
+
+.products-box {
+	margin: 30px 20%;
+	padding: 50px;
+	background-color: rgb(241, 237, 235);
+}
+
+.products-list {
+	display: flex;
+	justify-content: center;
+}
+
+.total-price {
+	font-size: 40px;
+}
+
+h2 {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.click-me {
+	font-size: 12px;
+	color: #666;
+}
+
+.click-me:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
