@@ -1,0 +1,82 @@
+.header-container {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.header-img {
+	width: 100%;
+	display: block;
+}
+
+.header-text {
+	font-family: "Miniver";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.header-main {
+	margin-bottom: 0;
+	font-size: 70px;
+}
+
+.header-text {
+	font-size: 22px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: lightblue;
+}
+
+.link-bar {
+	background-color: #222;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+i {
+	margin: 10px;
+	margin-left: 20px;
+}
+
+i:hover {
+	color: lightblue;
+	cursor: pointer;
+}
+
+.socials {
+	width: 20%;
+	text-align: left;
+}
+
+.configs {
+	width: 20%;
+	text-align: right;
+}
+
+button {
+	font-family: inherit;
+	border: none;
+	font-size: 20px;
+	color: #ccc;
+	background-color: inherit;
+	padding: 10px 20px;
+}
+
+button:hover {
+	background-color: #333;
+	cursor: pointer;
+}

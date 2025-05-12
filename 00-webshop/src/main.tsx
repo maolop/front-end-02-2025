@@ -8,13 +8,17 @@ import "leaflet/dist/leaflet.css";
 import "./i18n.ts";
 import { CartSumContextProvider } from "./context/CartSumContext.tsx";
 import { AuthContextProvider } from "./context/AuthContext.tsx";
+import { store } from "./context/store";
+import { Provider } from "react-redux";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
 		<BrowserRouter>
 			<CartSumContextProvider>
 				<AuthContextProvider>
-					<App />
+					<Provider store={store}>
+						<App />
+					</Provider>
 				</AuthContextProvider>
 			</CartSumContextProvider>
 		</BrowserRouter>

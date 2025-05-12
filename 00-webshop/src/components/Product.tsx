@@ -5,9 +5,12 @@ import { CartProduct } from "../models/CartProduct";
 import { ToastContainer, toast } from "react-toastify";
 import { CartSumContext } from "../context/CartSumContext";
 import { useContext } from "react";
+import { useDispatch } from "react-redux";
+import { increment } from "../context/counterSlice";
 
 function Product(props: { product: ProductModel }) {
 	const { cartSum, setCartSum } = useContext(CartSumContext);
+	const dispatch = useDispatch();
 	const addToCart = (product: ProductModel) => {
 		const currentCart: CartProduct[] = JSON.parse(localStorage.getItem("cart") || "[]");
 		const productInCart = currentCart.find((p) => p.product.id === product.id);
@@ -22,6 +25,7 @@ function Product(props: { product: ProductModel }) {
 		localStorage.setItem("cart", JSON.stringify(currentCart));
 		toast.success("Product added!");
 		setCartSum(cartSum + product.price);
+		dispatch(increment());
 	};
 
 	return (

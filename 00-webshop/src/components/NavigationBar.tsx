@@ -7,11 +7,17 @@ import i18n from "../i18n";
 import { useContext } from "react";
 import { CartSumContext } from "../context/CartSumContext";
 import { AuthContext } from "../context/AuthContext";
+import { useSelector } from "react-redux";
+import { RootState } from "../context/store";
 
 function NavigationBar() {
 	const { cartSum } = useContext(CartSumContext);
 	const { loggedIn, loggedInFalse } = useContext(AuthContext);
+
+	const count = useSelector((state: RootState) => state.counter.value);
+
 	const navigate = useNavigate();
+
 	const changeLang = (lang: string) => {
 		localStorage.setItem("language", lang);
 		i18n.changeLanguage(lang);
@@ -48,6 +54,7 @@ function NavigationBar() {
 						</Nav.Link>
 					</Nav>
 					<Nav>
+						<span>{count} pieces</span>
 						<span>{cartSum.toFixed(2)} €</span>
 						<img className="icon" src="uk.png" onClick={() => changeLang("en")} />
 						<img className="icon" src="estonia.png" onClick={() => changeLang("et")} />

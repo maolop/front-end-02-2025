@@ -6,10 +6,13 @@ import ParcelMachines from "../../components/ParcelMachines.tsx";
 import Payment from "../../components/Payment";
 import { CartProduct } from "../../models/CartProduct.ts";
 import { CartSumContext } from "../../context/CartSumContext.tsx";
+import { useDispatch } from "react-redux";
+import { decrement, increment, decrementByAmount, empty } from "../../context/counterSlice.ts";
 
 function Cart() {
 	const getCurrentCart = () => JSON.parse(localStorage.getItem("cart") || "[]");
 	const { setCartSum } = useContext(CartSumContext);
+	const dispatch = useDispatch();
 
 	if (getCurrentCart() === null) localStorage.setItem("cart", "[]");
 	const [cart, setCart] = useState<CartProduct[]>(() => getCurrentCart());
@@ -27,6 +30,7 @@ function Cart() {
 	};
 
 	const deleteAll = () => {
+		dispatch(empty());
 		localStorage.setItem("cart", "[]");
 		setCart([]);
 		setCartSum(0);
@@ -54,10 +58,12 @@ function Cart() {
 			deleteProduct(index);
 		}
 		setCartSum(findTotal());
+		dispatch(decrement());
 	};
 
 	const deleteProduct = (index: number) => {
 		// const newCart = cart.slice();
+		dispatch(decrementByAmount(cart[index].amount));
 		cart.splice(index, 1);
 		setCart(cart.slice());
 		localStorage.setItem("cart", JSON.stringify(cart));
@@ -70,6 +76,7 @@ function Cart() {
 		setCart(cart.slice());
 		localStorage.setItem("cart", JSON.stringify(cart));
 		setCartSum(findTotal());
+		dispatch(increment());
 	};
 
 	return (
