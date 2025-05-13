@@ -4,6 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import FindJourneys from "./pages/FindJourneys";
 import SearchResults from "./pages/SearchResults";
 import PurchaseSingleTicket from "./pages/PurchaseSingleTicket";
+import LogIn from "./pages/LogIn";
+import PeriodTicket from "./pages/PeriodTicket";
+import ZoneInfo from "./pages/ZoneInfo";
+import Notifications from "./pages/Notifications";
 
 function App() {
 	return (
@@ -19,8 +23,12 @@ function App() {
 			>
 				<Routes>
 					<Route path="/" element={<FindJourneys />} />
+					<Route path="/notifications" element={<Notifications/>}/>
 					<Route path="/search-results" element={<SearchResults />} />
 					<Route path="/purchase-single-ticket" element={<PurchaseSingleTicket />} />
+					<Route path="/log-in" element={<LogIn />} />
+					<Route path="/period-ticket" element={<PeriodTicket />} />
+					<Route path="/zone-info" element={<ZoneInfo />} />
 				</Routes>
 			</Box>
 		</>

@@ -1,10 +1,11 @@
-import { Box, Center, Checkbox, Container, Flex, Text } from "@mantine/core";
+import { Box, Center, Checkbox, Container, Flex, Input, Text } from "@mantine/core";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function PurchaseSingleTicket() {
 	const location = useLocation();
 	const { origin, destination, stopsNr, time, date } = location.state;
-	const price = stopsNr * 0.38;
+	const [discountChecked, setDiscountChecked] = useState(false);
 
 	return (
 		<>
@@ -24,12 +25,17 @@ function PurchaseSingleTicket() {
 					<Text>{time}</Text>
 				</Box>
 			</Flex>
-			<Box ta="center" mt="20px">
+			<Box ta="center" mt="20px" mb="20px">
 				<Center>
-					<Checkbox label="Sooduspilet" mb="15px" />
+					<Checkbox label="Sooduspilet" mb="15px" onChange={() => setDiscountChecked(!discountChecked)} />
 				</Center>
-				<Text size="2.5rem">Hind: {price}€</Text>
+				<Text size="2.5rem">Hind: {(discountChecked ? stopsNr * 0.33 : stopsNr * 0.44).toFixed(2)}€</Text>
 			</Box>
+			<Center>
+				<Input.Wrapper description="Sisesta e-mail" size="md">
+					<Input placeholder="E-mail" size="md" />
+				</Input.Wrapper>
+			</Center>
 		</>
 	);
 }
